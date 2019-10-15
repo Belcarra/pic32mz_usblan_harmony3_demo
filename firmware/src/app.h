@@ -90,6 +90,9 @@
 #define APP_LED_3StateGet()         LED3_Get()
 #define APP_LED_3StateClear()       LED3_Clear()
 #define APP_LED_3StateToggle()      LED3_Toggle()
+
+#define LED_On() LED2_Set()
+#define LED_Off() LED2_Clear()
 #endif
 
 // *****************************************************************************
@@ -107,6 +110,8 @@ typedef enum
 {
     /* The application mounts the disk. */
     APP_MOUNT_DISK = 0,
+
+    APP_USB_INIT,
 
     /* In this state, the application waits for the initialization of the TCP/IP stack
        to complete. */
@@ -174,6 +179,17 @@ typedef struct
     SYS_FS_HANDLE fileHandle;
     /* The application's current state */
     APP_STATES state;
+
+    /* Device layer handle returned by device layer open function */
+    USB_DEVICE_HANDLE  usbDevHandle;
+
+    /* Device configured */
+    bool deviceConfigured;
+
+
+    /* Configuration value selected by the host*/
+    uint8_t configurationValue;
+
 
     TCP_SOCKET              socket;
 
@@ -260,6 +276,10 @@ void APP_Initialize ( void );
  */
 
 void APP_Tasks ( void );
+
+
+extern const USB_DEVICE_FUNCTION_REGISTRATION_TABLE funcRegistrationTable[1];
+extern const USB_DEVICE_MASTER_DESCRIPTOR usbMasterDescriptor;
 
 // *****************************************************************************
 // *****************************************************************************

@@ -6,10 +6,10 @@
                    projectFiles="true">
       <logicalFolder name="f1" displayName="config" projectFiles="true">
         <logicalFolder name="f1" displayName="pic32mz_ef_sk" projectFiles="true">
-          <logicalFolder name="f6" displayName="bsp" projectFiles="true">
+          <logicalFolder name="f7" displayName="bsp" projectFiles="true">
             <itemPath>../src/config/pic32mz_ef_sk/bsp/bsp.h</itemPath>
           </logicalFolder>
-          <logicalFolder name="f7" displayName="crypto" projectFiles="true">
+          <logicalFolder name="f8" displayName="crypto" projectFiles="true">
             <itemPath>../src/config/pic32mz_ef_sk/crypto/crypto.h</itemPath>
             <itemPath>../src/config/pic32mz_ef_sk/crypto/src/aes.h</itemPath>
             <itemPath>../src/config/pic32mz_ef_sk/crypto/src/arc4.h</itemPath>
@@ -146,10 +146,49 @@
               </logicalFolder>
               <itemPath>../src/config/pic32mz_ef_sk/driver/miim/drv_miim.h</itemPath>
             </logicalFolder>
+            <logicalFolder name="f5" displayName="usb" projectFiles="true">
+              <logicalFolder name="f1" displayName="usbhs" projectFiles="true">
+                <logicalFolder name="f1" displayName="src" projectFiles="true">
+                  <logicalFolder name="f1" displayName="templates" projectFiles="true">
+                    <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/templates/usbhs_registers.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/templates/usbhs_ClockResetControl_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/templates/usbhs_ClockResetControl_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/templates/usbhs_EndpointFIFO_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/templates/usbhs_EndpointFIFO_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/templates/usbhs_EndpointOperations_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/templates/usbhs_EndpointOperations_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/templates/usbhs_EP0Status_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/templates/usbhs_EP0Status_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/templates/usbhs_HighSpeedSupport_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/templates/usbhs_HighSpeedSupport_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/templates/usbhs_Interrupts_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/templates/usbhs_Interrupts_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/templates/usbhs_ModuleControl_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/templates/usbhs_ModuleControl_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/templates/usbhs_RxEPStatus_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/templates/usbhs_RxEPStatus_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/templates/usbhs_SoftReset_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/templates/usbhs_SoftReset_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/templates/usbhs_TxEPStatus_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/templates/usbhs_TxEPStatus_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/templates/usbhs_USBIDControl_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/templates/usbhs_USBIDControl_Unsupported.h</itemPath>
+                  </logicalFolder>
+                  <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/drv_usbhs_variant_mapping.h</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/drv_usbhs_local.h</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/plib_usbhs.h</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/plib_usbhs_header.h</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/usbhs_registers.h</itemPath>
+                </logicalFolder>
+                <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/drv_usbhs.h</itemPath>
+              </logicalFolder>
+              <itemPath>../src/config/pic32mz_ef_sk/driver/usb/drv_usb.h</itemPath>
+              <itemPath>../src/config/pic32mz_ef_sk/driver/usb/drv_usb_external_dependencies.h</itemPath>
+            </logicalFolder>
             <itemPath>../src/config/pic32mz_ef_sk/driver/driver.h</itemPath>
             <itemPath>../src/config/pic32mz_ef_sk/driver/driver_common.h</itemPath>
           </logicalFolder>
-          <logicalFolder name="f5" displayName="library" projectFiles="true">
+          <logicalFolder name="f6" displayName="library" projectFiles="true">
             <logicalFolder name="f1" displayName="tcpip" projectFiles="true">
               <logicalFolder name="f1" displayName="src" projectFiles="true">
                 <logicalFolder name="f1" displayName="common" projectFiles="true">
@@ -270,7 +309,7 @@
               <itemPath>../src/config/pic32mz_ef_sk/library/tcpip/tcpip_ethernet.h</itemPath>
             </logicalFolder>
           </logicalFolder>
-          <logicalFolder name="f4" displayName="net_pres" projectFiles="true">
+          <logicalFolder name="f5" displayName="net_pres" projectFiles="true">
             <logicalFolder name="f1" displayName="pres" projectFiles="true">
               <logicalFolder name="f1" displayName="src" projectFiles="true">
                 <itemPath>../src/config/pic32mz_ef_sk/net_pres/pres/src/net_pres_local.h</itemPath>
@@ -284,7 +323,7 @@
               <itemPath>../src/config/pic32mz_ef_sk/net_pres/pres/net_pres_enc_glue.h</itemPath>
             </logicalFolder>
           </logicalFolder>
-          <logicalFolder name="f3" displayName="peripheral" projectFiles="true">
+          <logicalFolder name="f4" displayName="peripheral" projectFiles="true">
             <logicalFolder name="f4" displayName="clk" projectFiles="true">
               <itemPath>../src/config/pic32mz_ef_sk/peripheral/clk/plib_clk.h</itemPath>
             </logicalFolder>
@@ -305,15 +344,9 @@
               <itemPath>../src/config/pic32mz_ef_sk/peripheral/uart/plib_uart2.h</itemPath>
             </logicalFolder>
           </logicalFolder>
-          <logicalFolder name="f2" displayName="system" projectFiles="true">
+          <logicalFolder name="f3" displayName="system" projectFiles="true">
             <logicalFolder name="f5" displayName="console" projectFiles="true">
               <itemPath>../src/config/pic32mz_ef_sk/system/console/sys_console.h</itemPath>
-              <itemPath>../src/config/pic32mz_ef_sk/system/console/src/sys_console_local.h</itemPath>
-              <itemPath>../src/config/pic32mz_ef_sk/system/console/src/sys_console_uart.h</itemPath>
-              <itemPath>../src/config/pic32mz_ef_sk/system/console/src/sys_console_uart_definitions.h</itemPath>
-              <itemPath>../src/config/pic32mz_ef_sk/system/console/src/sys_debug_local.h</itemPath>
-              <itemPath>../src/config/pic32mz_ef_sk/system/console/sys_command.h</itemPath>
-              <itemPath>../src/config/pic32mz_ef_sk/system/console/sys_debug.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f4" displayName="fs" projectFiles="true">
               <logicalFolder name="f1" displayName="fat_fs" projectFiles="true">
@@ -356,6 +389,24 @@
             <itemPath>../src/config/pic32mz_ef_sk/system/sys_random_h2_adapter.h</itemPath>
             <itemPath>../src/config/pic32mz_ef_sk/system/sys_reset_h2_adapter.h</itemPath>
           </logicalFolder>
+          <logicalFolder name="f2" displayName="usb" projectFiles="true">
+            <logicalFolder name="f1" displayName="src" projectFiles="true">
+              <itemPath>../src/config/pic32mz_ef_sk/usb/src/usb_device_local.h</itemPath>
+              <itemPath>../src/config/pic32mz_ef_sk/usb/src/usb_device_mapping.h</itemPath>
+              <itemPath>../src/config/pic32mz_ef_sk/usb/src/usb_device_function_driver.h</itemPath>
+              <itemPath>../src/config/pic32mz_ef_sk/usb/src/usb_external_dependencies.h</itemPath>
+              <itemPath>../src/config/pic32mz_ef_sk/usb/src/usb_device_hid_local.h</itemPath>
+            </logicalFolder>
+            <itemPath>../src/config/pic32mz_ef_sk/usb/usb_device.h</itemPath>
+            <itemPath>../src/config/pic32mz_ef_sk/usb/usb_common.h</itemPath>
+            <itemPath>../src/config/pic32mz_ef_sk/usb/usb_chapter_9.h</itemPath>
+            <itemPath>../src/config/pic32mz_ef_sk/usb/usb_host_client_driver.h</itemPath>
+            <itemPath>../src/config/pic32mz_ef_sk/usb/usb_host_hub_interface.h</itemPath>
+            <itemPath>../src/config/pic32mz_ef_sk/usb/usb_host.h</itemPath>
+            <itemPath>../src/config/pic32mz_ef_sk/usb/usb_hub.h</itemPath>
+            <itemPath>../src/config/pic32mz_ef_sk/usb/usb_device_hid.h</itemPath>
+            <itemPath>../src/config/pic32mz_ef_sk/usb/usb_hid.h</itemPath>
+          </logicalFolder>
           <itemPath>../src/config/pic32mz_ef_sk/user.h</itemPath>
           <itemPath>../src/config/pic32mz_ef_sk/configuration.h</itemPath>
           <itemPath>../src/config/pic32mz_ef_sk/system_config.h</itemPath>
@@ -371,9 +422,9 @@
       </logicalFolder>
       <logicalFolder name="f2" displayName="packs" projectFiles="true">
         <logicalFolder name="f1"
-                       displayName="PIC32MZ2048EFH144_DFP"
+                       displayName="PIC32MZ2048EFM144_DFP"
                        projectFiles="true">
-          <itemPath>../src/packs/PIC32MZ2048EFH144_DFP/device.h</itemPath>
+          <itemPath>../src/packs/PIC32MZ2048EFM144_DFP/device.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <itemPath>../src/http_net_print.h</itemPath>
@@ -388,10 +439,10 @@
                    projectFiles="true">
       <logicalFolder name="f1" displayName="config" projectFiles="true">
         <logicalFolder name="f1" displayName="pic32mz_ef_sk" projectFiles="true">
-          <logicalFolder name="f7" displayName="bsp" projectFiles="true">
+          <logicalFolder name="f8" displayName="bsp" projectFiles="true">
             <itemPath>../src/config/pic32mz_ef_sk/bsp/bsp.c</itemPath>
           </logicalFolder>
-          <logicalFolder name="f8" displayName="crypto" projectFiles="true">
+          <logicalFolder name="f9" displayName="crypto" projectFiles="true">
             <itemPath>../src/config/pic32mz_ef_sk/crypto/src/crypto.c</itemPath>
             <itemPath>../src/config/pic32mz_ef_sk/crypto/src/aes.c</itemPath>
             <itemPath>../src/config/pic32mz_ef_sk/crypto/src/arc4.c</itemPath>
@@ -486,6 +537,14 @@
                 </logicalFolder>
               </logicalFolder>
             </logicalFolder>
+            <logicalFolder name="f5" displayName="usb" projectFiles="true">
+              <logicalFolder name="f1" displayName="usbhs" projectFiles="true">
+                <logicalFolder name="f1" displayName="src" projectFiles="true">
+                  <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/drv_usbhs.c</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/drv_usbhs_device.c</itemPath>
+                </logicalFolder>
+              </logicalFolder>
+            </logicalFolder>
           </logicalFolder>
           <logicalFolder name="f1" displayName="library" projectFiles="true">
             <logicalFolder name="f1" displayName="tcpip" projectFiles="true">
@@ -522,7 +581,7 @@
               </logicalFolder>
             </logicalFolder>
           </logicalFolder>
-          <logicalFolder name="f5" displayName="net_pres" projectFiles="true">
+          <logicalFolder name="f6" displayName="net_pres" projectFiles="true">
             <logicalFolder name="f1" displayName="pres" projectFiles="true">
               <logicalFolder name="f1" displayName="src" projectFiles="true">
                 <itemPath>../src/config/pic32mz_ef_sk/net_pres/pres/src/net_pres.c</itemPath>
@@ -530,7 +589,7 @@
               <itemPath>../src/config/pic32mz_ef_sk/net_pres/pres/net_pres_enc_glue.c</itemPath>
             </logicalFolder>
           </logicalFolder>
-          <logicalFolder name="f4" displayName="peripheral" projectFiles="true">
+          <logicalFolder name="f5" displayName="peripheral" projectFiles="true">
             <logicalFolder name="f4" displayName="clk" projectFiles="true">
               <itemPath>../src/config/pic32mz_ef_sk/peripheral/clk/plib_clk.c</itemPath>
             </logicalFolder>
@@ -550,15 +609,18 @@
               <itemPath>../src/config/pic32mz_ef_sk/peripheral/uart/plib_uart2.c</itemPath>
             </logicalFolder>
           </logicalFolder>
-          <logicalFolder name="f6" displayName="stdio" projectFiles="true">
+          <logicalFolder name="f7" displayName="stdio" projectFiles="true">
             <itemPath>../src/config/pic32mz_ef_sk/stdio/xc32_monitor.c</itemPath>
           </logicalFolder>
           <logicalFolder name="f3" displayName="system" projectFiles="true">
             <logicalFolder name="f4" displayName="console" projectFiles="true">
+              <itemPath>/home/sl/work/work19/pic32mz/web_net_server_nvm_test2/firmware/src/config/pic32mz_ef_sk/system/console/src/sys_command.c</itemPath>
+              <itemPath>/home/sl/work/work19/pic32mz/web_net_server_nvm_test2/firmware/src/config/pic32mz_ef_sk/system/console/src/sys_debug.c</itemPath>
+              <itemPath>../src/config/pic32mz_ef_sk/system/console/src/sys_console_local.h</itemPath>
               <itemPath>../src/config/pic32mz_ef_sk/system/console/src/sys_console.c</itemPath>
+              <itemPath>../src/config/pic32mz_ef_sk/system/console/src/sys_console_uart.h</itemPath>
+              <itemPath>../src/config/pic32mz_ef_sk/system/console/src/sys_console_uart_definitions.h</itemPath>
               <itemPath>../src/config/pic32mz_ef_sk/system/console/src/sys_console_uart.c</itemPath>
-              <itemPath>../src/config/pic32mz_ef_sk/system/console/src/sys_debug.c</itemPath>
-              <itemPath>../src/config/pic32mz_ef_sk/system/console/src/sys_command.c</itemPath>
             </logicalFolder>
             <logicalFolder name="f3" displayName="fs" projectFiles="true">
               <logicalFolder name="f1" displayName="fat_fs" projectFiles="true">
@@ -579,6 +641,13 @@
             </logicalFolder>
             <itemPath>../src/config/pic32mz_ef_sk/system/sys_time_h2_adapter.c</itemPath>
           </logicalFolder>
+          <logicalFolder name="f4" displayName="usb" projectFiles="true">
+            <logicalFolder name="f1" displayName="src" projectFiles="true">
+              <itemPath>../src/config/pic32mz_ef_sk/usb/src/usb_device.c</itemPath>
+              <itemPath>../src/config/pic32mz_ef_sk/usb/src/usb_device_hid.c</itemPath>
+            </logicalFolder>
+          </logicalFolder>
+          <itemPath>../src/config/pic32mz_ef_sk/usb_device_init_data.c</itemPath>
           <itemPath>../src/config/pic32mz_ef_sk/tasks.c</itemPath>
           <itemPath>../src/config/pic32mz_ef_sk/initialization.c</itemPath>
           <itemPath>../src/config/pic32mz_ef_sk/interrupts.c</itemPath>
@@ -588,8 +657,12 @@
       <logicalFolder name="f2" displayName="web_pages" projectFiles="true">
         <logicalFolder name="f1" displayName="dyndns" projectFiles="true">
           <itemPath>../src/web_pages/dyndns/index.htm</itemPath>
+          <itemPath>../src/web_pages/dyndns/index.htm</itemPath>
+          <itemPath>../src/web_pages/dyndns/index.htm</itemPath>
         </logicalFolder>
         <logicalFolder name="f2" displayName="email" projectFiles="true">
+          <itemPath>../src/web_pages/email/index.htm</itemPath>
+          <itemPath>../src/web_pages/email/index.htm</itemPath>
           <itemPath>../src/web_pages/email/index.htm</itemPath>
         </logicalFolder>
         <logicalFolder name="f3" displayName="protect" projectFiles="true">
@@ -597,26 +670,36 @@
           <itemPath>../src/web_pages/protect/index.htm</itemPath>
           <itemPath>../src/web_pages/protect/reboot.cgi</itemPath>
           <itemPath>../src/web_pages/protect/reboot.htm</itemPath>
+          <itemPath>../src/web_pages/protect/reboot.htm</itemPath>
+          <itemPath>../src/web_pages/protect/reboot.cgi</itemPath>
+          <itemPath>../src/web_pages/protect/config.htm</itemPath>
+          <itemPath>../src/web_pages/protect/index.htm</itemPath>
+          <itemPath>../src/web_pages/protect/reboot.htm</itemPath>
+          <itemPath>../src/web_pages/protect/reboot.cgi</itemPath>
+          <itemPath>../src/web_pages/protect/config.htm</itemPath>
+          <itemPath>../src/web_pages/protect/index.htm</itemPath>
         </logicalFolder>
         <logicalFolder name="f4" displayName="snmp" projectFiles="true">
           <itemPath>../src/web_pages/snmp/snmpconfig.htm</itemPath>
+          <itemPath>../src/web_pages/snmp/snmpconfig.htm</itemPath>
+          <itemPath>../src/web_pages/snmp/snmpconfig.htm</itemPath>
         </logicalFolder>
-        <itemPath>../src/web_pages/auth.htm</itemPath>
-        <itemPath>../src/web_pages/cookies.htm</itemPath>
-        <itemPath>../src/web_pages/dynvars.htm</itemPath>
-        <itemPath>../src/web_pages/footer.htm</itemPath>
-        <itemPath>../src/web_pages/forms.htm</itemPath>
-        <itemPath>../src/web_pages/harmony.gif</itemPath>
-        <itemPath>../src/web_pages/header.htm</itemPath>
-        <itemPath>../src/web_pages/index.htm</itemPath>
-        <itemPath>../src/web_pages/leds.cgi</itemPath>
-        <itemPath>../src/web_pages/mchp.css</itemPath>
         <itemPath>../src/web_pages/mchp.gif</itemPath>
-        <itemPath>../src/web_pages/mchp.js</itemPath>
-        <itemPath>../src/web_pages/snmp.bib</itemPath>
-        <itemPath>../src/web_pages/ssi.htm</itemPath>
         <itemPath>../src/web_pages/status.xml</itemPath>
+        <itemPath>../src/web_pages/dynvars.htm</itemPath>
+        <itemPath>../src/web_pages/snmp.bib</itemPath>
+        <itemPath>../src/web_pages/cookies.htm</itemPath>
+        <itemPath>../src/web_pages/leds.cgi</itemPath>
+        <itemPath>../src/web_pages/footer.htm</itemPath>
         <itemPath>../src/web_pages/upload.htm</itemPath>
+        <itemPath>../src/web_pages/harmony.gif</itemPath>
+        <itemPath>../src/web_pages/index.htm</itemPath>
+        <itemPath>../src/web_pages/mchp.css</itemPath>
+        <itemPath>../src/web_pages/mchp.js</itemPath>
+        <itemPath>../src/web_pages/auth.htm</itemPath>
+        <itemPath>../src/web_pages/ssi.htm</itemPath>
+        <itemPath>../src/web_pages/header.htm</itemPath>
+        <itemPath>../src/web_pages/forms.htm</itemPath>
       </logicalFolder>
       <itemPath>../src/http_net_print.c</itemPath>
       <itemPath>../src/custom_http_net_app.c</itemPath>
@@ -638,13 +721,13 @@
     <conf name="pic32mz_ef_sk" type="2">
       <toolsSet>
         <developmentServer>localhost</developmentServer>
-        <targetDevice>PIC32MZ2048EFH144</targetDevice>
+        <targetDevice>PIC32MZ2048EFM144</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>ICD4Tool</platformTool>
+        <platformTool>PKOBSKDEPlatformTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
         <languageToolchainVersion>2.20</languageToolchainVersion>
-        <platform>3</platform>
+        <platform>2</platform>
       </toolsSet>
       <packs>
         <pack name="PIC32MZ-EF_DFP" vendor="Microchip" version="1.0.20"/>
@@ -666,7 +749,7 @@
       </compileType>
       <makeCustomizationType>
         <makeCustomizationPreStepEnabled>true</makeCustomizationPreStepEnabled>
-        <makeCustomizationPreStep>java -jar ../../../../utilities/mpfs_generator/mpfs.jar /c /z "snmp.bib" "../src/web_pages" "../src" "mpfs_net_img.c"</makeCustomizationPreStep>
+        <makeCustomizationPreStep>java -jar /HarmonyFramework3/net/utilities/mpfs_generator/mpfs.jar /c /z "snmp.bib" "../src/web_pages" "../src" "mpfs_net_img.c"</makeCustomizationPreStep>
         <makeCustomizationPostStepEnabled>false</makeCustomizationPostStepEnabled>
         <makeCustomizationPostStep></makeCustomizationPostStep>
         <makeCustomizationPutChecksumInUserID>false</makeCustomizationPutChecksumInUserID>
@@ -682,7 +765,7 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/pic32mz_ef_sk;../src/packs/PIC32MZ2048EFH144_DFP;../src/mips;../src/config/pic32mz_ef_sk/library;../src/config/pic32mz_ef_sk/library/tcpip/src;../src/config/pic32mz_ef_sk/library/tcpip/src/common;"/>
+                  value="../src/config/pic32mz_ef_sk/library;../src/config/pic32mz_ef_sk/library/tcpip/src;../src/config/pic32mz_ef_sk/library/tcpip/src/common;../src;../src/config/pic32mz_ef_sk;../src/packs/PIC32MZ2048EFM144_DFP;../src/mips"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -817,7 +900,6 @@
         <property key="CHANGE NOTICE G" value="true"/>
         <property key="CHANGE NOTICE H" value="true"/>
         <property key="CHANGE NOTICE J" value="true"/>
-        <property key="CHANGE NOTICE K" value="true"/>
         <property key="COMPARATOR" value="true"/>
         <property key="DMA" value="true"/>
         <property key="ETHERNET CONTROLLER" value="true"/>
@@ -975,6 +1057,9 @@
         <property key="programoptions.uselvpprogramming" value="false"/>
         <property key="voltagevalue" value="3.25"/>
       </PICkit3PlatformTool>
+      <PKOBSKDEPlatformTool>
+        <property key="firmware.download.all" value="false"/>
+      </PKOBSKDEPlatformTool>
       <RealICEPlatformTool>
         <property key="ADC" value="true"/>
         <property key="AutoSelectMemRanges" value="auto"/>

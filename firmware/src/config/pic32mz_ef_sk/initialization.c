@@ -573,6 +573,39 @@ SYS_MODULE_OBJ TCPIP_STACK_Init()
 }
 // </editor-fold>
 
+/******************************************************
+ * USB Driver Initialization
+ ******************************************************/
+
+const DRV_USBHS_INIT drvUSBInit =
+{
+    /* Interrupt Source for USB module */
+    .interruptSource = INT_SOURCE_USB,
+
+	/* Interrupt Source for USB module */
+    .interruptSourceUSBDma = INT_SOURCE_USB_DMA,
+	
+    /* System module initialization */
+    .moduleInit = {0},
+
+    /* USB Controller to operate as USB Device */
+    .operationMode = DRV_USBHS_OPMODE_DEVICE,
+
+	/* Enable High Speed Operation */
+    .operationSpeed = USB_SPEED_HIGH,
+    
+    /* Stop in idle */
+    .stopInIdle = true,
+
+    /* Suspend in sleep */
+    .suspendInSleep = false,
+
+    /* Identifies peripheral (PLIB-level) ID */
+    .usbID = USBHS_ID_0,
+	
+};
+
+
 /*** File System Initialization Data ***/
 
 
@@ -590,6 +623,7 @@ const SYS_FS_REGISTRATION_TABLE sysFSInit [ SYS_FS_MAX_FILE_SYSTEM_TYPE ] =
         .nativeFileSystemFunctions = &MPFSFunctions
     }
 };
+
 
 
 
@@ -665,6 +699,7 @@ const SYS_CONSOLE_INIT sysConsole0Init =
     .deviceIndex = 0,
 };
 
+
 const SYS_DEBUG_INIT debugInit =
 {
     .moduleInit = {0},
@@ -677,6 +712,7 @@ const SYS_CMD_INIT sysCmdInit =
     .moduleInit = {0},
     .consoleCmdIOParam = SYS_CMD_SINGLE_CHARACTER_READ_CONSOLE_IO_PARAM,
 };
+
 // </editor-fold>
 
 
@@ -706,7 +742,6 @@ void SYS_Initialize ( void* data )
     CFGCONbits.ECCCON = 3;
 
 
-
     CORETIMER_Initialize();
 	UART2_Initialize();
 
@@ -721,9 +756,13 @@ void SYS_Initialize ( void* data )
 
     sysObj.sysTime = SYS_TIME_Initialize(SYS_TIME_INDEX_0, (SYS_MODULE_INIT *)&sysTimeInitData);
     sysObj.sysConsole0 = SYS_CONSOLE_Initialize(SYS_CONSOLE_INDEX_0, (SYS_MODULE_INIT *)&sysConsole0Init);
-    sysObj.sysDebug = SYS_DEBUG_Initialize(SYS_DEBUG_INDEX_0, (SYS_MODULE_INIT*)&debugInit);
-    SYS_CMD_Initialize((SYS_MODULE_INIT*)&sysCmdInit);
 
+
+
+	 /* Initialize the USB device layer */
+    sysObj.usbDevObject0 = USB_DEVICE_Initialize (USB_DEVICE_INDEX_0 , ( SYS_MODULE_INIT* ) & usbDevInitData);
+	
+	
 
     sysObj.netPres = NET_PRES_Initialize(0, (SYS_MODULE_INIT*)&netPresInitData);
 
@@ -732,6 +771,9 @@ void SYS_Initialize ( void* data )
     sysObj.tcpip = TCPIP_STACK_Init();
     SYS_ASSERT(sysObj.tcpip != SYS_MODULE_OBJ_INVALID, "TCPIP_STACK_Init Failed" );
 
+
+	/* Initialize USB Driver */ 
+    sysObj.drvUSBHSObject = DRV_USBHS_Initialize(DRV_USBHS_INDEX_0, (SYS_MODULE_INIT *) &drvUSBInit);	
 
     /*** File System Service Initialization Code ***/
     SYS_FS_Initialize( (const void *) sysFSInit );

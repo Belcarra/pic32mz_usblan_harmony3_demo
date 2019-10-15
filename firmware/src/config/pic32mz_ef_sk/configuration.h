@@ -89,6 +89,14 @@ extern "C" {
 #define SYS_TIME_COMPARE_UPDATE_EXECUTION_CYCLES      (620)
 
 
+/* RX queue size has one additional element for the empty spot needed in circular queue */
+#define SYS_CONSOLE_UART_RD_QUEUE_DEPTH_IDX0    11
+
+/* TX queue size has one additional element for the empty spot needed in circular queue */
+#define SYS_CONSOLE_UART_WR_QUEUE_DEPTH_IDX0    65
+#define SYS_CONSOLE_BUFFER_DMA_READY
+
+
 /* File System Service Configuration */
 
 #define SYS_FS_MEDIA_NUMBER               1
@@ -102,10 +110,6 @@ extern "C" {
 #define SYS_FS_MEDIA_MANAGER_BUFFER_SIZE  2048
 #define SYS_FS_FILE_NAME_LEN              255
 #define SYS_FS_CWD_STRING_LEN             1024
-
-
-
-
 
 /* Console System Service Configuration Options */
 #define SYS_CONSOLE_DEVICE_MAX_INSTANCES   1
@@ -261,6 +265,23 @@ extern "C" {
 /*** NBNS Configuration ***/
 #define TCPIP_STACK_USE_NBNS
 #define TCPIP_NBNS_TASK_TICK_RATE   110
+
+
+/* Number of Endpoints used */
+#define DRV_USBHS_ENDPOINTS_NUMBER                        3
+
+/* The USB Device Layer will not initialize the USB Driver */
+#define USB_DEVICE_DRIVER_INITIALIZE_EXPLICIT
+
+/* Maximum device layer instances */
+#define USB_DEVICE_INSTANCES_NUMBER                         1
+
+/* EP0 size in bytes */
+#define USB_DEVICE_EP0_BUFFER_SIZE                          64
+
+
+
+
 
 
 /*** TCPIP MAC Configuration ***/
@@ -574,6 +595,35 @@ extern "C" {
 #define DRV_ETHPHY_RESET_CLR_TMO					500
 #define DRV_ETHPHY_USE_DRV_MIIM                     true
 
+
+/*** USB Driver Configuration ***/
+
+/* Maximum USB driver instances */
+#define DRV_USBHS_INSTANCES_NUMBER                        1
+
+/* Interrupt mode enabled */
+#define DRV_USBHS_INTERRUPT_MODE                          true
+
+
+/* Enables Device Support */
+#define DRV_USBHS_DEVICE_SUPPORT                          true
+	
+/* Disable Host Support */
+#define DRV_USBHS_HOST_SUPPORT                            false
+
+
+
+
+/* Alignment for buffers that are submitted to USB Driver*/ 
+#define USB_ALIGN  CACHE_ALIGN
+
+/* Maximum instances of HID function driver */
+#define USB_DEVICE_HID_INSTANCES_NUMBER     1 
+
+/* HID Transfer Queue Size for both read and
+   write. Applicable to all instances of the
+   function driver */
+#define USB_DEVICE_HID_QUEUE_DEPTH_COMBINED 2
 
 
 

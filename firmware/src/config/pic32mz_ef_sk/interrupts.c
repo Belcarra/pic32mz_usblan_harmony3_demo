@@ -60,6 +60,8 @@
 
 
 void CORE_TIMER_InterruptHandler( void );
+void DRV_USBHS_InterruptHandler( void );
+void DRV_USBHS_DMAInterruptHandler( void );
 void UART2_FAULT_InterruptHandler( void );
 void UART2_RX_InterruptHandler( void );
 void UART2_TX_InterruptHandler( void );
@@ -72,6 +74,16 @@ void NVM_InterruptHandler( void );
 void __ISR(_CORE_TIMER_VECTOR, ipl1AUTO) CORE_TIMER_Handler (void)
 {
     CORE_TIMER_InterruptHandler();
+}
+
+void __ISR(_USB_VECTOR, ipl1AUTO) USB_Handler (void)
+{
+    DRV_USBHS_InterruptHandler();
+}
+
+void __ISR(_USB_DMA_VECTOR, ipl1AUTO) USB_DMA_Handler (void)
+{
+    DRV_USBHS_DMAInterruptHandler();
 }
 
 void __ISR(_UART2_FAULT_VECTOR, ipl1AUTO) UART2_FAULT_Handler (void)
@@ -98,6 +110,7 @@ void __ISR(_FLASH_CONTROL_VECTOR, ipl1AUTO) FLASH_CONTROL_Handler (void)
 {
     NVM_InterruptHandler();
 }
+
 
 
 
