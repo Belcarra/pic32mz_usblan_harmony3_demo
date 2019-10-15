@@ -76,8 +76,6 @@ SYS_FS_Tasks();
 
 SYS_CMD_Tasks();
 
-
-
     /* Maintain Device Drivers */
     DRV_MEMORY_Tasks(sysObj.drvMemory0);
 

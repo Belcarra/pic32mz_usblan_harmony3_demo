@@ -132,7 +132,7 @@ void APP_Tasks ( void )
     static IPV4_ADDR    dwLastIP[2] = { {-1}, {-1} };
     IPV4_ADDR           ipAddr;
     int                 i;
-    const char          *netName, *netBiosName;
+    //const char          *netName, *netBiosName;
     static uint32_t     startTick = 0;
 
 
@@ -166,13 +166,13 @@ void APP_Tasks ( void )
                 for(i = 0; i < nNets; i++)
                 {
                     netH = TCPIP_STACK_IndexToNet(i);
-                    netName = TCPIP_STACK_NetNameGet(netH);
-                    netBiosName = TCPIP_STACK_NetBIOSName(netH);
+                    //netName = TCPIP_STACK_NetNameGet(netH);
+                    //netBiosName = TCPIP_STACK_NetBIOSName(netH);
 
 #if defined(TCPIP_STACK_USE_NBNS)
-                    SYS_CONSOLE_PRINT("    Interface %s on host %s - NBNS enabled\r\n", netName, netBiosName);
+                    SYS_CONSOLE_PRINT("    Interface %s on host %s - NBNS enabled\r\n", TCPIP_STACK_NetNameGet(netH), TCPIP_STACK_NetBIOSName(netH));
 #else
-                    SYS_CONSOLE_PRINT("    Interface %s on host %s - NBNS disabled\r\n", netName, netBiosName);
+                    SYS_CONSOLE_PRINT("    Interface %s on host %s - NBNS disabled\r\n", TCPIP_STACK_NetNameGet(netH), TCPIP_STACK_NetBIOSName(netH));
 #endif // defined(TCPIP_STACK_USE_NBNS)
 
 #if defined(TCPIP_STACK_USE_ZEROCONF_MDNS_SD)
