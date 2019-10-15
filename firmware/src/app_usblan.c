@@ -180,24 +180,24 @@ void APP_USBDeviceEventHandler(USB_DEVICE_EVENT event, void * eventData, uintptr
 
 
 
-USB_DEVICE_HANDLE usbDevHandle;
+//USB_DEVICE_HANDLE usbDevHandle;
 
 bool APP_Tasks_USBLAN_Enable(void) 
 {
     SYS_PRINT("%s:\r\n", __FUNCTION__);
 
     /* Open the device layer */
-    usbDevHandle = USB_DEVICE_Open( USB_DEVICE_INDEX_0, DRV_IO_INTENT_READWRITE );
+    appData.usbDevHandle = USB_DEVICE_Open( USB_DEVICE_INDEX_0, DRV_IO_INTENT_READWRITE );
 
-    if(usbDevHandle != USB_DEVICE_HANDLE_INVALID)
+    if(appData.usbDevHandle != USB_DEVICE_HANDLE_INVALID)
     {
         /* Register a callback with device layer to get event notification (for end point 0) */
         SYS_PRINT("%s: OK\r\n", __FUNCTION__);
-        USB_DEVICE_EventHandlerSet(usbDevHandle,  APP_USBDeviceEventHandler, 0);
+        USB_DEVICE_EventHandlerSet(appData.usbDevHandle,  APP_USBDeviceEventHandler, 0);
 
         /* Attach the device */
         //SYS_PRINT("%s: Attach\r\n", __FUNCTION__);
-        //USB_DEVICE_Attach (usbDevHandle);
+        //USB_DEVICE_Attach (appData.usbDevHandle);
         return true;
     }
     /* The Device Layer is not ready to be opened. We should try
