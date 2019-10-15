@@ -84,6 +84,69 @@ APP_LED_STATE LEDstate = APP_LED_STATE_OFF;
 /* TODO:  Add any necessary callback functions.
 */
 
+void APP_USBDeviceEventHandler(USB_DEVICE_EVENT event, void * eventData, uintptr_t context)
+{   
+    switch(event)
+    {   
+        case USB_DEVICE_EVENT_RESET:
+        case USB_DEVICE_EVENT_DECONFIGURED:
+            
+            SYS_PRINT("%s: RESET\r\n", __func__);
+            /* Host has de configured the device or a bus reset has happened.
+             * Device layer is going to de-initialize all function drivers.
+             * Hence close handles to all function drivers (Only if they are
+             * opened previously. */
+            
+            LED_Off(); 
+            appData.deviceConfigured = false;
+            //appData.state = APP_STATE_WAIT_FOR_CONFIGURATION;
+            break;
+        
+        case USB_DEVICE_EVENT_CONFIGURED:
+            SYS_PRINT("%s: CONFIGURED\r\n", __func__);
+            LED_On(); 
+            /* Set the flag indicating device is configured. */
+            appData.deviceConfigured = true;
+            
+            /* Save the other details for later use. */
+            appData.configurationValue = ((USB_DEVICE_EVENT_DATA_CONFIGURED*)eventData)->configurationValue;
+            
+            /* Register application HID event handler */
+            //USB_DEVICE_HID_EventHandlerSet(USB_DEVICE_HID_INDEX_0, APP_USBDeviceHIDEventHandler, (uintptr_t)&appData);
+            
+            
+            break;
+        
+        case USB_DEVICE_EVENT_SUSPENDED:
+            SYS_PRINT("%s: SUSPENDED\r\n", __func__);
+            break;
+        
+        case USB_DEVICE_EVENT_POWER_DETECTED:
+            
+            SYS_PRINT("%s: VBUS PowerDetected\r\n", __func__);
+
+            /* VBUS was detected. We can attach the device */
+            
+            USB_DEVICE_Attach (appData.usbDevHandle);
+            break;
+        
+        case USB_DEVICE_EVENT_POWER_REMOVED:
+            SYS_PRINT("%s: VBUS lost\r\n", __func__);
+            LED_Off(); 
+            /* VBUS is not available */
+            USB_DEVICE_Detach(appData.usbDevHandle);
+            break;
+        
+        /* These events are not used in this demo */
+        case USB_DEVICE_EVENT_RESUMED:
+        case USB_DEVICE_EVENT_ERROR:
+        default:
+            break;
+    }
+}
+
+
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Application Local Functions
@@ -144,8 +207,30 @@ void APP_Tasks ( void )
             if(SYS_FS_Mount(SYS_FS_NVM_VOL, LOCAL_WEBSITE_PATH_FS, MPFS2, 0, NULL) == 0)
             {
                 SYS_CONSOLE_PRINT("SYS_Initialize: The %s File System is mounted\r\n", SYS_FS_MPFS_STRING);
+                //appData.state = APP_TCPIP_WAIT_INIT;
+                appData.state = APP_USB_INIT;
+            }
+            break;
+
+        case APP_USB_INIT:
+
+            /* Open the device layer */
+            appData.usbDevHandle = USB_DEVICE_Open( USB_DEVICE_INDEX_0, DRV_IO_INTENT_READWRITE );
+
+            if(appData.usbDevHandle != USB_DEVICE_HANDLE_INVALID)
+            {
+                /* Register a callback with device layer to get event notification (for end point 0) */
+                USB_DEVICE_EventHandlerSet(appData.usbDevHandle, APP_USBDeviceEventHandler, 0);
+
+                //appData.state = APP_STATE_WAIT_FOR_CONFIGURATION;
                 appData.state = APP_TCPIP_WAIT_INIT;
             }
+            else
+            {
+                /* The Device Layer is not ready to be opened. We should try
+                 * again later. */
+            }
+
             break;
 
         case APP_TCPIP_WAIT_INIT:
