@@ -97,6 +97,16 @@ void CLK_Initialize( void )
 
     OSCCONbits.FRCDIV = 0;
 
+    /* XXX Peripheral Module Disable Configuration */
+    /* XXX MHC inserted these, but it disables ethernet phy */
+    // XXX PMD1 = 0xffffffff;
+    // XXX PMD2 = 0xffffffff;
+    // XXX PMD3 = 0xffffffff;
+    // XXX PMD4 = 0xffffffff;
+    // XXX PMD5 = 0xfefffffd;
+    // XXX PMD6 = 0xfffff0ff;
+    // XXX PMD7 = 0xffffffef;
+    /* XXX MHC inserted these, but it disables ethernet phy */
 
 
   
