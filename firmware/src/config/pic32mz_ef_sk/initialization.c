@@ -665,6 +665,7 @@ const SYS_CONSOLE_INIT sysConsole0Init =
     .deviceIndex = 0,
 };
 
+
 const SYS_DEBUG_INIT debugInit =
 {
     .moduleInit = {0},
@@ -677,6 +678,7 @@ const SYS_CMD_INIT sysCmdInit =
     .moduleInit = {0},
     .consoleCmdIOParam = SYS_CMD_SINGLE_CHARACTER_READ_CONSOLE_IO_PARAM,
 };
+
 // </editor-fold>
 
 
@@ -704,7 +706,6 @@ void SYS_Initialize ( void* data )
     PRECONbits.PREFEN = 3;
     PRECONbits.PFMWS = 2;
     CFGCONbits.ECCCON = 3;
-
 
 
     CORETIMER_Initialize();
