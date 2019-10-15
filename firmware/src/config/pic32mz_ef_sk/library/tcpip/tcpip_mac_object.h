@@ -108,6 +108,7 @@ typedef struct
     
 // supported MAC objects
 extern const TCPIP_MAC_OBJECT DRV_ETHMAC_PIC32MACObject;
+extern const TCPIP_MAC_OBJECT DRV_USBLAN_MACObject;
 extern const TCPIP_MAC_OBJECT DRV_GMAC_Object;
 extern const TCPIP_MAC_OBJECT DRV_ENCX24J600_MACObject;
 extern const TCPIP_MAC_OBJECT WDRV_MRF24WN_MACObject;
