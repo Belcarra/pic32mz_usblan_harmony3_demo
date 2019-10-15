@@ -6,10 +6,10 @@
                    projectFiles="true">
       <logicalFolder name="f1" displayName="config" projectFiles="true">
         <logicalFolder name="f1" displayName="pic32mz_ef_sk" projectFiles="true">
-          <logicalFolder name="f6" displayName="bsp" projectFiles="true">
+          <logicalFolder name="f7" displayName="bsp" projectFiles="true">
             <itemPath>../src/config/pic32mz_ef_sk/bsp/bsp.h</itemPath>
           </logicalFolder>
-          <logicalFolder name="f7" displayName="crypto" projectFiles="true">
+          <logicalFolder name="f8" displayName="crypto" projectFiles="true">
             <itemPath>../src/config/pic32mz_ef_sk/crypto/crypto.h</itemPath>
             <itemPath>../src/config/pic32mz_ef_sk/crypto/src/aes.h</itemPath>
             <itemPath>../src/config/pic32mz_ef_sk/crypto/src/arc4.h</itemPath>
@@ -146,10 +146,49 @@
               </logicalFolder>
               <itemPath>../src/config/pic32mz_ef_sk/driver/miim/drv_miim.h</itemPath>
             </logicalFolder>
+            <logicalFolder name="f5" displayName="usb" projectFiles="true">
+              <logicalFolder name="f1" displayName="usbhs" projectFiles="true">
+                <logicalFolder name="f1" displayName="src" projectFiles="true">
+                  <logicalFolder name="f1" displayName="templates" projectFiles="true">
+                    <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/templates/usbhs_registers.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/templates/usbhs_ClockResetControl_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/templates/usbhs_ClockResetControl_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/templates/usbhs_EndpointFIFO_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/templates/usbhs_EndpointFIFO_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/templates/usbhs_EndpointOperations_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/templates/usbhs_EndpointOperations_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/templates/usbhs_EP0Status_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/templates/usbhs_EP0Status_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/templates/usbhs_HighSpeedSupport_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/templates/usbhs_HighSpeedSupport_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/templates/usbhs_Interrupts_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/templates/usbhs_Interrupts_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/templates/usbhs_ModuleControl_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/templates/usbhs_ModuleControl_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/templates/usbhs_RxEPStatus_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/templates/usbhs_RxEPStatus_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/templates/usbhs_SoftReset_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/templates/usbhs_SoftReset_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/templates/usbhs_TxEPStatus_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/templates/usbhs_TxEPStatus_Unsupported.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/templates/usbhs_USBIDControl_Default.h</itemPath>
+                    <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/templates/usbhs_USBIDControl_Unsupported.h</itemPath>
+                  </logicalFolder>
+                  <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/drv_usbhs_variant_mapping.h</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/drv_usbhs_local.h</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/plib_usbhs.h</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/plib_usbhs_header.h</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/usbhs_registers.h</itemPath>
+                </logicalFolder>
+                <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/drv_usbhs.h</itemPath>
+              </logicalFolder>
+              <itemPath>../src/config/pic32mz_ef_sk/driver/usb/drv_usb.h</itemPath>
+              <itemPath>../src/config/pic32mz_ef_sk/driver/usb/drv_usb_external_dependencies.h</itemPath>
+            </logicalFolder>
             <itemPath>../src/config/pic32mz_ef_sk/driver/driver.h</itemPath>
             <itemPath>../src/config/pic32mz_ef_sk/driver/driver_common.h</itemPath>
           </logicalFolder>
-          <logicalFolder name="f5" displayName="library" projectFiles="true">
+          <logicalFolder name="f6" displayName="library" projectFiles="true">
             <logicalFolder name="f1" displayName="tcpip" projectFiles="true">
               <logicalFolder name="f1" displayName="src" projectFiles="true">
                 <logicalFolder name="f1" displayName="common" projectFiles="true">
@@ -270,7 +309,7 @@
               <itemPath>../src/config/pic32mz_ef_sk/library/tcpip/tcpip_ethernet.h</itemPath>
             </logicalFolder>
           </logicalFolder>
-          <logicalFolder name="f4" displayName="net_pres" projectFiles="true">
+          <logicalFolder name="f5" displayName="net_pres" projectFiles="true">
             <logicalFolder name="f1" displayName="pres" projectFiles="true">
               <logicalFolder name="f1" displayName="src" projectFiles="true">
                 <itemPath>../src/config/pic32mz_ef_sk/net_pres/pres/src/net_pres_local.h</itemPath>
@@ -284,7 +323,7 @@
               <itemPath>../src/config/pic32mz_ef_sk/net_pres/pres/net_pres_enc_glue.h</itemPath>
             </logicalFolder>
           </logicalFolder>
-          <logicalFolder name="f3" displayName="peripheral" projectFiles="true">
+          <logicalFolder name="f4" displayName="peripheral" projectFiles="true">
             <logicalFolder name="f4" displayName="clk" projectFiles="true">
               <itemPath>../src/config/pic32mz_ef_sk/peripheral/clk/plib_clk.h</itemPath>
             </logicalFolder>
@@ -305,7 +344,7 @@
               <itemPath>../src/config/pic32mz_ef_sk/peripheral/uart/plib_uart2.h</itemPath>
             </logicalFolder>
           </logicalFolder>
-          <logicalFolder name="f2" displayName="system" projectFiles="true">
+          <logicalFolder name="f3" displayName="system" projectFiles="true">
             <logicalFolder name="f5" displayName="console" projectFiles="true">
               <itemPath>../src/config/pic32mz_ef_sk/system/console/sys_console.h</itemPath>
             </logicalFolder>
@@ -350,6 +389,24 @@
             <itemPath>../src/config/pic32mz_ef_sk/system/sys_random_h2_adapter.h</itemPath>
             <itemPath>../src/config/pic32mz_ef_sk/system/sys_reset_h2_adapter.h</itemPath>
           </logicalFolder>
+          <logicalFolder name="f2" displayName="usb" projectFiles="true">
+            <logicalFolder name="f1" displayName="src" projectFiles="true">
+              <itemPath>../src/config/pic32mz_ef_sk/usb/src/usb_device_local.h</itemPath>
+              <itemPath>../src/config/pic32mz_ef_sk/usb/src/usb_device_mapping.h</itemPath>
+              <itemPath>../src/config/pic32mz_ef_sk/usb/src/usb_device_function_driver.h</itemPath>
+              <itemPath>../src/config/pic32mz_ef_sk/usb/src/usb_external_dependencies.h</itemPath>
+              <itemPath>../src/config/pic32mz_ef_sk/usb/src/usb_device_hid_local.h</itemPath>
+            </logicalFolder>
+            <itemPath>../src/config/pic32mz_ef_sk/usb/usb_device.h</itemPath>
+            <itemPath>../src/config/pic32mz_ef_sk/usb/usb_common.h</itemPath>
+            <itemPath>../src/config/pic32mz_ef_sk/usb/usb_chapter_9.h</itemPath>
+            <itemPath>../src/config/pic32mz_ef_sk/usb/usb_host_client_driver.h</itemPath>
+            <itemPath>../src/config/pic32mz_ef_sk/usb/usb_host_hub_interface.h</itemPath>
+            <itemPath>../src/config/pic32mz_ef_sk/usb/usb_host.h</itemPath>
+            <itemPath>../src/config/pic32mz_ef_sk/usb/usb_hub.h</itemPath>
+            <itemPath>../src/config/pic32mz_ef_sk/usb/usb_device_hid.h</itemPath>
+            <itemPath>../src/config/pic32mz_ef_sk/usb/usb_hid.h</itemPath>
+          </logicalFolder>
           <itemPath>../src/config/pic32mz_ef_sk/user.h</itemPath>
           <itemPath>../src/config/pic32mz_ef_sk/configuration.h</itemPath>
           <itemPath>../src/config/pic32mz_ef_sk/system_config.h</itemPath>
@@ -382,10 +439,10 @@
                    projectFiles="true">
       <logicalFolder name="f1" displayName="config" projectFiles="true">
         <logicalFolder name="f1" displayName="pic32mz_ef_sk" projectFiles="true">
-          <logicalFolder name="f7" displayName="bsp" projectFiles="true">
+          <logicalFolder name="f8" displayName="bsp" projectFiles="true">
             <itemPath>../src/config/pic32mz_ef_sk/bsp/bsp.c</itemPath>
           </logicalFolder>
-          <logicalFolder name="f8" displayName="crypto" projectFiles="true">
+          <logicalFolder name="f9" displayName="crypto" projectFiles="true">
             <itemPath>../src/config/pic32mz_ef_sk/crypto/src/crypto.c</itemPath>
             <itemPath>../src/config/pic32mz_ef_sk/crypto/src/aes.c</itemPath>
             <itemPath>../src/config/pic32mz_ef_sk/crypto/src/arc4.c</itemPath>
@@ -480,6 +537,14 @@
                 </logicalFolder>
               </logicalFolder>
             </logicalFolder>
+            <logicalFolder name="f5" displayName="usb" projectFiles="true">
+              <logicalFolder name="f1" displayName="usbhs" projectFiles="true">
+                <logicalFolder name="f1" displayName="src" projectFiles="true">
+                  <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/drv_usbhs.c</itemPath>
+                  <itemPath>../src/config/pic32mz_ef_sk/driver/usb/usbhs/src/drv_usbhs_device.c</itemPath>
+                </logicalFolder>
+              </logicalFolder>
+            </logicalFolder>
           </logicalFolder>
           <logicalFolder name="f1" displayName="library" projectFiles="true">
             <logicalFolder name="f1" displayName="tcpip" projectFiles="true">
@@ -516,7 +581,7 @@
               </logicalFolder>
             </logicalFolder>
           </logicalFolder>
-          <logicalFolder name="f5" displayName="net_pres" projectFiles="true">
+          <logicalFolder name="f6" displayName="net_pres" projectFiles="true">
             <logicalFolder name="f1" displayName="pres" projectFiles="true">
               <logicalFolder name="f1" displayName="src" projectFiles="true">
                 <itemPath>../src/config/pic32mz_ef_sk/net_pres/pres/src/net_pres.c</itemPath>
@@ -524,7 +589,7 @@
               <itemPath>../src/config/pic32mz_ef_sk/net_pres/pres/net_pres_enc_glue.c</itemPath>
             </logicalFolder>
           </logicalFolder>
-          <logicalFolder name="f4" displayName="peripheral" projectFiles="true">
+          <logicalFolder name="f5" displayName="peripheral" projectFiles="true">
             <logicalFolder name="f4" displayName="clk" projectFiles="true">
               <itemPath>../src/config/pic32mz_ef_sk/peripheral/clk/plib_clk.c</itemPath>
             </logicalFolder>
@@ -544,18 +609,18 @@
               <itemPath>../src/config/pic32mz_ef_sk/peripheral/uart/plib_uart2.c</itemPath>
             </logicalFolder>
           </logicalFolder>
-          <logicalFolder name="f6" displayName="stdio" projectFiles="true">
+          <logicalFolder name="f7" displayName="stdio" projectFiles="true">
             <itemPath>../src/config/pic32mz_ef_sk/stdio/xc32_monitor.c</itemPath>
           </logicalFolder>
           <logicalFolder name="f3" displayName="system" projectFiles="true">
             <logicalFolder name="f4" displayName="console" projectFiles="true">
+              <itemPath>/home/sl/work/work19/pic32mz/web_net_server_nvm_test2/firmware/src/config/pic32mz_ef_sk/system/console/src/sys_command.c</itemPath>
+              <itemPath>/home/sl/work/work19/pic32mz/web_net_server_nvm_test2/firmware/src/config/pic32mz_ef_sk/system/console/src/sys_debug.c</itemPath>
               <itemPath>../src/config/pic32mz_ef_sk/system/console/src/sys_console_local.h</itemPath>
               <itemPath>../src/config/pic32mz_ef_sk/system/console/src/sys_console.c</itemPath>
               <itemPath>../src/config/pic32mz_ef_sk/system/console/src/sys_console_uart.h</itemPath>
               <itemPath>../src/config/pic32mz_ef_sk/system/console/src/sys_console_uart_definitions.h</itemPath>
               <itemPath>../src/config/pic32mz_ef_sk/system/console/src/sys_console_uart.c</itemPath>
-              <itemPath>/home/sl/work/work19/pic32mz/web_net_server_nvm_test2/firmware/src/config/pic32mz_ef_sk/system/console/src/sys_command.c</itemPath>
-              <itemPath>/home/sl/work/work19/pic32mz/web_net_server_nvm_test2/firmware/src/config/pic32mz_ef_sk/system/console/src/sys_debug.c</itemPath>
             </logicalFolder>
             <logicalFolder name="f3" displayName="fs" projectFiles="true">
               <logicalFolder name="f1" displayName="fat_fs" projectFiles="true">
@@ -576,6 +641,13 @@
             </logicalFolder>
             <itemPath>../src/config/pic32mz_ef_sk/system/sys_time_h2_adapter.c</itemPath>
           </logicalFolder>
+          <logicalFolder name="f4" displayName="usb" projectFiles="true">
+            <logicalFolder name="f1" displayName="src" projectFiles="true">
+              <itemPath>../src/config/pic32mz_ef_sk/usb/src/usb_device.c</itemPath>
+              <itemPath>../src/config/pic32mz_ef_sk/usb/src/usb_device_hid.c</itemPath>
+            </logicalFolder>
+          </logicalFolder>
+          <itemPath>../src/config/pic32mz_ef_sk/usb_device_init_data.c</itemPath>
           <itemPath>../src/config/pic32mz_ef_sk/tasks.c</itemPath>
           <itemPath>../src/config/pic32mz_ef_sk/initialization.c</itemPath>
           <itemPath>../src/config/pic32mz_ef_sk/interrupts.c</itemPath>
@@ -586,8 +658,10 @@
         <logicalFolder name="f1" displayName="dyndns" projectFiles="true">
           <itemPath>../src/web_pages/dyndns/index.htm</itemPath>
           <itemPath>../src/web_pages/dyndns/index.htm</itemPath>
+          <itemPath>../src/web_pages/dyndns/index.htm</itemPath>
         </logicalFolder>
         <logicalFolder name="f2" displayName="email" projectFiles="true">
+          <itemPath>../src/web_pages/email/index.htm</itemPath>
           <itemPath>../src/web_pages/email/index.htm</itemPath>
           <itemPath>../src/web_pages/email/index.htm</itemPath>
         </logicalFolder>
@@ -600,8 +674,13 @@
           <itemPath>../src/web_pages/protect/reboot.cgi</itemPath>
           <itemPath>../src/web_pages/protect/config.htm</itemPath>
           <itemPath>../src/web_pages/protect/index.htm</itemPath>
+          <itemPath>../src/web_pages/protect/reboot.htm</itemPath>
+          <itemPath>../src/web_pages/protect/reboot.cgi</itemPath>
+          <itemPath>../src/web_pages/protect/config.htm</itemPath>
+          <itemPath>../src/web_pages/protect/index.htm</itemPath>
         </logicalFolder>
         <logicalFolder name="f4" displayName="snmp" projectFiles="true">
+          <itemPath>../src/web_pages/snmp/snmpconfig.htm</itemPath>
           <itemPath>../src/web_pages/snmp/snmpconfig.htm</itemPath>
           <itemPath>../src/web_pages/snmp/snmpconfig.htm</itemPath>
         </logicalFolder>
