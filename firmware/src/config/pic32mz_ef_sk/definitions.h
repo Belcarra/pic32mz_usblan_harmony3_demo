@@ -83,7 +83,6 @@
 #include "app.h"
 
 
-
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
 
@@ -212,7 +211,6 @@ typedef struct
     SYS_MODULE_OBJ  drvMiim;
     SYS_MODULE_OBJ  sysConsole0;
     SYS_MODULE_OBJ  sysDebug;
-
 
 } SYSTEM_OBJECTS;
 
