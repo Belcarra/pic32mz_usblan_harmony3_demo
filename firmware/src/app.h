@@ -51,6 +51,9 @@ extern "C" {
 #endif
 
 
+
+
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Included Files
@@ -113,6 +116,33 @@ extern "C" {
 #define APP_LED_3StateGet()         LED3_Get()
 #define APP_LED_3StateClear()       LED3_Clear()
 #define APP_LED_3StateToggle()      LED3_Toggle()
+
+
+
+#if 0
+#ifdef RGBLED
+/* BSP LED and Switch Re-directs */
+/* This section is highly customizable based on application's specific needs. */
+
+#define APP_RGB_LED_RED_OC_FUNCTION     OUTPUT_FUNC_OC3
+#define APP_RGB_LED_RED_OC_PIN          OUTPUT_PIN_RPB5
+#define APP_RGB_LED_GREEN_OC_FUNCTION   OUTPUT_FUNC_OC4
+#define APP_RGB_LED_GREEN_OC_PIN        OUTPUT_PIN_RPB1
+#define APP_RGB_LED_BLUE_OC_FUNCTION    OUTPUT_FUNC_OC5
+#define APP_RGB_LED_BLUE_OC_PIN         OUTPUT_PIN_RPB0
+
+/* ID's for RGB LED */
+#define APP_TMR_ID_FOR_OC       TMR_ID_3
+#define APP_RGB_LED_RED_OC_ID   OC_ID_3
+#define APP_RGB_LED_GREEN_OC_ID OC_ID_4
+#define APP_RGB_LED_BLUE_OC_ID  OC_ID_5
+
+
+void LEDinit(void);
+void LEDColorSet(int Red, int Green, int Blue);
+#endif /* RGBLED */
+#endif
+
 
 // *****************************************************************************
 /* Application States

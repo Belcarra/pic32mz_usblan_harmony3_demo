@@ -588,7 +588,7 @@
           <LogicalPath dnOrder="2">config/pic32mz_ef_curiosity/library/tcpip/src/</LogicalPath>
           <PhysicalPath dnOrder="3">/library/tcpip/src/</PhysicalPath>
           <GeneratedChecksum dnOrder="4">E01D9C4A1E16CF63EF3D759C84D53514</GeneratedChecksum>
-          <UserChecksum dnOrder="5">E01D9C4A1E16CF63EF3D759C84D53514</UserChecksum>
+          <UserChecksum dnOrder="5">D657B0729B574F0784525C1242FCC7DD</UserChecksum>
         </File>
         <File dnOrder="73">
           <Type dnOrder="0">SOURCE</Type>
@@ -708,7 +708,7 @@
           <LogicalPath dnOrder="2"/>
           <PhysicalPath dnOrder="3">/../../</PhysicalPath>
           <GeneratedChecksum dnOrder="4">6CB1F91CE619A13C4D9C1A6EE579470A</GeneratedChecksum>
-          <UserChecksum dnOrder="5">B88E52AD0C6BC8A2B6411F578FD1F9D5</UserChecksum>
+          <UserChecksum dnOrder="5">F5F032D52B2243EC0749EA5583DB130A</UserChecksum>
         </File>
         <File dnOrder="88">
           <Type dnOrder="0">SOURCE</Type>
@@ -780,7 +780,7 @@
           <LogicalPath dnOrder="2">config/pic32mz_ef_curiosity/peripheral/clk/</LogicalPath>
           <PhysicalPath dnOrder="3">/peripheral/clk/</PhysicalPath>
           <GeneratedChecksum dnOrder="4">AFF10B4F43D395992ED9028641866DC4</GeneratedChecksum>
-          <UserChecksum dnOrder="5">8334ED6A02E5A745FC82E3E3C52A5D72</UserChecksum>
+          <UserChecksum dnOrder="5">8A58BE9433B6F7CF2526D02F7BC8B824</UserChecksum>
         </File>
         <File dnOrder="97">
           <Type dnOrder="0">SOURCE</Type>
@@ -803,8 +803,8 @@
           <Name dnOrder="1">plib_gpio.c</Name>
           <LogicalPath dnOrder="2">config/pic32mz_ef_curiosity/peripheral/gpio/</LogicalPath>
           <PhysicalPath dnOrder="3">/peripheral/gpio/</PhysicalPath>
-          <GeneratedChecksum dnOrder="4">21868DADE622BDC89E9B3C8CCC1E81D3</GeneratedChecksum>
-          <UserChecksum dnOrder="5">21868DADE622BDC89E9B3C8CCC1E81D3</UserChecksum>
+          <GeneratedChecksum dnOrder="4">4A50E625221FE0DF61FC11B0F9FB9A70</GeneratedChecksum>
+          <UserChecksum dnOrder="5">4A50E625221FE0DF61FC11B0F9FB9A70</UserChecksum>
         </File>
         <File dnOrder="100">
           <Type dnOrder="0">SOURCE</Type>
@@ -1180,7 +1180,7 @@
           <LogicalPath dnOrder="2">config/pic32mz_ef_curiosity/library/tcpip/src/</LogicalPath>
           <PhysicalPath dnOrder="3">/library/tcpip/src/</PhysicalPath>
           <GeneratedChecksum dnOrder="4">8E1BE29B6358D8C76631DEF2AFC5FBD7</GeneratedChecksum>
-          <UserChecksum dnOrder="5">8E1BE29B6358D8C76631DEF2AFC5FBD7</UserChecksum>
+          <UserChecksum dnOrder="5">54BCDE96E780C7AF403044E5C7EF6684</UserChecksum>
         </File>
         <File dnOrder="147">
           <Type dnOrder="0">SOURCE</Type>

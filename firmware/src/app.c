@@ -74,7 +74,6 @@
 
 APP_DATA appData;
 
-APP_LED_STATE LEDstate = APP_LED_STATE_OFF;
 // *****************************************************************************
 // *****************************************************************************
 // Section: Application Callback Functions
@@ -112,6 +111,21 @@ void APP_Initialize ( void )
     
     /* Place the application state machine in its initial state. */
     appData.state = APP_MOUNT_DISK;
+
+    /* DO NOT REMOVE DURING MERGE */
+    //#ifdef RGBLED
+    //LEDinit();
+    //#endif /* RGBLED */
+
+    RGB_LED_RED_Clear();
+    RGB_LED_GREEN_Clear();
+    RGB_LED_BLUE_Clear();
+
+    RGB_LED_RED_Set();
+    RGB_LED_GREEN_Set();
+    RGB_LED_BLUE_Set();
+
+    /* DO NOT REMOVE DURING MERGE */
 }
 
 /* DO NOT REMOVE DURING MERGE */
@@ -251,15 +265,7 @@ void APP_Tasks ( void )
             if(SYS_TMR_TickCountGet() - startTick >= SYS_TMR_TickCounterFrequencyGet()/2ul)
             {
                 startTick = SYS_TMR_TickCountGet();
-                LEDstate ^= APP_LED_STATE_ON;
-                if(LEDstate == 1)
-                {
-                    APP_LED_1StateSet();
-                }
-                else if(LEDstate == 0)
-                {
-                    APP_LED_1StateClear();
-                }
+                APP_LED_1StateToggle();
             }
 
             // if the IP address of an interface has changed
