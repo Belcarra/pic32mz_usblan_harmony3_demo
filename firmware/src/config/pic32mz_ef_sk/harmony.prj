@@ -564,7 +564,7 @@
           <LogicalPath dnOrder="2">config/pic32mz_ef_sk/</LogicalPath>
           <PhysicalPath dnOrder="3">/</PhysicalPath>
           <GeneratedChecksum dnOrder="4">FC85D36EB87EF1FF25EEA19FC3FFFB47</GeneratedChecksum>
-          <UserChecksum dnOrder="5">B484213D079AA12E6EC04782766C1AAC</UserChecksum>
+          <UserChecksum dnOrder="5">30D4130EDE985A815D5AE00B544EE58C</UserChecksum>
         </File>
         <File dnOrder="70">
           <Type dnOrder="0">SOURCE</Type>
@@ -708,7 +708,7 @@
           <LogicalPath dnOrder="2"/>
           <PhysicalPath dnOrder="3">/../../</PhysicalPath>
           <GeneratedChecksum dnOrder="4">6CB1F91CE619A13C4D9C1A6EE579470A</GeneratedChecksum>
-          <UserChecksum dnOrder="5">AC7746227DDE2747AC5D61948AAB4430</UserChecksum>
+          <UserChecksum dnOrder="5">7819AA4BF1EFCDD85EA4D83C419361F2</UserChecksum>
         </File>
         <File dnOrder="88">
           <Type dnOrder="0">SOURCE</Type>
@@ -803,8 +803,8 @@
           <Name dnOrder="1">plib_gpio.c</Name>
           <LogicalPath dnOrder="2">config/pic32mz_ef_sk/peripheral/gpio/</LogicalPath>
           <PhysicalPath dnOrder="3">/peripheral/gpio/</PhysicalPath>
-          <GeneratedChecksum dnOrder="4">95B2DFBCDE1534D7E1B647742A37CCD2</GeneratedChecksum>
-          <UserChecksum dnOrder="5">95B2DFBCDE1534D7E1B647742A37CCD2</UserChecksum>
+          <GeneratedChecksum dnOrder="4">CEE5E9CCC19FABC7BFF48087231FFBC7</GeneratedChecksum>
+          <UserChecksum dnOrder="5">CEE5E9CCC19FABC7BFF48087231FFBC7</UserChecksum>
         </File>
         <File dnOrder="100">
           <Type dnOrder="0">SOURCE</Type>
