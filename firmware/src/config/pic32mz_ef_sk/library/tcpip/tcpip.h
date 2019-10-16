@@ -658,14 +658,18 @@ typedef struct
 #include "tcpip/tcp.h"
 #include "tcpip/udp.h"
 #include "tcpip/dhcp.h"
+#include "tcpip/zero_conf_link_local.h"
+#include "tcpip/zero_conf_multicast_dns.h"
 #include "tcpip/dns.h"
 #include "tcpip/icmp.h"
 #include "tcpip/nbns.h"
+#include "tcpip/telnet.h"
 #include "tcpip/sntp.h"
 #include "tcpip/http_net.h"
 #include "tcpip/tcpip_announce.h"
 #include "tcpip/lldp.h"
 #include "tcpip/smtpc.h"
+#include "tcpip/iperf.h"
 #include "tcpip/tcpip_commands.h"
 
 #endif  // __TCPIP_H__

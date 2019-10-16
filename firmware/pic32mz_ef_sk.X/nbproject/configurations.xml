@@ -107,7 +107,7 @@
             <itemPath>../src/config/pic32mz_ef_sk/crypto/src/zlib-1.2.7/gzguts.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f1" displayName="driver" projectFiles="true">
-            <logicalFolder name="f2" displayName="ethmac" projectFiles="true">
+            <logicalFolder name="f4" displayName="ethmac" projectFiles="true">
               <logicalFolder name="f1" displayName="src" projectFiles="true">
                 <logicalFolder name="f1" displayName="dynamic" projectFiles="true">
                   <itemPath>../src/config/pic32mz_ef_sk/driver/ethmac/src/dynamic/_eth_dcpt_lists.h</itemPath>
@@ -118,7 +118,7 @@
               </logicalFolder>
               <itemPath>../src/config/pic32mz_ef_sk/driver/ethmac/drv_ethmac.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f4" displayName="ethphy" projectFiles="true">
+            <logicalFolder name="f3" displayName="ethphy" projectFiles="true">
               <logicalFolder name="f1" displayName="src" projectFiles="true">
                 <logicalFolder name="f1" displayName="dynamic" projectFiles="true">
                   <itemPath>../src/config/pic32mz_ef_sk/driver/ethphy/src/dynamic/drv_extphy_regs.h</itemPath>
@@ -134,7 +134,7 @@
               <itemPath>../src/config/pic32mz_ef_sk/driver/memory/drv_memory_definitions.h</itemPath>
               <itemPath>../src/config/pic32mz_ef_sk/driver/memory/drv_memory_nvm.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f3" displayName="miim" projectFiles="true">
+            <logicalFolder name="f2" displayName="miim" projectFiles="true">
               <logicalFolder name="f1" displayName="config" projectFiles="true">
                 <itemPath>../src/config/pic32mz_ef_sk/driver/miim/config/drv_miim_config.h</itemPath>
               </logicalFolder>
@@ -323,11 +323,11 @@
               <itemPath>../src/config/pic32mz_ef_sk/net_pres/pres/net_pres_enc_glue.h</itemPath>
             </logicalFolder>
           </logicalFolder>
-          <logicalFolder name="f4" displayName="peripheral" projectFiles="true">
+          <logicalFolder name="f3" displayName="peripheral" projectFiles="true">
             <logicalFolder name="f4" displayName="clk" projectFiles="true">
               <itemPath>../src/config/pic32mz_ef_sk/peripheral/clk/plib_clk.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f2" displayName="coretimer" projectFiles="true">
+            <logicalFolder name="f1" displayName="coretimer" projectFiles="true">
               <itemPath>../src/config/pic32mz_ef_sk/peripheral/coretimer/plib_coretimer.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f6" displayName="evic" projectFiles="true">
@@ -336,7 +336,7 @@
             <logicalFolder name="f5" displayName="gpio" projectFiles="true">
               <itemPath>../src/config/pic32mz_ef_sk/peripheral/gpio/plib_gpio.h</itemPath>
             </logicalFolder>
-            <logicalFolder name="f1" displayName="nvm" projectFiles="true">
+            <logicalFolder name="f2" displayName="nvm" projectFiles="true">
               <itemPath>../src/config/pic32mz_ef_sk/peripheral/nvm/plib_nvm.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f3" displayName="uart" projectFiles="true">
@@ -344,7 +344,7 @@
               <itemPath>../src/config/pic32mz_ef_sk/peripheral/uart/plib_uart2.h</itemPath>
             </logicalFolder>
           </logicalFolder>
-          <logicalFolder name="f3" displayName="system" projectFiles="true">
+          <logicalFolder name="f2" displayName="system" projectFiles="true">
             <logicalFolder name="f5" displayName="console" projectFiles="true">
               <itemPath>../src/config/pic32mz_ef_sk/system/console/sys_console.h</itemPath>
             </logicalFolder>
@@ -389,7 +389,7 @@
             <itemPath>../src/config/pic32mz_ef_sk/system/sys_random_h2_adapter.h</itemPath>
             <itemPath>../src/config/pic32mz_ef_sk/system/sys_reset_h2_adapter.h</itemPath>
           </logicalFolder>
-          <logicalFolder name="f2" displayName="usb" projectFiles="true">
+          <logicalFolder name="f4" displayName="usb" projectFiles="true">
             <logicalFolder name="f1" displayName="src" projectFiles="true">
               <itemPath>../src/config/pic32mz_ef_sk/usb/src/usb_device_local.h</itemPath>
               <itemPath>../src/config/pic32mz_ef_sk/usb/src/usb_device_mapping.h</itemPath>
@@ -415,20 +415,20 @@
           <itemPath>../src/config/pic32mz_ef_sk/definitions.h</itemPath>
         </logicalFolder>
       </logicalFolder>
-      <logicalFolder name="f3" displayName="osal" projectFiles="true">
+      <logicalFolder name="f2" displayName="osal" projectFiles="true">
         <itemPath>../src/config/pic32mz_ef_sk/osal/osal.h</itemPath>
         <itemPath>../src/config/pic32mz_ef_sk/osal/osal_definitions.h</itemPath>
         <itemPath>../src/config/pic32mz_ef_sk/osal/osal_impl_basic.h</itemPath>
       </logicalFolder>
-      <logicalFolder name="f2" displayName="packs" projectFiles="true">
+      <logicalFolder name="f3" displayName="packs" projectFiles="true">
         <logicalFolder name="f1"
                        displayName="PIC32MZ2048EFM144_DFP"
                        projectFiles="true">
           <itemPath>../src/packs/PIC32MZ2048EFM144_DFP/device.h</itemPath>
         </logicalFolder>
       </logicalFolder>
-      <itemPath>../src/http_net_print.h</itemPath>
       <itemPath>../src/app.h</itemPath>
+      <itemPath>../src/http_net_print.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -508,7 +508,7 @@
             <itemPath>../src/config/pic32mz_ef_sk/crypto/src/ecc_fp.c</itemPath>
           </logicalFolder>
           <logicalFolder name="f2" displayName="driver" projectFiles="true">
-            <logicalFolder name="f2" displayName="ethmac" projectFiles="true">
+            <logicalFolder name="f4" displayName="ethmac" projectFiles="true">
               <logicalFolder name="f1" displayName="src" projectFiles="true">
                 <logicalFolder name="f1" displayName="dynamic" projectFiles="true">
                   <itemPath>../src/config/pic32mz_ef_sk/driver/ethmac/src/dynamic/drv_ethmac.c</itemPath>
@@ -517,7 +517,7 @@
                 </logicalFolder>
               </logicalFolder>
             </logicalFolder>
-            <logicalFolder name="f4" displayName="ethphy" projectFiles="true">
+            <logicalFolder name="f3" displayName="ethphy" projectFiles="true">
               <logicalFolder name="f1" displayName="src" projectFiles="true">
                 <logicalFolder name="f1" displayName="dynamic" projectFiles="true">
                   <itemPath>../src/config/pic32mz_ef_sk/driver/ethphy/src/dynamic/drv_ethphy.c</itemPath>
@@ -530,7 +530,7 @@
               <itemPath>../src/config/pic32mz_ef_sk/driver/memory/src/drv_memory_file_system.c</itemPath>
               <itemPath>../src/config/pic32mz_ef_sk/driver/memory/src/drv_memory_nvm.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f3" displayName="miim" projectFiles="true">
+            <logicalFolder name="f2" displayName="miim" projectFiles="true">
               <logicalFolder name="f1" displayName="src" projectFiles="true">
                 <logicalFolder name="f1" displayName="dynamic" projectFiles="true">
                   <itemPath>../src/config/pic32mz_ef_sk/driver/miim/src/dynamic/drv_miim.c</itemPath>
@@ -553,19 +553,26 @@
                   <itemPath>../src/config/pic32mz_ef_sk/library/tcpip/src/common/sys_fs_wrapper.c</itemPath>
                   <itemPath>../src/config/pic32mz_ef_sk/library/tcpip/src/helpers.c</itemPath>
                 </logicalFolder>
-                <itemPath>../src/config/pic32mz_ef_sk/library/tcpip/src/dns.c</itemPath>
                 <itemPath>../src/config/pic32mz_ef_sk/library/tcpip/src/icmp.c</itemPath>
-                <itemPath>../src/config/pic32mz_ef_sk/library/tcpip/src/http_net.c</itemPath>
-                <itemPath>../src/config/pic32mz_ef_sk/library/tcpip/src/nbns.c</itemPath>
                 <itemPath>../src/config/pic32mz_ef_sk/library/tcpip/src/tcp.c</itemPath>
-                <itemPath>../src/config/pic32mz_ef_sk/library/tcpip/src/dhcp.c</itemPath>
+                <itemPath>../src/config/pic32mz_ef_sk/library/tcpip/src/zero_conf_helper.c</itemPath>
+                <itemPath>../src/config/pic32mz_ef_sk/library/tcpip/src/zero_conf_link_local.c</itemPath>
+                <itemPath>../src/config/pic32mz_ef_sk/library/tcpip/src/zero_conf_multicast_dns.c</itemPath>
                 <itemPath>../src/config/pic32mz_ef_sk/library/tcpip/src/arp.c</itemPath>
-                <itemPath>../src/config/pic32mz_ef_sk/library/tcpip/src/icmpv6.c</itemPath>
                 <itemPath>../src/config/pic32mz_ef_sk/library/tcpip/src/ndp.c</itemPath>
-                <itemPath>../src/config/pic32mz_ef_sk/library/tcpip/src/tcpip_commands.c</itemPath>
                 <itemPath>../src/config/pic32mz_ef_sk/library/tcpip/src/ipv6.c</itemPath>
+                <itemPath>../src/config/pic32mz_ef_sk/library/tcpip/src/telnet.c</itemPath>
+                <itemPath>../src/config/pic32mz_ef_sk/library/tcpip/src/iperf.c</itemPath>
                 <itemPath>../src/config/pic32mz_ef_sk/library/tcpip/src/ipv4.c</itemPath>
                 <itemPath>../src/config/pic32mz_ef_sk/library/tcpip/src/smtpc.c</itemPath>
+                <itemPath>../src/config/pic32mz_ef_sk/library/tcpip/src/tcpip_announce.c</itemPath>
+                <itemPath>../src/config/pic32mz_ef_sk/library/tcpip/src/udp.c</itemPath>
+                <itemPath>../src/config/pic32mz_ef_sk/library/tcpip/src/dns.c</itemPath>
+                <itemPath>../src/config/pic32mz_ef_sk/library/tcpip/src/http_net.c</itemPath>
+                <itemPath>../src/config/pic32mz_ef_sk/library/tcpip/src/nbns.c</itemPath>
+                <itemPath>../src/config/pic32mz_ef_sk/library/tcpip/src/dhcp.c</itemPath>
+                <itemPath>../src/config/pic32mz_ef_sk/library/tcpip/src/icmpv6.c</itemPath>
+                <itemPath>../src/config/pic32mz_ef_sk/library/tcpip/src/tcpip_commands.c</itemPath>
                 <itemPath>../src/config/pic32mz_ef_sk/library/tcpip/src/tcpip_heap_alloc.c</itemPath>
                 <itemPath>../src/config/pic32mz_ef_sk/library/tcpip/src/tcpip_heap_internal.c</itemPath>
                 <itemPath>../src/config/pic32mz_ef_sk/library/tcpip/src/hash_fnv.c</itemPath>
@@ -576,8 +583,6 @@
                 <itemPath>../src/config/pic32mz_ef_sk/library/tcpip/src/tcpip_notify.c</itemPath>
                 <itemPath>../src/config/pic32mz_ef_sk/library/tcpip/src/tcpip_packet.c</itemPath>
                 <itemPath>../src/config/pic32mz_ef_sk/library/tcpip/src/sntp.c</itemPath>
-                <itemPath>../src/config/pic32mz_ef_sk/library/tcpip/src/tcpip_announce.c</itemPath>
-                <itemPath>../src/config/pic32mz_ef_sk/library/tcpip/src/udp.c</itemPath>
               </logicalFolder>
             </logicalFolder>
           </logicalFolder>
@@ -589,11 +594,11 @@
               <itemPath>../src/config/pic32mz_ef_sk/net_pres/pres/net_pres_enc_glue.c</itemPath>
             </logicalFolder>
           </logicalFolder>
-          <logicalFolder name="f5" displayName="peripheral" projectFiles="true">
+          <logicalFolder name="f4" displayName="peripheral" projectFiles="true">
             <logicalFolder name="f4" displayName="clk" projectFiles="true">
               <itemPath>../src/config/pic32mz_ef_sk/peripheral/clk/plib_clk.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f2" displayName="coretimer" projectFiles="true">
+            <logicalFolder name="f1" displayName="coretimer" projectFiles="true">
               <itemPath>../src/config/pic32mz_ef_sk/peripheral/coretimer/plib_coretimer.c</itemPath>
             </logicalFolder>
             <logicalFolder name="f6" displayName="evic" projectFiles="true">
@@ -602,7 +607,7 @@
             <logicalFolder name="f5" displayName="gpio" projectFiles="true">
               <itemPath>../src/config/pic32mz_ef_sk/peripheral/gpio/plib_gpio.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f1" displayName="nvm" projectFiles="true">
+            <logicalFolder name="f2" displayName="nvm" projectFiles="true">
               <itemPath>../src/config/pic32mz_ef_sk/peripheral/nvm/plib_nvm.c</itemPath>
             </logicalFolder>
             <logicalFolder name="f3" displayName="uart" projectFiles="true">
@@ -641,7 +646,7 @@
             </logicalFolder>
             <itemPath>../src/config/pic32mz_ef_sk/system/sys_time_h2_adapter.c</itemPath>
           </logicalFolder>
-          <logicalFolder name="f4" displayName="usb" projectFiles="true">
+          <logicalFolder name="f5" displayName="usb" projectFiles="true">
             <logicalFolder name="f1" displayName="src" projectFiles="true">
               <itemPath>../src/config/pic32mz_ef_sk/usb/src/usb_device.c</itemPath>
               <itemPath>../src/config/pic32mz_ef_sk/usb/src/usb_device_hid.c</itemPath>
@@ -659,8 +664,8 @@
               </logicalFolder>
             </logicalFolder>
           </logicalFolder>
-          <itemPath>../src/config/pic32mz_ef_sk/usb_device_init_data.c</itemPath>
           <itemPath>../src/config/pic32mz_ef_sk/tasks.c</itemPath>
+          <itemPath>../src/config/pic32mz_ef_sk/usb_device_init_data.c</itemPath>
           <itemPath>../src/config/pic32mz_ef_sk/initialization.c</itemPath>
           <itemPath>../src/config/pic32mz_ef_sk/interrupts.c</itemPath>
           <itemPath>../src/config/pic32mz_ef_sk/exceptions.c</itemPath>
@@ -669,8 +674,10 @@
       <logicalFolder name="f2" displayName="web_pages" projectFiles="true">
         <logicalFolder name="f1" displayName="dyndns" projectFiles="true">
           <itemPath>../src/web_pages/dyndns/index.htm</itemPath>
+          <itemPath>../src/web_pages/dyndns/index.htm</itemPath>
         </logicalFolder>
         <logicalFolder name="f2" displayName="email" projectFiles="true">
+          <itemPath>../src/web_pages/email/index.htm</itemPath>
           <itemPath>../src/web_pages/email/index.htm</itemPath>
         </logicalFolder>
         <logicalFolder name="f3" displayName="protect" projectFiles="true">
@@ -678,8 +685,13 @@
           <itemPath>../src/web_pages/protect/index.htm</itemPath>
           <itemPath>../src/web_pages/protect/reboot.cgi</itemPath>
           <itemPath>../src/web_pages/protect/reboot.htm</itemPath>
+          <itemPath>../src/web_pages/protect/reboot.htm</itemPath>
+          <itemPath>../src/web_pages/protect/reboot.cgi</itemPath>
+          <itemPath>../src/web_pages/protect/config.htm</itemPath>
+          <itemPath>../src/web_pages/protect/index.htm</itemPath>
         </logicalFolder>
         <logicalFolder name="f4" displayName="snmp" projectFiles="true">
+          <itemPath>../src/web_pages/snmp/snmpconfig.htm</itemPath>
           <itemPath>../src/web_pages/snmp/snmpconfig.htm</itemPath>
         </logicalFolder>
         <itemPath>../src/web_pages/mchp.gif</itemPath>
@@ -699,12 +711,12 @@
         <itemPath>../src/web_pages/header.htm</itemPath>
         <itemPath>../src/web_pages/forms.htm</itemPath>
       </logicalFolder>
+      <itemPath>/home/sl/work/work19/pic32mz/web_net_server_nvm_test2/firmware/src/app_usblan.c</itemPath>
+      <itemPath>../src/app.c</itemPath>
       <itemPath>../src/http_net_print.c</itemPath>
       <itemPath>../src/custom_http_net_app.c</itemPath>
       <itemPath>../src/mpfs_net_img.c</itemPath>
-      <itemPath>../src/app.c</itemPath>
       <itemPath>../src/main.c</itemPath>
-      <itemPath>/home/sl/work/work19/pic32mz/web_net_server_nvm_test2/firmware/src/app_usblan.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -1063,6 +1075,7 @@
         <property key="ToolFirmwareFilePath"
                   value="Press to browse for a specific firmware version"/>
         <property key="ToolFirmwareOption.UseLatestFirmware" value="true"/>
+        <property key="firmware.download.all" value="false"/>
         <property key="memories.configurationmemory" value="true"/>
         <property key="memories.dataflash" value="true"/>
         <property key="memories.eeprom" value="true"/>
