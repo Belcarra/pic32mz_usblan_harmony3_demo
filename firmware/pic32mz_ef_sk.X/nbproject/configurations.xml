@@ -545,18 +545,6 @@
                 </logicalFolder>
               </logicalFolder>
             </logicalFolder>
-            <logicalFolder name="f6" displayName="usblan" projectFiles="true">
-              <logicalFolder name="f1" displayName="src" projectFiles="true">
-                <logicalFolder name="f1" displayName="dynamic" projectFiles="true">
-                  <itemPath>/home/sl/work/work19/pic32mz/web_net_server_nvm_test2/firmware/src/config/pic32mz_ef_sk/driver/usblan/src/dynamic/drv_lib.c</itemPath>
-                  <itemPath>/home/sl/work/work19/pic32mz/web_net_server_nvm_test2/firmware/src/config/pic32mz_ef_sk/driver/usblan/src/dynamic/drv_usblan.c</itemPath>
-                  <itemPath>/home/sl/work/work19/pic32mz/web_net_server_nvm_test2/firmware/src/config/pic32mz_ef_sk/driver/usblan/src/dynamic/eem-rx.c</itemPath>
-                  <itemPath>/home/sl/work/work19/pic32mz/web_net_server_nvm_test2/firmware/src/config/pic32mz_ef_sk/driver/usblan/src/dynamic/eem-tx.c</itemPath>
-                  <itemPath>/home/sl/work/work19/pic32mz/web_net_server_nvm_test2/firmware/src/config/pic32mz_ef_sk/driver/usblan/src/dynamic/usb_device_usblan.c</itemPath>
-                  <itemPath>/home/sl/work/work19/pic32mz/web_net_server_nvm_test2/firmware/src/config/pic32mz_ef_sk/driver/usblan/src/dynamic/usblan-config.c</itemPath>
-                </logicalFolder>
-              </logicalFolder>
-            </logicalFolder>
           </logicalFolder>
           <logicalFolder name="f1" displayName="library" projectFiles="true">
             <logicalFolder name="f1" displayName="tcpip" projectFiles="true">
@@ -657,6 +645,18 @@
             <logicalFolder name="f1" displayName="src" projectFiles="true">
               <itemPath>../src/config/pic32mz_ef_sk/usb/src/usb_device.c</itemPath>
               <itemPath>../src/config/pic32mz_ef_sk/usb/src/usb_device_hid.c</itemPath>
+            </logicalFolder>
+          </logicalFolder>
+          <logicalFolder name="f10" displayName="usblan" projectFiles="true">
+            <logicalFolder name="f1" displayName="src" projectFiles="true">
+              <logicalFolder name="f1" displayName="dynamic" projectFiles="true">
+                <itemPath>/home/sl/work/work19/pic32mz/web_net_server_nvm_test2/firmware/src/config/pic32mz_ef_sk/driver/usblan/src/dynamic/drv_lib.c</itemPath>
+                <itemPath>/home/sl/work/work19/pic32mz/web_net_server_nvm_test2/firmware/src/config/pic32mz_ef_sk/driver/usblan/src/dynamic/drv_usblan.c</itemPath>
+                <itemPath>/home/sl/work/work19/pic32mz/web_net_server_nvm_test2/firmware/src/config/pic32mz_ef_sk/driver/usblan/src/dynamic/eem-rx.c</itemPath>
+                <itemPath>/home/sl/work/work19/pic32mz/web_net_server_nvm_test2/firmware/src/config/pic32mz_ef_sk/driver/usblan/src/dynamic/eem-tx.c</itemPath>
+                <itemPath>/home/sl/work/work19/pic32mz/web_net_server_nvm_test2/firmware/src/config/pic32mz_ef_sk/driver/usblan/src/dynamic/usb_device_usblan.c</itemPath>
+                <itemPath>/home/sl/work/work19/pic32mz/web_net_server_nvm_test2/firmware/src/config/pic32mz_ef_sk/driver/usblan/src/dynamic/usblan-config.c</itemPath>
+              </logicalFolder>
             </logicalFolder>
           </logicalFolder>
           <itemPath>../src/config/pic32mz_ef_sk/usb_device_init_data.c</itemPath>
