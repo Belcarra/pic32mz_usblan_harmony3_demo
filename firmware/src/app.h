@@ -64,7 +64,6 @@
 // *****************************************************************************
 // *****************************************************************************
 
-#if 0
 #if defined (__PIC32C__) || defined(__SAMA5D2__)        
 /* This section is highly customizable based on application's specific needs. */
 #define APP_SWITCH_1StateGet()      SWITCH_Get()
@@ -76,12 +75,14 @@
 #define APP_SWITCH_2StateGet()      SWITCH2_Get()
 #define APP_SWITCH_3StateGet()      SWITCH2_Get()
 #endif
-#endif
 
+#if 0
 #define APP_SWITCH_1StateGet()     (0) 
 #define APP_SWITCH_2StateGet()     (0)
 #define APP_SWITCH_3StateGet()     (0)
+#endif
 
+#if 0
 #define LED1_Set()
 #define LED1_Get() (0)
 #define LED1_Clear()
@@ -96,6 +97,7 @@
 #define LED3_Get() (0)
 #define LED3_Clear()
 #define LED3_Toggle()
+#endif
 
 #define APP_LED_1StateSet()         LED1_Set()
 #define APP_LED_1StateGet()         LED1_Get()
