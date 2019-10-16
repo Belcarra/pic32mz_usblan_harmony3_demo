@@ -61,7 +61,7 @@ void APP_USBDeviceEventHandler(USB_DEVICE_EVENT event, void * eventData, uintptr
             /* Device is reset or deconfigured. Provide LED indication.*/
             LED1_Set();
             LED2_Set();
-            LED3_Clear();
+            //LED3_Clear();
 
             appData.deviceConfigured = false;
 
@@ -78,7 +78,7 @@ void APP_USBDeviceEventHandler(USB_DEVICE_EVENT event, void * eventData, uintptr
                 /* The device is in configured state. Update LED indication */
                 LED1_Clear();
                 LED2_Clear();
-                LED3_Set();
+                //LED3_Set();
 
                 /* Reset endpoint data send & receive flag  */
                 appData.deviceConfigured = true;
@@ -92,7 +92,7 @@ void APP_USBDeviceEventHandler(USB_DEVICE_EVENT event, void * eventData, uintptr
             /* Device is suspended. Update LED indication */
             LED1_Clear();
             LED2_Set();
-            LED3_Set();
+            //LED3_Set();
             break;
 
 
