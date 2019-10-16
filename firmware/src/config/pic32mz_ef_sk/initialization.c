@@ -682,6 +682,10 @@ const DRV_USBHS_INIT drvUSBInit =
 
 
 
+
+
+
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: System Initialization
@@ -811,7 +815,6 @@ void SYS_Initialize ( void* data )
     sysObj.sysConsole0 = SYS_CONSOLE_Initialize(SYS_CONSOLE_INDEX_0, (SYS_MODULE_INIT *)&sysConsole0Init);
     sysObj.sysDebug0 = SYS_DEBUG_Initialize(SYS_DEBUG_INDEX_0, (SYS_MODULE_INIT*)&debugInit);
     SYS_CMD_Initialize((SYS_MODULE_INIT*)&sysCmdInit);
-
 
     /*** File System Service Initialization Code ***/
     SYS_FS_Initialize( (const void *) sysFSInit );
