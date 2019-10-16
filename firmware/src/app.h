@@ -44,6 +44,16 @@
 #ifndef _APP_H
 #define _APP_H
 
+#ifdef __cplusplus  // Provide C++ Compatibility
+
+extern "C" {
+
+#endif
+
+
+
+
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Included Files
@@ -64,67 +74,75 @@
 // *****************************************************************************
 // *****************************************************************************
 
-#if defined (__PIC32C__) || defined(__SAMA5D2__)        
 /* This section is highly customizable based on application's specific needs. */
-#define APP_SWITCH_1StateGet()      SWITCH_Get()
-#define APP_SWITCH_2StateGet()      SWITCH_Get()
-#define APP_SWITCH_3StateGet()      SWITCH_Get()
-#elif defined (__PIC32MZ__)
-/* This section is highly customizable based on application's specific needs. */
-#define APP_SWITCH_1StateGet()      SWITCH1_Get()
-#define APP_SWITCH_2StateGet()      SWITCH2_Get()
-#define APP_SWITCH_3StateGet()      SWITCH2_Get()
-#endif
 
-#if 0
-#define APP_SWITCH_1StateGet()     (0) 
-#define APP_SWITCH_2StateGet()     (0)
-#define APP_SWITCH_3StateGet()     (0)
-#endif
+#ifndef SWITCH2_GET
+#define SWITCH2_Get()      (0)
+#endif /* SWITCH2_GET() */
 
-#if 0
-#define LED1_Set()
-#define LED1_Get() (0)
-#define LED1_Clear()
-#define LED1_Toggle()
+#ifndef SWITCH3_GET
+#define SWITCH3_Get()      (0)
+#endif /* SWITCH3_GET() */
 
+#ifndef LED2_Set
 #define LED2_Set()
-#define LED2_Get() (0)
+#define LED2_Get()  (0)
 #define LED2_Clear()
 #define LED2_Toggle()
+#endif /* LED2_Set */
 
+#ifndef LED3_Set
 #define LED3_Set()
-#define LED3_Get() (0)
+#define LED3_Get()  (0)
 #define LED3_Clear()
 #define LED3_Toggle()
-#endif
+#endif /* LED3_Set */
+
+#define APP_SWITCH_1StateGet()      SWITCH1_Get()
+#define APP_SWITCH_2StateGet()      SWITCH2_Get()
+#define APP_SWITCH_3StateGet()      SWITCH3_Get()
 
 #define APP_LED_1StateSet()         LED1_Set()
 #define APP_LED_1StateGet()         LED1_Get()
 #define APP_LED_1StateClear()       LED1_Clear()
 #define APP_LED_1StateToggle()      LED1_Toggle()
 
-#if defined(__PIC32MZ__)
 #define APP_LED_2StateSet()         LED2_Set()
 #define APP_LED_2StateGet()         LED2_Get()
 #define APP_LED_2StateClear()       LED2_Clear()
 #define APP_LED_2StateToggle()      LED2_Toggle()
 
-#if 0
 #define APP_LED_3StateSet()         LED3_Set()
 #define APP_LED_3StateGet()         LED3_Get()
 #define APP_LED_3StateClear()       LED3_Clear()
 #define APP_LED_3StateToggle()      LED3_Toggle()
-#else
-#define APP_LED_3StateSet()         LED2_Set()
-#define APP_LED_3StateGet()         LED2_Get()
-#define APP_LED_3StateClear()       LED2_Clear()
-#define APP_LED_3StateToggle()      LED2_Toggle()
+
+
+
+#if 0
+#ifdef RGBLED
+/* BSP LED and Switch Re-directs */
+/* This section is highly customizable based on application's specific needs. */
+
+#define APP_RGB_LED_RED_OC_FUNCTION     OUTPUT_FUNC_OC3
+#define APP_RGB_LED_RED_OC_PIN          OUTPUT_PIN_RPB5
+#define APP_RGB_LED_GREEN_OC_FUNCTION   OUTPUT_FUNC_OC4
+#define APP_RGB_LED_GREEN_OC_PIN        OUTPUT_PIN_RPB1
+#define APP_RGB_LED_BLUE_OC_FUNCTION    OUTPUT_FUNC_OC5
+#define APP_RGB_LED_BLUE_OC_PIN         OUTPUT_PIN_RPB0
+
+/* ID's for RGB LED */
+#define APP_TMR_ID_FOR_OC       TMR_ID_3
+#define APP_RGB_LED_RED_OC_ID   OC_ID_3
+#define APP_RGB_LED_GREEN_OC_ID OC_ID_4
+#define APP_RGB_LED_BLUE_OC_ID  OC_ID_5
+
+
+void LEDinit(void);
+void LEDColorSet(int Red, int Green, int Blue);
+#endif /* RGBLED */
 #endif
 
-#define LED_On() LED2_Set()
-#define LED_Off() LED2_Clear()
-#endif
 
 // *****************************************************************************
 /* Application States
@@ -328,13 +346,14 @@ extern const USB_DEVICE_MASTER_DESCRIPTOR usbMasterDescriptor;
 extern void HTTP_APP_Initialize(void);
 #endif // defined(TCPIP_STACK_USE_HTTP_NET_SERVER)
 
-#endif /* _APP_H */
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
 }
 #endif
 //DOM-IGNORE-END
+
+#endif /* _APP_H */
 
 /*******************************************************************************
  End of File

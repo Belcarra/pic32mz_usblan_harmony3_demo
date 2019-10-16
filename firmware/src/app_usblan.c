@@ -59,9 +59,9 @@ void APP_USBDeviceEventHandler(USB_DEVICE_EVENT event, void * eventData, uintptr
             SYS_PRINT("USB RESET\r\n");
 
             /* Device is reset or deconfigured. Provide LED indication.*/
-            LED1_Set();
-            LED2_Set();
-            //LED3_Clear();
+            //LED1_Set();
+            LED2_Clear();
+            LED3_Clear();
 
             appData.deviceConfigured = false;
 
@@ -76,9 +76,8 @@ void APP_USBDeviceEventHandler(USB_DEVICE_EVENT event, void * eventData, uintptr
             if(*configurationValue == 1 )
             {
                 /* The device is in configured state. Update LED indication */
-                LED1_Clear();
-                LED2_Clear();
-                //LED3_Set();
+                LED2_Set();
+                LED3_Set();
 
                 /* Reset endpoint data send & receive flag  */
                 appData.deviceConfigured = true;
@@ -90,15 +89,16 @@ void APP_USBDeviceEventHandler(USB_DEVICE_EVENT event, void * eventData, uintptr
             SYS_PRINT("USB SUSPENDED\r\n");
 
             /* Device is suspended. Update LED indication */
-            LED1_Clear();
             LED2_Set();
-            //LED3_Set();
+            LED3_Clear();
             break;
 
 
         case USB_DEVICE_EVENT_POWER_DETECTED:
             
             SYS_PRINT("USB VBUS\r\n");
+            LED2_Set();
+            LED3_Clear();
 
             /* VBUS is detected. Attach the device */
             USB_DEVICE_Attach(appData.usbDevHandle);
@@ -110,6 +110,8 @@ void APP_USBDeviceEventHandler(USB_DEVICE_EVENT event, void * eventData, uintptr
 
             /* VBUS is removed. Detach the device */
             USB_DEVICE_Detach (appData.usbDevHandle);
+            LED2_Clear();
+            LED3_Clear();
             break;
 
 
