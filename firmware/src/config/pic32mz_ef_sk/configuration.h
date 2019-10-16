@@ -280,9 +280,12 @@ extern "C" {
 #define USB_DEVICE_EP0_BUFFER_SIZE                          64
 
 
-
-
-
+/* DO NOT REMOVE DURING MERGE */
+#ifdef USBLAN
+/* Maximum instances of USBLAN function driver */
+#define USB_DEVICE_USBLAN_INSTANCES_NUMBER     1
+#endif /* USBLAN */
+/* DO NOT REMOVE DURING MERGE */
 
 /*** TCPIP MAC Configuration ***/
 #define TCPIP_EMAC_TX_DESCRIPTORS				    8
@@ -419,6 +422,31 @@ extern "C" {
 													
 #define TCPIP_NETWORK_DEFAULT_MAC_DRIVER_IDX0			DRV_ETHMAC_PIC32MACObject
 
+
+/* DO NOT REMOVE DURING MERGE */
+#ifdef USBLAN
+/*** Network Configuration Index 1 USBLAN ***/
+#define TCPIP_NETWORK_DEFAULT_INTERFACE_NAME_IDX1       "USBLAN"
+#define TCPIP_IF_USBLAN
+
+#define TCPIP_NETWORK_DEFAULT_HOST_NAME_IDX1            "USBLAN_E"
+#define TCPIP_NETWORK_DEFAULT_MAC_ADDR_IDX1             0
+
+#define TCPIP_NETWORK_DEFAULT_IP_ADDRESS_IDX1           "192.168.188.2"
+#define TCPIP_NETWORK_DEFAULT_IP_MASK_IDX1              "255.255.255.0"
+#define TCPIP_NETWORK_DEFAULT_GATEWAY_IDX1              "192.168.188.2"
+#define TCPIP_NETWORK_DEFAULT_DNS_IDX1                  "192.168.188.2"
+#define TCPIP_NETWORK_DEFAULT_SECOND_DNS_IDX1           "0.0.0.0"
+#define TCPIP_NETWORK_DEFAULT_POWER_MODE_IDX1           "full"
+#define TCPIP_NETWORK_DEFAULT_INTERFACE_FLAGS_IDX1          \
+                                                    TCPIP_NETWORK_CONFIG_DHCP_CLIENT_ON |\
+                                                    TCPIP_NETWORK_CONFIG_DNS_CLIENT_ON |\
+                                                    TCPIP_NETWORK_CONFIG_IP_STATIC 
+
+#define TCPIP_NETWORK_DEFAULT_MAC_DRIVER_IDX1           DRV_USBLAN_MACObject
+/*** end of Network Configuration Index 1 USBLAN ***/
+#endif /* USBLAN */
+/* DO NOT REMOVE DURING MERGE */
 
 
 /*** tcpip_cmd Configuration ***/

@@ -647,6 +647,18 @@
               <itemPath>../src/config/pic32mz_ef_sk/usb/src/usb_device_hid.c</itemPath>
             </logicalFolder>
           </logicalFolder>
+          <logicalFolder name="f10" displayName="usblan" projectFiles="true">
+            <logicalFolder name="f1" displayName="src" projectFiles="true">
+              <logicalFolder name="f1" displayName="dynamic" projectFiles="true">
+                <itemPath>/home/sl/work/work19/pic32mz/web_net_server_nvm_test2/firmware/src/config/pic32mz_ef_sk/driver/usblan/src/dynamic/drv_lib.c</itemPath>
+                <itemPath>/home/sl/work/work19/pic32mz/web_net_server_nvm_test2/firmware/src/config/pic32mz_ef_sk/driver/usblan/src/dynamic/drv_usblan.c</itemPath>
+                <itemPath>/home/sl/work/work19/pic32mz/web_net_server_nvm_test2/firmware/src/config/pic32mz_ef_sk/driver/usblan/src/dynamic/eem-rx.c</itemPath>
+                <itemPath>/home/sl/work/work19/pic32mz/web_net_server_nvm_test2/firmware/src/config/pic32mz_ef_sk/driver/usblan/src/dynamic/eem-tx.c</itemPath>
+                <itemPath>/home/sl/work/work19/pic32mz/web_net_server_nvm_test2/firmware/src/config/pic32mz_ef_sk/driver/usblan/src/dynamic/usb_device_usblan.c</itemPath>
+                <itemPath>/home/sl/work/work19/pic32mz/web_net_server_nvm_test2/firmware/src/config/pic32mz_ef_sk/driver/usblan/src/dynamic/usblan-config.c</itemPath>
+              </logicalFolder>
+            </logicalFolder>
+          </logicalFolder>
           <itemPath>../src/config/pic32mz_ef_sk/usb_device_init_data.c</itemPath>
           <itemPath>../src/config/pic32mz_ef_sk/tasks.c</itemPath>
           <itemPath>../src/config/pic32mz_ef_sk/initialization.c</itemPath>
@@ -657,12 +669,8 @@
       <logicalFolder name="f2" displayName="web_pages" projectFiles="true">
         <logicalFolder name="f1" displayName="dyndns" projectFiles="true">
           <itemPath>../src/web_pages/dyndns/index.htm</itemPath>
-          <itemPath>../src/web_pages/dyndns/index.htm</itemPath>
-          <itemPath>../src/web_pages/dyndns/index.htm</itemPath>
         </logicalFolder>
         <logicalFolder name="f2" displayName="email" projectFiles="true">
-          <itemPath>../src/web_pages/email/index.htm</itemPath>
-          <itemPath>../src/web_pages/email/index.htm</itemPath>
           <itemPath>../src/web_pages/email/index.htm</itemPath>
         </logicalFolder>
         <logicalFolder name="f3" displayName="protect" projectFiles="true">
@@ -670,18 +678,8 @@
           <itemPath>../src/web_pages/protect/index.htm</itemPath>
           <itemPath>../src/web_pages/protect/reboot.cgi</itemPath>
           <itemPath>../src/web_pages/protect/reboot.htm</itemPath>
-          <itemPath>../src/web_pages/protect/reboot.htm</itemPath>
-          <itemPath>../src/web_pages/protect/reboot.cgi</itemPath>
-          <itemPath>../src/web_pages/protect/config.htm</itemPath>
-          <itemPath>../src/web_pages/protect/index.htm</itemPath>
-          <itemPath>../src/web_pages/protect/reboot.htm</itemPath>
-          <itemPath>../src/web_pages/protect/reboot.cgi</itemPath>
-          <itemPath>../src/web_pages/protect/config.htm</itemPath>
-          <itemPath>../src/web_pages/protect/index.htm</itemPath>
         </logicalFolder>
         <logicalFolder name="f4" displayName="snmp" projectFiles="true">
-          <itemPath>../src/web_pages/snmp/snmpconfig.htm</itemPath>
-          <itemPath>../src/web_pages/snmp/snmpconfig.htm</itemPath>
           <itemPath>../src/web_pages/snmp/snmpconfig.htm</itemPath>
         </logicalFolder>
         <itemPath>../src/web_pages/mchp.gif</itemPath>
@@ -706,6 +704,7 @@
       <itemPath>../src/mpfs_net_img.c</itemPath>
       <itemPath>../src/app.c</itemPath>
       <itemPath>../src/main.c</itemPath>
+      <itemPath>/home/sl/work/work19/pic32mz/web_net_server_nvm_test2/firmware/src/app_usblan.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -715,6 +714,7 @@
   </logicalFolder>
   <sourceRootList>
     <Elem>../src</Elem>
+    <Elem>/home/sl/work/work19/pic32mz/web_net_server_nvm_test2/firmware/src/config/pic32mz_ef_sk/driver/usblan/src/dynamic</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -774,7 +774,7 @@
         <property key="place-data-into-section" value="false"/>
         <property key="post-instruction-scheduling" value="default"/>
         <property key="pre-instruction-scheduling" value="default"/>
-        <property key="preprocessor-macros" value=""/>
+        <property key="preprocessor-macros" value="USBLAN"/>
         <property key="strict-ansi" value="false"/>
         <property key="support-ansi" value="false"/>
         <property key="toplevel-reordering" value=""/>
@@ -1058,7 +1058,29 @@
         <property key="voltagevalue" value="3.25"/>
       </PICkit3PlatformTool>
       <PKOBSKDEPlatformTool>
-        <property key="firmware.download.all" value="false"/>
+        <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="SecureSegment.SegmentProgramming" value="FullChipProgramming"/>
+        <property key="ToolFirmwareFilePath"
+                  value="Press to browse for a specific firmware version"/>
+        <property key="ToolFirmwareOption.UseLatestFirmware" value="true"/>
+        <property key="memories.configurationmemory" value="true"/>
+        <property key="memories.dataflash" value="true"/>
+        <property key="memories.eeprom" value="true"/>
+        <property key="memories.id" value="true"/>
+        <property key="memories.programmemory" value="true"/>
+        <property key="memories.programmemory.ranges" value="1d000000-1d1fffff"/>
+        <property key="memories.userotp" value="true"/>
+        <property key="programoptions.donoteraseauxmem" value="false"/>
+        <property key="programoptions.eraseb4program" value="true"/>
+        <property key="programoptions.preservedataflash" value="false"/>
+        <property key="programoptions.preservedataflash.ranges" value=""/>
+        <property key="programoptions.preserveeeprom" value="false"/>
+        <property key="programoptions.preserveeeprom.ranges"
+                  value="${memories.eedata.default}"/>
+        <property key="programoptions.preserveprogram.ranges" value=""/>
+        <property key="programoptions.preserveprogramrange" value="false"/>
+        <property key="programoptions.usehighvoltageonmclr" value="false"/>
+        <property key="programoptions.uselvpprogramming" value="true"/>
       </PKOBSKDEPlatformTool>
       <RealICEPlatformTool>
         <property key="ADC" value="true"/>

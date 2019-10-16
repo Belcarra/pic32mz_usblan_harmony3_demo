@@ -448,15 +448,13 @@ const TCPIP_MODULE_MAC_PIC32INT_CONFIG tcpipMACPIC32INTInitData =
     .pPhyInit               = &tcpipPhyInitData,
 };
 
-
-
-
-
-
-
-
-
-
+/* DO NOT REMOVE DURING MERGE */
+#ifdef USBLAN
+/*** ETH MAC Initialization Data for USBLAN ***/
+extern const TCPIP_MODULE_MAC_PIC32INT_CONFIG tcpipMACUSBLANInitData;
+/*** end of ETH MAC Initialization Data for USBLAN ***/
+/* DO NOT REMOVE DURING MERGE */
+#endif /* USBLAN */
 
 
 /*** DNS Client Initialization Data ***/
@@ -493,6 +491,30 @@ TCPIP_STACK_HEAP_INTERNAL_CONFIG tcpipHeapConfig =
 
 const TCPIP_NETWORK_CONFIG __attribute__((unused))  TCPIP_HOSTS_CONFIGURATION[] =
 {
+/* DO NOT REMOVE DURING MERGE */
+#ifdef USBLAN
+/*** Network Configuration Index 1 for USBLAN 
+ * IDX1 is used to avoid patching the ETHMAC driver config.
+ * This is placed first in the array to allow iperf to work. The tcpip iperf.c 
+ * does not correctly route to ip addresses in the second interface.
+ */
+    {
+        TCPIP_NETWORK_DEFAULT_INTERFACE_NAME_IDX1,       // interface
+        TCPIP_NETWORK_DEFAULT_HOST_NAME_IDX1,            // hostName
+        TCPIP_NETWORK_DEFAULT_MAC_ADDR_IDX1,             // macAddr
+        TCPIP_NETWORK_DEFAULT_IP_ADDRESS_IDX1,           // ipAddr
+        TCPIP_NETWORK_DEFAULT_IP_MASK_IDX1,              // ipMask
+        TCPIP_NETWORK_DEFAULT_GATEWAY_IDX1,              // gateway
+        TCPIP_NETWORK_DEFAULT_DNS_IDX1,                  // priDNS
+        TCPIP_NETWORK_DEFAULT_SECOND_DNS_IDX1,           // secondDNS
+        TCPIP_NETWORK_DEFAULT_POWER_MODE_IDX1,           // powerMode
+        TCPIP_NETWORK_DEFAULT_INTERFACE_FLAGS_IDX1,      // startFlags
+       &TCPIP_NETWORK_DEFAULT_MAC_DRIVER_IDX1,           // pMacObject
+    },
+/*** end of Network Configuration Index 1 for USBLAN ***/
+/* DO NOT REMOVE DURING MERGE */
+#endif /* USBLAN */
+
 	/*** Network Configuration Index 0 ***/
     {
         TCPIP_NETWORK_DEFAULT_INTERFACE_NAME_IDX0,       // interface
@@ -533,7 +555,13 @@ const TCPIP_STACK_MODULE_CONFIG TCPIP_STACK_MODULE_CONFIG_TBL [] =
     {TCPIP_MODULE_SMTPC, &tcpipSMTPCInitData},                                  // TCPIP_MODULE_SMTPC,
     { TCPIP_MODULE_MANAGER,         &tcpipHeapConfig },             // TCPIP_MODULE_MANAGER
 
-// MAC modules
+    // MAC modules
+    /* DO NOT REMOVE DURING MERGE */
+    #ifdef USBLAN
+    {TCPIP_MODULE_MAC_USBLAN,       &tcpipMACUSBLANInitData},       // TCPIP_MODULE_MAC_USBLAN
+    /* DO NOT REMOVE DURING MERGE */
+    #endif /* USBLAN */
+
     {TCPIP_MODULE_MAC_PIC32INT,     &tcpipMACPIC32INTInitData},     // TCPIP_MODULE_MAC_PIC32INT
 
 
@@ -573,6 +601,9 @@ SYS_MODULE_OBJ TCPIP_STACK_Init()
 }
 // </editor-fold>
 
+/* DO NOT REMOVE DURING MERGE */
+#ifdef USBLAN
+
 /******************************************************
  * USB Driver Initialization
  ******************************************************/
@@ -604,6 +635,9 @@ const DRV_USBHS_INIT drvUSBInit =
     .usbID = USBHS_ID_0,
 	
 };
+/* DO NOT REMOVE DURING MERGE */
+#endif /* USBLAN */
+
 
 
 /*** File System Initialization Data ***/
@@ -756,13 +790,9 @@ void SYS_Initialize ( void* data )
 
     sysObj.sysTime = SYS_TIME_Initialize(SYS_TIME_INDEX_0, (SYS_MODULE_INIT *)&sysTimeInitData);
     sysObj.sysConsole0 = SYS_CONSOLE_Initialize(SYS_CONSOLE_INDEX_0, (SYS_MODULE_INIT *)&sysConsole0Init);
+    sysObj.sysDebug0 = SYS_DEBUG_Initialize(SYS_DEBUG_INDEX_0, (SYS_MODULE_INIT*)&debugInit);
+    SYS_CMD_Initialize((SYS_MODULE_INIT*)&sysCmdInit);
 
-
-
-	 /* Initialize the USB device layer */
-    sysObj.usbDevObject0 = USB_DEVICE_Initialize (USB_DEVICE_INDEX_0 , ( SYS_MODULE_INIT* ) & usbDevInitData);
-	
-	
 
     sysObj.netPres = NET_PRES_Initialize(0, (SYS_MODULE_INIT*)&netPresInitData);
 
@@ -772,8 +802,16 @@ void SYS_Initialize ( void* data )
     SYS_ASSERT(sysObj.tcpip != SYS_MODULE_OBJ_INVALID, "TCPIP_STACK_Init Failed" );
 
 
+    /* DO NOT REMOVE DURING MERGE */
+    #ifdef USBLAN
 	/* Initialize USB Driver */ 
     sysObj.drvUSBHSObject = DRV_USBHS_Initialize(DRV_USBHS_INDEX_0, (SYS_MODULE_INIT *) &drvUSBInit);	
+
+	/* Initialize the USB device layer */
+    //sysObj.usbDevObject0 = USB_DEVICE_Initialize (USB_DEVICE_INDEX_0 , ( SYS_MODULE_INIT* ) & usbDevInitData);
+    sysObj.usbDevObject0 = USB_DEVICE_Initialize (USB_DEVICE_INDEX_0 , ( SYS_MODULE_INIT* ) & usblanDevInitData);
+    /* DO NOT REMOVE DURING MERGE */
+    #endif /* USBLAN */
 
     /*** File System Service Initialization Code ***/
     SYS_FS_Initialize( (const void *) sysFSInit );

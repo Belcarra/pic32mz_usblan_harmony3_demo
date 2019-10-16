@@ -83,7 +83,7 @@ APP_LED_STATE LEDstate = APP_LED_STATE_OFF;
 
 /* TODO:  Add any necessary callback functions.
 */
-
+#if 0
 void APP_USBDeviceEventHandler(USB_DEVICE_EVENT event, void * eventData, uintptr_t context)
 {   
     switch(event)
@@ -144,7 +144,7 @@ void APP_USBDeviceEventHandler(USB_DEVICE_EVENT event, void * eventData, uintptr
             break;
     }
 }
-
+#endif
 
 
 // *****************************************************************************
@@ -180,6 +180,15 @@ void APP_Initialize ( void )
     appData.state = APP_MOUNT_DISK;
 }
 
+/* DO NOT REMOVE DURING MERGE */
+#ifdef USBLAN
+/* Enable USBLAN, returns true if OK, or false for retry
+ */
+extern bool APP_Tasks_USBLAN_Enable(void);
+/* DO NOT REMOVE DURING MERGE */
+#endif /* USBLAN */
+
+
 /******************************************************************************
   Function:
     void APP_Tasks ( void )
@@ -207,13 +216,27 @@ void APP_Tasks ( void )
             if(SYS_FS_Mount(SYS_FS_NVM_VOL, LOCAL_WEBSITE_PATH_FS, MPFS2, 0, NULL) == 0)
             {
                 SYS_CONSOLE_PRINT("SYS_Initialize: The %s File System is mounted\r\n", SYS_FS_MPFS_STRING);
-                //appData.state = APP_TCPIP_WAIT_INIT;
-                appData.state = APP_USB_INIT;
+                /* DO NOT REMOVE DURING MERGE */
+                #ifdef USBLAN
+                appData.state = APP_USB_ENABLE;
+                #else /* USBLAN */
+                appData.state = APP_TCPIP_WAIT_INIT;
+                /* DO NOT REMOVE DURING MERGE */
+                #endif /* USBLAN */
+
             }
             break;
 
-        case APP_USB_INIT:
 
+            /* DO NOT REMOVE DURING MERGE */
+            #ifdef USBLAN
+        case APP_USB_ENABLE:
+
+            SYS_PRINT("%s: APP_USB_ENABLE\r\n", __FUNCTION__);
+            appData.state = APP_Tasks_USBLAN_Enable() ? APP_TCPIP_WAIT_INIT : APP_USB_ENABLE;
+            break;
+
+            #if 0
             /* Open the device layer */
             appData.usbDevHandle = USB_DEVICE_Open( USB_DEVICE_INDEX_0, DRV_IO_INTENT_READWRITE );
 
@@ -230,8 +253,11 @@ void APP_Tasks ( void )
                 /* The Device Layer is not ready to be opened. We should try
                  * again later. */
             }
+            #endif
 
             break;
+            /* DO NOT REMOVE DURING MERGE */
+            #endif /* USBLAN */
 
         case APP_TCPIP_WAIT_INIT:
             tcpipStat = TCPIP_STACK_Status(sysObj.tcpip);
