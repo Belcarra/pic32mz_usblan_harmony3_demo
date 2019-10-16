@@ -18,7 +18,7 @@
             </sourceRootList>
             <confList>
                 <confElem>
-                    <name>pic32mz_ef_curiositysk</name>
+                    <name>pic32mz_ef_curiosity</name>
                     <type>2</type>
                 </confElem>
                 <confElem>
