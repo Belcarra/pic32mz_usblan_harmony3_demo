@@ -62,45 +62,37 @@
 // *****************************************************************************
 
 /*** Macros for LED1 pin ***/
-#define LED1_Set()               (LATHSET = (1<<0))
-#define LED1_Clear()             (LATHCLR = (1<<0))
-#define LED1_Toggle()            (LATHINV= (1<<0))
-#define LED1_Get()               ((PORTH >> 0) & 0x1)
-#define LED1_OutputEnable()      (TRISHCLR = (1<<0))
-#define LED1_InputEnable()       (TRISHSET = (1<<0))
-#define LED1_PIN                  GPIO_PIN_RH0
+#define LED1_Set()               (LATBSET = (1<<14))
+#define LED1_Clear()             (LATBCLR = (1<<14))
+#define LED1_Toggle()            (LATBINV= (1<<14))
+#define LED1_Get()               ((PORTB >> 14) & 0x1)
+#define LED1_OutputEnable()      (TRISBCLR = (1<<14))
+#define LED1_InputEnable()       (TRISBSET = (1<<14))
+#define LED1_PIN                  GPIO_PIN_RB14
 /*** Macros for LED2 pin ***/
-#define LED2_Set()               (LATHSET = (1<<1))
-#define LED2_Clear()             (LATHCLR = (1<<1))
-#define LED2_Toggle()            (LATHINV= (1<<1))
-#define LED2_Get()               ((PORTH >> 1) & 0x1)
-#define LED2_OutputEnable()      (TRISHCLR = (1<<1))
-#define LED2_InputEnable()       (TRISHSET = (1<<1))
-#define LED2_PIN                  GPIO_PIN_RH1
-/*** Macros for LED3 pin ***/
-#define LED3_Set()               (LATHSET = (1<<2))
-#define LED3_Clear()             (LATHCLR = (1<<2))
-#define LED3_Toggle()            (LATHINV= (1<<2))
-#define LED3_Get()               ((PORTH >> 2) & 0x1)
-#define LED3_OutputEnable()      (TRISHCLR = (1<<2))
-#define LED3_InputEnable()       (TRISHSET = (1<<2))
-#define LED3_PIN                  GPIO_PIN_RH2
+#define LED2_Set()               (LATBSET = (1<<15))
+#define LED2_Clear()             (LATBCLR = (1<<15))
+#define LED2_Toggle()            (LATBINV= (1<<15))
+#define LED2_Get()               ((PORTB >> 15) & 0x1)
+#define LED2_OutputEnable()      (TRISBCLR = (1<<15))
+#define LED2_InputEnable()       (TRISBSET = (1<<15))
+#define LED2_PIN                  GPIO_PIN_RB15
 /*** Macros for SWITCH1 pin ***/
-#define SWITCH1_Set()               (LATBSET = (1<<12))
-#define SWITCH1_Clear()             (LATBCLR = (1<<12))
-#define SWITCH1_Toggle()            (LATBINV= (1<<12))
-#define SWITCH1_Get()               ((PORTB >> 12) & 0x1)
-#define SWITCH1_OutputEnable()      (TRISBCLR = (1<<12))
-#define SWITCH1_InputEnable()       (TRISBSET = (1<<12))
-#define SWITCH1_PIN                  GPIO_PIN_RB12
+#define SWITCH1_Set()               (LATASET = (1<<2))
+#define SWITCH1_Clear()             (LATACLR = (1<<2))
+#define SWITCH1_Toggle()            (LATAINV= (1<<2))
+#define SWITCH1_Get()               ((PORTA >> 2) & 0x1)
+#define SWITCH1_OutputEnable()      (TRISACLR = (1<<2))
+#define SWITCH1_InputEnable()       (TRISASET = (1<<2))
+#define SWITCH1_PIN                  GPIO_PIN_RA2
 /*** Macros for SWITCH2 pin ***/
-#define SWITCH2_Set()               (LATBSET = (1<<13))
-#define SWITCH2_Clear()             (LATBCLR = (1<<13))
-#define SWITCH2_Toggle()            (LATBINV= (1<<13))
-#define SWITCH2_Get()               ((PORTB >> 13) & 0x1)
-#define SWITCH2_OutputEnable()      (TRISBCLR = (1<<13))
-#define SWITCH2_InputEnable()       (TRISBSET = (1<<13))
-#define SWITCH2_PIN                  GPIO_PIN_RB13
+#define SWITCH2_Set()               (LATASET = (1<<3))
+#define SWITCH2_Clear()             (LATACLR = (1<<3))
+#define SWITCH2_Toggle()            (LATAINV= (1<<3))
+#define SWITCH2_Get()               ((PORTA >> 3) & 0x1)
+#define SWITCH2_OutputEnable()      (TRISACLR = (1<<3))
+#define SWITCH2_InputEnable()       (TRISASET = (1<<3))
+#define SWITCH2_PIN                  GPIO_PIN_RA3
 
 
 // *****************************************************************************
@@ -129,9 +121,6 @@ typedef enum
     GPIO_PORT_E = 4,
     GPIO_PORT_F = 5,
     GPIO_PORT_G = 6,
-    GPIO_PORT_H = 7,
-    GPIO_PORT_J = 8,
-    GPIO_PORT_K = 9,
 } GPIO_PORT;
 
 // *****************************************************************************
@@ -195,8 +184,6 @@ typedef enum
     GPIO_PIN_RD3 = 51,
     GPIO_PIN_RD4 = 52,
     GPIO_PIN_RD5 = 53,
-    GPIO_PIN_RD6 = 54,
-    GPIO_PIN_RD7 = 55,
     GPIO_PIN_RD9 = 57,
     GPIO_PIN_RD10 = 58,
     GPIO_PIN_RD11 = 59,
@@ -233,46 +220,6 @@ typedef enum
     GPIO_PIN_RG13 = 109,
     GPIO_PIN_RG14 = 110,
     GPIO_PIN_RG15 = 111,
-    GPIO_PIN_RH0 = 112,
-    GPIO_PIN_RH1 = 113,
-    GPIO_PIN_RH2 = 114,
-    GPIO_PIN_RH3 = 115,
-    GPIO_PIN_RH4 = 116,
-    GPIO_PIN_RH5 = 117,
-    GPIO_PIN_RH6 = 118,
-    GPIO_PIN_RH7 = 119,
-    GPIO_PIN_RH8 = 120,
-    GPIO_PIN_RH9 = 121,
-    GPIO_PIN_RH10 = 122,
-    GPIO_PIN_RH11 = 123,
-    GPIO_PIN_RH12 = 124,
-    GPIO_PIN_RH13 = 125,
-    GPIO_PIN_RH14 = 126,
-    GPIO_PIN_RH15 = 127,
-    GPIO_PIN_RJ0 = 128,
-    GPIO_PIN_RJ1 = 129,
-    GPIO_PIN_RJ2 = 130,
-    GPIO_PIN_RJ3 = 131,
-    GPIO_PIN_RJ4 = 132,
-    GPIO_PIN_RJ5 = 133,
-    GPIO_PIN_RJ6 = 134,
-    GPIO_PIN_RJ7 = 135,
-    GPIO_PIN_RJ8 = 136,
-    GPIO_PIN_RJ9 = 137,
-    GPIO_PIN_RJ10 = 138,
-    GPIO_PIN_RJ11 = 139,
-    GPIO_PIN_RJ12 = 140,
-    GPIO_PIN_RJ13 = 141,
-    GPIO_PIN_RJ14 = 142,
-    GPIO_PIN_RJ15 = 143,
-    GPIO_PIN_RK0 = 144,
-    GPIO_PIN_RK1 = 145,
-    GPIO_PIN_RK2 = 146,
-    GPIO_PIN_RK3 = 147,
-    GPIO_PIN_RK4 = 148,
-    GPIO_PIN_RK5 = 149,
-    GPIO_PIN_RK6 = 150,
-    GPIO_PIN_RK7 = 151,
 
     /* This element should not be used in any of the GPIO APIs.
        It will be used by other modules or application to denote that none of the GPIO Pin is used */

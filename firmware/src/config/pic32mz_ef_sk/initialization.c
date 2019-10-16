@@ -64,6 +64,8 @@
 #pragma config FECCCON =    OFF_UNLOCKED
 #pragma config FSLEEP =     OFF
 #pragma config DBGPER =     PG_ALL
+/* DO NOT REMOVE DURING MERGE */
+#ifndef PIC32MZECSK
 #pragma config SMCLR =      MCLR_NORM
 #pragma config SOSCGAIN =   GAIN_LEVEL_2
 #pragma config SOSCBOOST =  ON
@@ -71,6 +73,8 @@
 #pragma config POSCBOOST =  OFF
 #pragma config EJTAGBEN =   NORMAL
 #pragma config CP =         OFF
+#endif /* PIC32MZECSK */
+/* DO NOT REMOVE DURING MERGE */
 
 /*** DEVCFG1 ***/
 #pragma config FNOSC =      SPLL

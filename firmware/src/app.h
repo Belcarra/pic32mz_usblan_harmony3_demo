@@ -86,10 +86,17 @@
 #define APP_LED_2StateClear()       LED2_Clear()
 #define APP_LED_2StateToggle()      LED2_Toggle()
 
+#if 0
 #define APP_LED_3StateSet()         LED3_Set()
 #define APP_LED_3StateGet()         LED3_Get()
 #define APP_LED_3StateClear()       LED3_Clear()
 #define APP_LED_3StateToggle()      LED3_Toggle()
+#else
+#define APP_LED_3StateSet()         LED2_Set()
+#define APP_LED_3StateGet()         LED2_Get()
+#define APP_LED_3StateClear()       LED2_Clear()
+#define APP_LED_3StateToggle()      LED2_Toggle()
+#endif
 
 #define LED_On() LED2_Set()
 #define LED_Off() LED2_Clear()
