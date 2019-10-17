@@ -37,6 +37,7 @@ THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 #include "system_config.h"
 #include "system_definitions.h"
 #include "http_net_print.h"
+#include "confname.h"
 #if defined(TCPIP_STACK_USE_HTTP_NET_SERVER)
 
 #include "crypto/crypto.h"
@@ -1373,6 +1374,18 @@ TCPIP_HTTP_DYN_PRINT_RES TCPIP_HTTP_Print_drive(TCPIP_HTTP_NET_CONN_HANDLE connH
 TCPIP_HTTP_DYN_PRINT_RES TCPIP_HTTP_Print_fstype(TCPIP_HTTP_NET_CONN_HANDLE connHandle, const TCPIP_HTTP_DYN_VAR_DCPT *vDcpt)
 {
     TCPIP_HTTP_NET_DynamicWriteString(vDcpt, (const char *)SYS_FS_MPFS_STRING, false);
+    return TCPIP_HTTP_DYN_PRINT_RES_DONE;
+}
+
+TCPIP_HTTP_DYN_PRINT_RES TCPIP_HTTP_Print_project(TCPIP_HTTP_NET_CONN_HANDLE connHandle, const TCPIP_HTTP_DYN_VAR_DCPT *vDcpt)
+{
+    TCPIP_HTTP_NET_DynamicWriteString(vDcpt, (const char *)PROJDIR, false);
+    return TCPIP_HTTP_DYN_PRINT_RES_DONE;
+}
+
+TCPIP_HTTP_DYN_PRINT_RES TCPIP_HTTP_Print_confname(TCPIP_HTTP_NET_CONN_HANDLE connHandle, const TCPIP_HTTP_DYN_VAR_DCPT *vDcpt)
+{
+    TCPIP_HTTP_NET_DynamicWriteString(vDcpt, (const char *)CONFNAME, false);
     return TCPIP_HTTP_DYN_PRINT_RES_DONE;
 }
 

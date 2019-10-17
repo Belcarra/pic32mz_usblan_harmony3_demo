@@ -45,3 +45,5 @@ myVariable
 +ddns_user
 +ddns_pass
 +ddns_host
++project
++confname
