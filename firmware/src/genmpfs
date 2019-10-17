@@ -1,0 +1,16 @@
+#!/bin/sh
+
+#set -x
+#echo $0: ${*} > args.txt
+#env > vars.txt
+#set > set.txt
+
+CONFNAME=$1
+
+echo '#define CONFNAME "'$1'"' > ../src/confname.h
+
+set -x
+java -jar /HarmonyFramework3/net/utilities/mpfs_generator/mpfs.jar /c /z "snmp.bib" "../src/web_pages" "../src" "mpfs_net_img.c"
+
+
+

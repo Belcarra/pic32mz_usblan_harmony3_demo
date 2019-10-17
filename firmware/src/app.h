@@ -76,22 +76,22 @@ extern "C" {
 
 /* This section is highly customizable based on application's specific needs. */
 
-#ifndef SWITCH2_GET
+#ifndef SWITCH2_PIN
 #define SWITCH2_Get()      (0)
 #endif /* SWITCH2_GET() */
 
-#ifndef SWITCH3_GET
+#ifndef SWITCH3_PIN
 #define SWITCH3_Get()      (0)
 #endif /* SWITCH3_GET() */
 
-#ifndef LED2_Set
+#ifndef LED2_PIN
 #define LED2_Set()
 #define LED2_Get()  (0)
 #define LED2_Clear()
 #define LED2_Toggle()
 #endif /* LED2_Set */
 
-#ifndef LED3_Set
+#ifndef LED3_PIN
 #define LED3_Set()
 #define LED3_Get()  (0)
 #define LED3_Clear()
@@ -117,6 +117,14 @@ extern "C" {
 #define APP_LED_3StateClear()       LED3_Clear()
 #define APP_LED_3StateToggle()      LED3_Toggle()
 
+#ifndef RGB_LED_BLUE_PIN
+#define RGB_LED_BLUE_Set()
+#define RGB_LED_RED_Set()
+#define RGB_LED_GREEN_Set()
+#define RGB_LED_GREEN_Clear()
+#define RGB_LED_BLUE_Clear()
+#define RGB_LED_RED_Clear()
+#endif /* RGB_LED_BLUE_PIN */
 
 
 #if 0

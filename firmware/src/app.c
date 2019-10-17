@@ -117,10 +117,6 @@ void APP_Initialize ( void )
     //LEDinit();
     //#endif /* RGBLED */
 
-    RGB_LED_RED_Clear();
-    RGB_LED_GREEN_Clear();
-    RGB_LED_BLUE_Clear();
-
     RGB_LED_RED_Set();
     RGB_LED_GREEN_Set();
     RGB_LED_BLUE_Set();
