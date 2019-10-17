@@ -754,7 +754,7 @@
       </compileType>
       <makeCustomizationType>
         <makeCustomizationPreStepEnabled>true</makeCustomizationPreStepEnabled>
-        <makeCustomizationPreStep>../src/genmpfs ${ProjectDir} ${ConfName}</makeCustomizationPreStep>
+        <makeCustomizationPreStep>../src/genmpfs ${ProjectDir} ${ConfName} ${Device}</makeCustomizationPreStep>
         <makeCustomizationPostStepEnabled>false</makeCustomizationPostStepEnabled>
         <makeCustomizationPostStep></makeCustomizationPostStep>
         <makeCustomizationPutChecksumInUserID>false</makeCustomizationPutChecksumInUserID>

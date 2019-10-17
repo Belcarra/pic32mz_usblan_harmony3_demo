@@ -5,17 +5,19 @@
 #env > vars.txt
 #set > set.txt
 
-CONFNAME=$2
-
 PROJDIR=$(echo $1 | sed -e 's/.*\/\(.*\)\/firmware.*/\1/')
+CONFNAME=$2
+DEVICE=$3
 
+printf '\r\nPROJDIR: %s CONFNAME: %s DEVICE: %s\r\n\r\n' ${PROJDIR} ${CONFNAME} ${DEVICE} 1>&2
 
 (
 echo "/* DO NOT EDIT - see src/genmpfs which is called from project properties building */"
 echo 
 echo '#define PROJDIR "'$PROJDIR'"' 
 echo '#define CONFNAME "'$CONFNAME'"' 
-) > ../src/confname.h
+echo '#define DEVICE "'$DEVICE'"' 
+) > ../src/config/${CONFNAME}/confname.h
 
 set -x
 java -jar /HarmonyFramework3/net/utilities/mpfs_generator/mpfs.jar /c /z "snmp.bib" "../src/web_pages" "../src" "mpfs_net_img.c"

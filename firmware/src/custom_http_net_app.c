@@ -1389,6 +1389,12 @@ TCPIP_HTTP_DYN_PRINT_RES TCPIP_HTTP_Print_confname(TCPIP_HTTP_NET_CONN_HANDLE co
     return TCPIP_HTTP_DYN_PRINT_RES_DONE;
 }
 
+TCPIP_HTTP_DYN_PRINT_RES TCPIP_HTTP_Print_device(TCPIP_HTTP_NET_CONN_HANDLE connHandle, const TCPIP_HTTP_DYN_VAR_DCPT *vDcpt)
+{
+    TCPIP_HTTP_NET_DynamicWriteString(vDcpt, (const char *)DEVICE, false);
+    return TCPIP_HTTP_DYN_PRINT_RES_DONE;
+}
+
 TCPIP_HTTP_DYN_PRINT_RES TCPIP_HTTP_Print_cookiename(TCPIP_HTTP_NET_CONN_HANDLE connHandle, const TCPIP_HTTP_DYN_VAR_DCPT *vDcpt)
 {
     const char *ptr;
