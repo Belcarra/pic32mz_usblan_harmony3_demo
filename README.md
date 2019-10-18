@@ -1,22 +1,27 @@
 # Web Net Server Demo
 
-This is a Microchip demonstration for the **Belcarra PIC32MZ USBLAN Driver**. 
-It demonstrates how **Networking over USB** can be used instead of **Ethernet** or
-**WiFi** to provide networking to a Microchip PIC32MZ based board.
+This is demonstration kit for the **Belcarra PIC32MZ USBLAN Driver** using either of **Microchip's* 
+**PIC32MZ EF Starter Kit** or **PIC32MZ EF Curiosity Board**.
 
-It is based on the **Microchip Harmony 3 Framework demonstration project**:
+It demonstrates how **Networking over USB** can be used as an alternative to **Ethernet** or
+**WiFi** to provide lower cost networking to a Microchip PIC32MZ based board.
+
+**Networking over USB** allows a point to point network connection to be used between
+the PIC32MZ board and a Windows, Mac or Linux host.
+
+This kit is based on the [**Microchip Harmony 3 Framework demonstration project**](https://github.com/Microchip-MPLAB-Harmony):
 
     - **apps/tcpip/web_net_server_nvm_mpfs**
 
-The project was developed using **MPLAB X IDE v5.20** 
+The kit was developed using [**MPLAB X IDE v5.20**](https://www.microchip.com/mplab/mplab-x-ide/0). 
 
-There are two projects available:
+There are two projects available in the kit:
 
     * pic32mz_ef_sk.X - support for the PIC32MZ_EF_SK Ethernet Starter Kit
     * pic32mz_ef_curiosity.X - support of the PIC32MZ_EF_CURIOSITY Board
 
 
-The project has been modified to add the following Harmony 3 components:
+The sample application was been modified to add the following Harmony 3 components:
 
     * net Telnet
     * net Iperf
@@ -24,9 +29,7 @@ The project has been modified to add the following Harmony 3 components:
     * USB High Speed Driver
     * USB Device Driver
 
-This demonstration can be used with or without the Belcarra USBLAN Driver:
-
-    * The **Belcarra PIC32MZ USBLAN Driver** can be used if installed in the Harmony 3 Framework drivers directory.
+This demonstration can be used with or without the Belcarra USBLAN Driver.
 
 
 ## Supported Microchip Evaluation Boards
@@ -34,13 +37,12 @@ This demonstration can be used with or without the Belcarra USBLAN Driver:
     - **PIC32MZ EF Ethernet Starter Kit** (pic32mz_ef_sk)
     - **PIC32MZ EF Curiosity Board Bundle **(pic32mz_ef_curiosity)
 
-## Networking Over USB - CDC-EEM
+## CDC-EEM
 
 **Networking over USB** uses a USB connection to transfer TCP IP Frames (aka packets) between the USB Device (in this case a Microchip Evaluation Board) and a
 USB Host (typically a Windows, Mac or Linux system.)
 
 There are various protocols defined by USB.org:
-
     * CDC-ECM
     * CDC-EEM
     * CDC-NCM
@@ -60,9 +62,12 @@ Using iperf the pic32mz_ef_sk board can source TCP data at about **70-80 Mbits/s
 
 ## Belcarra PIC32MZ USBLAN Driver
 
-The _usblan_ configurations require the **Belcarra PIC32MZ USBLAN Driver**. That driver is available under license from Belcarra Technologies.
+The kit is set up to use the **Belcarra PIC32MZ USBLAN Driver**. That driver is available under license from Belcarra Technologies. Simply copy the USBLAN
+driver into **src/config/*/driver/usblan**.
 
-Contact Email: [info@belcarra.com](mailto://info@belcarra.com)
+To use this kit without the Belcarra driver remove the **USBLAN** definition from the X32-gcc Preprocessing macros and compile.
+
+For information on obtaining a copy of the Belcarra driver contact Email: [info@belcarra.com](mailto://info@belcarra.com)
 
 
 ## Microchip Eval Boards 
@@ -93,14 +98,6 @@ Configurations:
 [pic32mz_ef_sk]: /img/pic32mz_ef_sk.png
 [pic32mz_ef_curiosity]: /img/pic32mz_ef_curiosity.png
 
-## Configurations
-
-    - pic32mz_ef_sk_usblan - USBLAN and Ethernet
-    - pic32mz_ef_sk_curiosity_usblan - USBLAN and Ethernet
-    - pic32mz_ec_sk_usblan - USBLAN and Ethernet
-    - pic32mz_ef_sk - Ethernet only
-    - pic32mz_ef_sk_curiosity - Ethernet only
-    - pic32mz_ec_sk - Ethernet only
 
 
 ## Testing Setup
@@ -135,9 +132,14 @@ On the Curiosity board, there is only one button.
 
 
 
-## PIC32MZ EF Curiosity - Enabling Rx/Tx to Mikro Bus slots
+## PIC32MZ EF Curiosity 
 
-The base configuration for the pic32mz_ef_sk_curiosity did not have USART #1 and #2 pins on the MPU enabled.
+The current (mid 2019) Harmony 3 framework does not have any PIC32MZ EF Curiosity board application samples. 
+It does have the support so that the Harmony Configurator 3 can support the board. 
+
+This was done by duplicating the pic32mz_ef_sk project to get a pic32mz_ef_curiosity project. After changing
+the processor from PIC32MZ2048EFM144 to PIC32MZ2048EFM100 the MHC Pin configuration table was used
+to setup of the correct pin configuration.
 
 The following pins were added to the pin configuration:
 
