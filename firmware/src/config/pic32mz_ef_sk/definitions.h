@@ -83,6 +83,11 @@
 #include "driver/usb/usbhs/drv_usbhs.h"
 #include "system/console/sys_console.h"
 #include "system/console/src/sys_console_uart_definitions.h"
+/* DO NOT REMOVE DURING MERGE */
+#ifdef USBLAN
+#include "driver/usblan/usb_device_usblan.h"
+/* DO NOT REMOVE DURING MERGE */
+#endif /* USBLAN */
 #include "app.h"
 
 
@@ -231,7 +236,11 @@ typedef struct
 // *****************************************************************************
 // *****************************************************************************
 
+/* DO NOT REMOVE DURING MERGE */
+#if 0
 extern const USB_DEVICE_INIT usbDevInitData; 
+#endif
+/* DO NOT REMOVE DURING MERGE */
 
 
 

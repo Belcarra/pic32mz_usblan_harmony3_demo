@@ -88,7 +88,7 @@ DRV_MEMORY_Tasks(sysObj.drvMemory0);
 
 
     /* Maintain Middleware & Other Libraries */
-    	/* USB Device layer tasks routine */ 
+    /* USB Device layer tasks routine */ 
     USB_DEVICE_Tasks(sysObj.usbDevObject0);
 
 

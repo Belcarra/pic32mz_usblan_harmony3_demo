@@ -771,9 +771,14 @@ void SYS_Initialize ( void* data )
 
 
 	 /* Initialize the USB device layer */
-    sysObj.usbDevObject0 = USB_DEVICE_Initialize (USB_DEVICE_INDEX_0 , ( SYS_MODULE_INIT* ) & usbDevInitData);
-	
-	
+    /* DO NOT REMOVE DURING MERGE */
+    #ifdef USBLAN
+    /* DO NOT REMOVE DURING MERGE                                                           vvvvvvvvvvvvvvvvvvv  */
+    sysObj.usbDevObject0 = USB_DEVICE_Initialize (USB_DEVICE_INDEX_0 , ( SYS_MODULE_INIT* ) &usblanDevInitData);
+    #else /* USBLAN */
+    sysObj.usbDevObject0 = USB_DEVICE_Initialize (USB_DEVICE_INDEX_0 , ( SYS_MODULE_INIT* ) &usbDevInitData);
+    /* DO NOT REMOVE DURING MERGE */
+    #endif /* USBLAN */
 
     sysObj.netPres = NET_PRES_Initialize(0, (SYS_MODULE_INIT*)&netPresInitData);
 
