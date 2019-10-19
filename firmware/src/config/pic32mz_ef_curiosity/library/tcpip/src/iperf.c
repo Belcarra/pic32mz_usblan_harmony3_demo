@@ -260,10 +260,10 @@ static void CommandIperfSize(SYS_CMD_DEVICE_NODE* pCmdIO, int argc, char** argv)
 // Iperf command table
 static const SYS_CMD_DESCRIPTOR    iperfCmdTbl[]=
 {
-    {"iperf",   	CommandIperfStart, 	":  <iperf> start cmd"},
-    {"iperfk",  	CommandIperfStop,	": <iperfk> kill cmd"},
-    {"iperfi",  	CommandIperfNetIf,	": <iperfi address>  interface cmd"},
-    {"iperfs",  	CommandIperfSize,	": <iperfs tx/rx size> tx/rx size cmd"}
+    {"iperf",   	(SYS_CMD_FNC) CommandIperfStart, 	":  <iperf> start cmd"},
+    {"iperfk",  	(SYS_CMD_FNC) CommandIperfStop,	": <iperfk> kill cmd"},
+    {"iperfi",  	(SYS_CMD_FNC) CommandIperfNetIf,	": <iperfi address>  interface cmd"},
+    {"iperfs",  	(SYS_CMD_FNC) CommandIperfSize,	": <iperfs tx/rx size> tx/rx size cmd"}
 };
 
 

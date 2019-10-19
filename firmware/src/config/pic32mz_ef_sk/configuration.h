@@ -728,12 +728,11 @@ extern "C" {
 
 /*** TCP/IP Configuration ***/
 
-#if 0
+
 /* Endpoint Transfer Queue Size for both read and
    write. Applicable to all instances of the
    function driver */
 #define USB_DEVICE_ENDPOINT_QUEUE_DEPTH_COMBINED 2
-#endif
 
 
 /*** SNTP Configuration ***/

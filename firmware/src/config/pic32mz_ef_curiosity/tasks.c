@@ -71,9 +71,10 @@
 void SYS_Tasks ( void )
 {
     /* Maintain system services */
-    
-SYS_FS_Tasks();
 
+    SYS_FS_Tasks();
+
+    SYS_CMD_Tasks();
 
 
     /* Maintain Device Drivers */
@@ -85,24 +86,28 @@ DRV_MEMORY_Tasks(sysObj.drvMemory0);
 
 
     /* Maintain Middleware & Other Libraries */
-    	/* USB Device layer tasks routine */ 
+
+
+    NET_PRES_Tasks(sysObj.netPres);
+
+
+
+    TCPIP_STACK_Task(sysObj.tcpip);
+
+    /* DO NOT REMOVE DURING MERGE */
+    #ifdef USBLAN
+    /* USB Device layer tasks routine */ 
     USB_DEVICE_Tasks(sysObj.usbDevObject0);
-
-
-NET_PRES_Tasks(sysObj.netPres);
-
-
-
-TCPIP_STACK_Task(sysObj.tcpip);
-
 
     /* USBHS Driver Task Routine */ 
     DRV_USBHS_Tasks(sysObj.drvUSBHSObject);
+    /* DO NOT REMOVE DURING MERGE */
+    #endif /* USBLAN */
 
 
 
     /* Maintain the application's state machine. */
-        /* Call Application task APP. */
+    /* Call Application task APP. */
     APP_Tasks();
 
 
@@ -111,6 +116,6 @@ TCPIP_STACK_Task(sysObj.tcpip);
 
 
 /*******************************************************************************
- End of File
+  End of File
  */
 

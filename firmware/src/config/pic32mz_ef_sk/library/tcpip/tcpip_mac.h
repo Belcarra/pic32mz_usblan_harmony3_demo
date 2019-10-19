@@ -161,7 +161,6 @@ typedef enum
     TCPIP_MODULE_MAC_WILC1000       = 0x1080,
     TCPIP_MODULE_MAC_WILC1000_0     = 0x1080,   // alternate numbered name
 
-    // Internal/Embedded PIC32WK Wi-Fi MAC: room for 16 PIC32WK devices
     TCPIP_MODULE_MAC_PIC32WK        = 0x1090,
     TCPIP_MODULE_MAC_PIC32WK_0      = 0x1090,   // alternate numbered name
 
