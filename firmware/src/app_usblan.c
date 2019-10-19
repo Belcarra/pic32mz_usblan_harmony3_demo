@@ -1,6 +1,6 @@
  
 #include "app.h"
-
+#include "system/debug/sys_debug.h"
 //#include "tcpip/tcpip.h"
 
 //#include "app_commands.h"

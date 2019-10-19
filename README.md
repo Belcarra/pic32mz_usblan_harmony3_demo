@@ -79,6 +79,13 @@ Configurations:
     - pic32mz_ef_sk_usblan - USBLAN and Ethernet
     - pic32mz_ef_sk - Ethernet only 
 
+There are two versions of this kit, you may to need to chnage the processor selection to match your kit:
+
+    - DM30007 - non-crypto PIC32MZ2048EFH144
+    - DM30007-C - crypto PIC32MZ2048EFM1444
+
+
+
 ![pic32mz_ef_sk][pic32mz_ef_sk]
 
 

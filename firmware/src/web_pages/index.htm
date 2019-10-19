@@ -18,7 +18,7 @@
 		<span id="btn2">?</span> &nbsp;
 		<span id="btn1">?</span> &nbsp;
 		<span id="btn0">?</span></p>
-		<p>Random Number: <span id="pot0" style="font-weight:normal">?</span></p>
+		<p>Random: <span id="pot0" style="font-weight:normal">?</span></p>
 	</div>
 </div>
 
@@ -41,7 +41,7 @@ running the Harmony Microchip TCP/IP Stack.</p>
 <p>On the right you'll see the current status of the demo board.  For a quick
 example, click the LEDs to toggle the lights on the board.  Press the push
 buttons (except MCLR!) and you'll see the status update immediately.
-This examples uses AJAX techniques to provide real-time feedback.</p>
+This example uses AJAX techniques to provide real-time feedback.</p>
 
 <p>This site is provided as a tutorial for the various features of the HTTP
 web server, including:</p>
@@ -86,7 +86,7 @@ function updateStatus(xmlData) {
 	loadstat = 'none';
 
 	// Loop over all the LEDs
-	for(i = 0; i < 1; i++) // Temporarily change 3 to 1
+	for(i = 0; i < 3; i++) 
 		document.getElementById('led' + i).style.color = (getXMLValue(xmlData, 'led' + i) == '1') ? '#090' : '#ddd';
 
 	// Loop over all the buttons

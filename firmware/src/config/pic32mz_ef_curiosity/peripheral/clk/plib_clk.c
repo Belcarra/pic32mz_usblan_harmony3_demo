@@ -99,16 +99,20 @@ void CLK_Initialize( void )
     }
 
 
+  
+
+    /* Peripheral Module Disable Configuration */
+    PMD1 = 0xffffffff;
+    PMD2 = 0xffffffff;
+    PMD3 = 0xffffffff;
+    PMD4 = 0xffffffff;
+    PMD5 = 0xfefffffd;
+
     /* XXX Peripheral Module Disable Configuration */
-    /* XXX MHC inserted these, but it disables ethernet phy */
-    // XXX PMD1 = 0xffffffff;
-    // XXX PMD2 = 0xffffffff;
-    // XXX PMD3 = 0xffffffff;
-    // XXX PMD4 = 0xffffffff;
-    // XXX PMD5 = 0xfefffffd;
+    /* XXX MHC inserted this, but it disables ethernet phy */
     // XXX PMD6 = 0xfffff0ff;
     // XXX PMD7 = 0xffffffef;
-    /* XXX MHC inserted these, but it disables ethernet phy */
+    /* XXX MHC inserted this, but it disables ethernet phy */
 
 
   

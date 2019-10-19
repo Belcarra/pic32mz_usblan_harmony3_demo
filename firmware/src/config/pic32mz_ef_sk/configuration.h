@@ -90,10 +90,10 @@ extern "C" {
 
 
 /* RX queue size has one additional element for the empty spot needed in circular queue */
-#define SYS_CONSOLE_UART_RD_QUEUE_DEPTH_IDX0    11
+#define SYS_CONSOLE_UART_RD_QUEUE_DEPTH_IDX0    65
 
 /* TX queue size has one additional element for the empty spot needed in circular queue */
-#define SYS_CONSOLE_UART_WR_QUEUE_DEPTH_IDX0    65
+#define SYS_CONSOLE_UART_WR_QUEUE_DEPTH_IDX0    129
 #define SYS_CONSOLE_BUFFER_DMA_READY
 
 
@@ -111,29 +111,29 @@ extern "C" {
 #define SYS_FS_FILE_NAME_LEN              255
 #define SYS_FS_CWD_STRING_LEN             1024
 
-/* Console System Service Configuration Options */
-#define SYS_CONSOLE_DEVICE_MAX_INSTANCES   1
-#define SYS_CONSOLE_INSTANCES_NUMBER       1
-#define SYS_CONSOLE_UART_MAX_INSTANCES     1
 
-/* RX queue size has one additional element for the empty spot needed in circular queue */
-#define SYS_CONSOLE_UART_RD_QUEUE_DEPTH_IDX0    11
 
-/* TX queue size has one additional element for the empty spot needed in circular queue */
-#define SYS_CONSOLE_UART_WR_QUEUE_DEPTH_IDX0    65
-#define SYS_CONSOLE_BUFFER_DMA_READY
 
-#define SYS_DEBUG_ENABLE
-#define SYS_DEBUG_GLOBAL_ERROR_LEVEL       SYS_ERROR_DEBUG
-#define SYS_DEBUG_PRINT_BUFFER_SIZE        200
-#define SYS_DEBUG_BUFFER_DMA_READY
-#define SYS_DEBUG_USE_CONSOLE
+
 
 #define SYS_CMD_ENABLE
 #define SYS_CMD_DEVICE_MAX_INSTANCES       SYS_CONSOLE_DEVICE_MAX_INSTANCES
-#define SYS_CMD_PRINT_BUFFER_SIZE          2048
+#define SYS_CMD_PRINT_BUFFER_SIZE          1024
 #define SYS_CMD_BUFFER_DMA_READY
 #define SYS_CMD_REMAP_SYS_CONSOLE_MESSAGE
+#define SYS_CMD_REMAP_SYS_DEBUG_MESSAGE
+
+
+#define SYS_DEBUG_ENABLE
+#define SYS_DEBUG_GLOBAL_ERROR_LEVEL       SYS_ERROR_DEBUG
+#define SYS_DEBUG_PRINT_BUFFER_SIZE        500
+#define SYS_DEBUG_BUFFER_DMA_READY
+#define SYS_DEBUG_USE_CONSOLE
+
+
+/* Console System Service Configuration Options */
+#define SYS_CONSOLE_DEVICE_MAX_INSTANCES   1
+#define SYS_CONSOLE_UART_MAX_INSTANCES     1
 
 
 
@@ -301,7 +301,7 @@ extern "C" {
 #define TCPIP_STACK_USE_TELNET_SERVER
 #define TCPIP_TELNET_MAX_CONNECTIONS    2
 #define TCPIP_TELNET_USERNAME           "admin"
-#define TCPIP_TELNET_PASSWORD           "microchip"
+#define TCPIP_TELNET_PASSWORD           ""
 #define TCPIP_TELNET_TASK_TICK_RATE     100
 
 
@@ -620,27 +620,6 @@ extern "C" {
 #define TCPIP_STACK_COMMANDS_ICMP_ECHO_REQUEST_DATA_SIZE    100
 
 
-
-
-/*** IPv6 Configuration ***/
-#define TCPIP_IPV6_DEFAULT_ALLOCATION_BLOCK_SIZE 		64
-#define TCPIP_IPV6_MINIMUM_LINK_MTU 					1280
-#define TCPIP_IPV6_DEFAULT_LINK_MTU 					1500
-#define TCPIP_IPV6_DEFAULT_CUR_HOP_LIMIT 				64
-#define TCPIP_IPV6_DEFAULT_BASE_REACHABLE_TIME 			30
-#define TCPIP_IPV6_DEFAULT_RETRANSMIT_TIME 				1000
-#define TCPIP_IPV6_QUEUE_NEIGHBOR_PACKET_LIMIT 			1
-#define TCPIP_IPV6_NEIGHBOR_CACHE_ENTRY_STALE_TIMEOUT 	600
-#define TCPIP_IPV6_QUEUE_MCAST_PACKET_LIMIT 			4
-#define TCPIP_IPV6_QUEUED_MCAST_PACKET_TIMEOUT 			10
-#define TCPIP_IPV6_TASK_PROCESS_RATE 					1000
-#define TCPIP_IPV6_INIT_TASK_PROCESS_RATE 				32
-#define TCPIP_IPV6_ULA_GENERATE_ENABLE 					false
-#define TCPIP_IPV6_ULA_NTP_ACCESS_TMO 					12000
-#define TCPIP_IPV6_ULA_NTP_VALID_WINDOW 				1000
-#define TCPIP_IPV6_FRAGMENT_PKT_TIMEOUT 				60
-#define TCPIP_IPV6_RX_FRAGMENTED_BUFFER_SIZE 			1514
-
 /* MPLAB Harmony Net Presentation Layer Definitions*/
 #define NET_PRES_NUM_INSTANCE 1
 #define NET_PRES_NUM_SOCKETS 10
@@ -648,34 +627,10 @@ extern "C" {
 
 
 
-/*** IPv4 Configuration ***/
-
-
-
-/*** SMTPC Configuration ***/
-#define TCPIP_STACK_USE_SMTPC
-#define TCPIP_SMTPC_MAIL_CONNECTIONS 	            2
-#define TCPIP_SMTPC_CLIENT_MESSAGE_DATE 	        "Wed, 20 July 2016 14:55:06 -0600"
-#define TCPIP_SMTPC_SERVER_REPLY_TIMEOUT 	        60
-#define TCPIP_SMTPC_SERVER_DATA_TIMEOUT 	        60
-#define TCPIP_SMTPC_TLS_HANDSHAKE_TIMEOUT 	        10
-#define TCPIP_SMTPC_MAIL_RETRIES 	                3
-#define TCPIP_SMTPC_SERVER_TRANSIENT_RETRY_TIMEOUT  600
-#define TCPIP_SMTPC_INTERNAL_RETRY_TIMEOUT          10
-#define TCPIP_SMTPC_SERVER_REPLY_BUFFER_SIZE 	    512
-#define TCPIP_SMTPC_CLIENT_AUTH_BUFFER_SIZE 	    100
-#define TCPIP_SMTPC_CLIENT_ADDR_BUFFER_SIZE 	    80
-#define TCPIP_SMTPC_PLAIN_LINE_BUFF_SIZE 	        256
-#define TCPIP_SMTPC_SKT_TX_BUFF_SIZE			    0
-#define TCPIP_SMTPC_SKT_RX_BUFF_SIZE			    0
-#define TCPIP_SMTPC_TASK_TICK_RATE			        55
-
-
-
 /*** TCPIP Heap Configuration ***/
 
 #define TCPIP_STACK_USE_INTERNAL_HEAP
-#define TCPIP_STACK_DRAM_SIZE                       39250
+#define TCPIP_STACK_DRAM_SIZE                       59250
 #define TCPIP_STACK_DRAM_RUN_LIMIT                  2048
 
 #define TCPIP_STACK_MALLOC_FUNC                     malloc
@@ -728,6 +683,15 @@ extern "C" {
 
 /*** TCP/IP Configuration ***/
 
+
+/* DO NOT REMOVE DURING MERGE */
+#if 0
+/* Endpoint Transfer Queue Size for both read and
+   write. Applicable to all instances of the
+   function driver */
+#define USB_DEVICE_ENDPOINT_QUEUE_DEPTH_COMBINED 2
+#endif
+/* DO NOT REMOVE DURING MERGE */
 
 
 /*** SNTP Configuration ***/
@@ -805,45 +769,6 @@ extern "C" {
 
 /* Alignment for buffers that are submitted to USB Driver*/ 
 #define USB_ALIGN  CACHE_ALIGN
-
-/* Maximum instances of HID function driver */
-#define USB_DEVICE_HID_INSTANCES_NUMBER     1 
-
-/* HID Transfer Queue Size for both read and
-   write. Applicable to all instances of the
-   function driver */
-#define USB_DEVICE_HID_QUEUE_DEPTH_COMBINED 2
-
-
-
-/*** Crypto Library Configuration ***/
-#define WC_NO_HARDEN
-#define NO_DSA
-#define HAVE_MCAPI
-#define WOLFSSL_IGNORE_FILE_WARN
-
-#define MICROCHIP_MPLAB_HARMONY
-#define MICROCHIP_MPLAB_HARMONY_3
-
-#define MICROCHIP_PIC32
-#define SIZEOF_LONG_LONG 8
-#define SINGLE_THREADED
-#define WOLFSSL_USER_IO
-#define NO_WRITEV
-#define NO_DEV_RANDOM
-#define NO_FILESYSTEM
-#define USE_FAST_MATH
-#define TFM_TIMING_RESISTANT
-#define USE_CERT_BUFFERS_2048
-#define NO_BIG_INT
-#define NO_AES
-#define WOLFSSL_SHA512
-#define NO_ASN
-#define NO_RSA
-#define NO_DES3
-#define NO_AES_CBC
-#define NO_RNG
-#define NO_RNG_TEST
 
 
 
