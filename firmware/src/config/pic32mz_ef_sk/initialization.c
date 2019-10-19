@@ -599,7 +599,7 @@ const TCPIP_STACK_MODULE_CONFIG TCPIP_STACK_MODULE_CONFIG_TBL [] =
     // MAC modules
     /* DO NOT REMOVE DURING MERGE */
     #ifdef USBLAN
-    {TCPIP_MODULE_MAC_USBLAN,       &tcpipMACUSBLANInitData},       // TCPIP_MODULE_MAC_USBLAN
+    {TCPIP_MODULE_MAC_EXTERNAL,       &tcpipMACUSBLANInitData},       
     /* DO NOT REMOVE DURING MERGE */
     #endif /* USBLAN */
 
