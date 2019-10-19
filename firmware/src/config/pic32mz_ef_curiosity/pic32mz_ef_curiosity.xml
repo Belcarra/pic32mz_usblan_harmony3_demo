@@ -3067,7 +3067,7 @@
                 </Boolean>
                 <Integer dnOrder="1" id="TCPIP_HTTP_NET_LISTEN_PORT">
                   <Values dnOrder="0">
-                    <User dnOrder="0" value="443"/>
+                    <User dnOrder="0" value="80"/>
                   </Values>
                 </Integer>
                 <Integer dnOrder="2" id="TCPIP_HTTP_NET_SSI_VARIABLE_STRING_MAX_LENGTH">

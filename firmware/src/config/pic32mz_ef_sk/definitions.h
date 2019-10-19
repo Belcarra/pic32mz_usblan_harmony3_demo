@@ -48,7 +48,6 @@
 #include <stdint.h>
 #include <stddef.h>
 #include <stdbool.h>
-#include "crypto/crypto.h"
 #include "driver/memory/drv_memory.h"
 #include "system/time/sys_time.h"
 #include "peripheral/coretimer/plib_coretimer.h"

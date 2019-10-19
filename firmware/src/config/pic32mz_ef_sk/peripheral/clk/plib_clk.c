@@ -98,8 +98,10 @@ void CLK_Initialize( void )
         __builtin_mtc0(12, 0,(__builtin_mfc0(12, 0) | 0x0001)); /* enable interrupts */
     }
 
-    OSCCONbits.FRCDIV = 0;
 
+  
+
+    /* Peripheral Module Disable Configuration */
     PMD1 = 0xffffffff;
     PMD2 = 0xffffffff;
     PMD3 = 0xffffffff;
@@ -113,7 +115,6 @@ void CLK_Initialize( void )
 
     PMD7 = 0xffffffef;
 
-  
     /* Lock system since done with clock configuration */
     int_flag = (bool)__builtin_disable_interrupts();
 
