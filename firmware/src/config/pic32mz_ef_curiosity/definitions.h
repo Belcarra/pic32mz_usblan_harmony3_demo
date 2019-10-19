@@ -74,22 +74,20 @@
 #include "system/sys_clk_h2_adapter.h"
 #include "system/sys_random_h2_adapter.h"
 #include "system/sys_reset_h2_adapter.h"
+#include "system/command/sys_command.h"
 #include "peripheral/clk/plib_clk.h"
 #include "peripheral/gpio/plib_gpio.h"
 #include "peripheral/evic/plib_evic.h"
 #include "bsp/bsp.h"
+#include "system/debug/sys_debug.h"
 #include "driver/usb/usbhs/drv_usbhs.h"
-#include "usb/usb_device_hid.h"
-#include "usb/usb_hid.h"
 #include "system/console/sys_console.h"
 #include "system/console/src/sys_console_uart_definitions.h"
-#include "system/console/sys_debug.h"
 /* DO NOT REMOVE DURING MERGE */
 #ifdef USBLAN
 #include "driver/usblan/usb_device_usblan.h"
 /* DO NOT REMOVE DURING MERGE */
 #endif /* USBLAN */
-#include "system/console/sys_command.h"
 #include "app.h"
 
 
@@ -212,26 +210,21 @@ void SYS_Tasks ( void );
 
 typedef struct
 {
-
     SYS_MODULE_OBJ  sysTime;
+    SYS_MODULE_OBJ  sysConsole0;
+
+
+    SYS_MODULE_OBJ  drvMiim;
+	SYS_MODULE_OBJ  usbDevObject0;
+
     SYS_MODULE_OBJ  drvMemory0;
     SYS_MODULE_OBJ  netPres;
 
 
-
     SYS_MODULE_OBJ  tcpip;
+    SYS_MODULE_OBJ  sysDebug;
 
-    SYS_MODULE_OBJ  drvMiim;
-
-    /* DO NOT REMOVE DURING MERGE */
-    #ifdef USBLAN
 	SYS_MODULE_OBJ  drvUSBHSObject;
-	SYS_MODULE_OBJ  usbDevObject0;
-    /* DO NOT REMOVE DURING MERGE */
-    #endif /* USBLAN */
-
-    SYS_MODULE_OBJ  sysConsole0;
-    SYS_MODULE_OBJ  sysDebug0;
 
 
 } SYSTEM_OBJECTS;
@@ -243,7 +236,11 @@ typedef struct
 // *****************************************************************************
 // *****************************************************************************
 
+/* DO NOT REMOVE DURING MERGE */
+#if 0
 extern const USB_DEVICE_INIT usbDevInitData; 
+#endif
+/* DO NOT REMOVE DURING MERGE */
 
 
 

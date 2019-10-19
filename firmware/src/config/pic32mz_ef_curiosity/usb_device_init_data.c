@@ -49,50 +49,7 @@
 /**************************************************
  * USB Device Function Driver Init Data
  **************************************************/
-	/****************************************************
- * Class specific descriptor - HID Report descriptor
- ****************************************************/
-const uint8_t hid_rpt0[] =
-{
-	0x05, 0x01, /* Usage Page (Generic Desktop)        */
-    0x09, 0x02, /* Usage (Mouse)                       */
-    0xA1, 0x01, /* Collection (Application)            */
-    0x09, 0x01, /* Usage (Pointer)                     */
-    0xA1, 0x00, /* Collection (Physical)               */
-    0x05, 0x09, /* Usage Page (Buttons)                */
-    0x19, 0x01, /* Usage Minimum (01)                  */
-    0x29, 0x03, /* Usage Maximum (03)                  */
-    0x15, 0x00, /* Logical Minimum (0)                 */
-    0x25, 0x01, /* Logical Maximum (1)                 */
-    0x95, 0x03, /* Report Count (3)                    */
-    0x75, 0x01, /* Report Size (1)                     */
-    0x81, 0x02, /* Input (Data, Variable, Absolute)    */
-    0x95, 0x01, /* Report Count (1)                    */
-    0x75, 0x05, /* Report Size (5)                     */
-    0x81, 0x01, /* Input (Constant)    ;5 bit padding  */
-    0x05, 0x01, /* Usage Page (Generic Desktop)        */
-    0x09, 0x30, /* Usage (X)                           */
-    0x09, 0x31, /* Usage (Y)                           */
-    0x15, 0x81, /* Logical Minimum (-127)              */
-    0x25, 0x7F, /* Logical Maximum (127)               */
-    0x75, 0x08, /* Report Size (8)                     */
-    0x95, 0x02, /* Report Count (2)                    */
-    0x81, 0x06, /* Input (Data, Variable, Relative)    */
-    0xC0, 0xC0
-};
-
-/**************************************************
- * USB Device HID Function Init Data
- **************************************************/
-const USB_DEVICE_HID_INIT hidInit0 =
-{
-	 .hidReportDescriptorSize = sizeof(hid_rpt0),
-	 .hidReportDescriptor = (void *)&hid_rpt0,
-	 .queueSizeReportReceive = 1,
-	 .queueSizeReportSend = 1
-};
-
-
+	
 
 /**************************************************
  * USB Device Layer Function Driver Registration 
@@ -101,15 +58,15 @@ const USB_DEVICE_HID_INIT hidInit0 =
 const USB_DEVICE_FUNCTION_REGISTRATION_TABLE funcRegistrationTable[1] =
 {
     
-	/* HID Function 0 */
+	/* Vendor Function 0 */
     { 
         .configurationValue = 1,    /* Configuration value */ 
         .interfaceNumber = 0,       /* First interfaceNumber of this function */ 
         .speed = USB_SPEED_HIGH|USB_SPEED_FULL,    /* Function Speed */ 
         .numberOfInterfaces = 1,    /* Number of interfaces */
-        .funcDriverIndex = 0,  /* Index of HID Function Driver */
-        .driver = (void*)USB_DEVICE_HID_FUNCTION_DRIVER,    /* USB HID function data exposed to device layer */
-        .funcDriverInit = (void*)&hidInit0    /* Function driver init data */
+        .funcDriverIndex = 0,  /* Index of Function Driver */
+        .driver = NULL,    
+        .funcDriverInit = NULL    /* Function driver init data */
     },
 
 
@@ -179,48 +136,35 @@ const uint8_t highSpeedConfigurationDescriptor[]=
     USB_ATTRIBUTE_DEFAULT | USB_ATTRIBUTE_SELF_POWERED, // Attributes
     50,
 	
-
 	/* Interface Descriptor */
 
-    0x09,                               // Size of this descriptor in bytes
-    USB_DESCRIPTOR_INTERFACE,           // Descriptor Type is Interface descriptor
-    0,                                  // Interface Number
-    0x00,                                  // Alternate Setting Number
-    0x02,                                  // Number of endpoints in this interface
-    USB_HID_CLASS_CODE,                 // Class code
-    USB_HID_SUBCLASS_CODE_NO_SUBCLASS , // Subclass code
-    USB_HID_PROTOCOL_CODE_NONE,         // No Protocol
-    0x00,                                  // Interface string index
+    0x09,                       // Size of this descriptor in bytes
+    USB_DESCRIPTOR_INTERFACE,   // INTERFACE descriptor type
+    0,                          // Interface Number
+    0,                          // Alternate Setting Number
+    2,                          // Number of endpoints in this intf
+    0xFF,                       // Class code
+    0xFF,                       // Subclass code
+    0xFF,                       // Protocol code
+    0,                          // Interface string index
 
-    /* HID Class-Specific Descriptor */
+    /* Endpoint (OUT) Descriptor */
 
-    0x09,                           // Size of this descriptor in bytes
-    USB_HID_DESCRIPTOR_TYPES_HID,   // HID descriptor type
-    0x11,0x01,                      // HID Spec Release Number in BCD format (1.11)
-    0x00,                           // Country Code (0x00 for Not supported)
-    1,                              // Number of class descriptors
-    USB_HID_DESCRIPTOR_TYPES_REPORT,// Report descriptor type
-    USB_DEVICE_16bitTo8bitArrange(sizeof(hid_rpt0)),   // Size of the report descriptor
-
-    /* Endpoint Descriptor */
-
-    0x07,                           // Size of this descriptor in bytes
-    USB_DESCRIPTOR_ENDPOINT,        // Endpoint Descriptor
-    1 | USB_EP_DIRECTION_IN,    // EndpointAddress ( EP1 IN )
-    USB_TRANSFER_TYPE_INTERRUPT,    // Attributes
-    0x40,0x00,                      // Size
-    0x01,                           // Interval
-
-    /* Endpoint Descriptor */
-
-    0x07,                           // Size of this descriptor in bytes
-    USB_DESCRIPTOR_ENDPOINT,        // Endpoint Descriptor
+    0x07,                       // Size of this descriptor in bytes
+    USB_DESCRIPTOR_ENDPOINT,    // Endpoint Descriptor 
     1 | USB_EP_DIRECTION_OUT,   // EndpointAddress ( EP1 OUT )
-    USB_TRANSFER_TYPE_INTERRUPT,    // Attributes
-    0x40,0x00,                      // size
-    0x01,                           // Interval
-    
-    
+    USB_TRANSFER_TYPE_BULK,     // Attributes
+    0x00,0x02,                  // Max packet size of this EP
+    1,                          // Interval
+
+    /* Endpoint (IN) Descriptor */
+
+    0x07,                       // Size of this descriptor in bytes
+    USB_DESCRIPTOR_ENDPOINT,    // Endpoint Descriptor
+    1 | USB_EP_DIRECTION_IN,    // EndpointAddress ( EP1 IN )
+    USB_TRANSFER_TYPE_BULK,     // Attributes
+    0x00,0x02,                  // Max packet size of this EP
+    1,                          // Interval
 
 
 
@@ -250,48 +194,35 @@ const uint8_t fullSpeedConfigurationDescriptor[]=
     USB_ATTRIBUTE_DEFAULT | USB_ATTRIBUTE_SELF_POWERED,     // Attributes
     50,
 	
-
 	/* Interface Descriptor */
 
-    0x09,                               // Size of this descriptor in bytes
-    USB_DESCRIPTOR_INTERFACE,           // Descriptor Type is Interface descriptor
-    0,                                  // Interface Number
-    0x00,                                  // Alternate Setting Number
-    0x02,                                  // Number of endpoints in this interface
-    USB_HID_CLASS_CODE,                 // Class code
-    USB_HID_SUBCLASS_CODE_NO_SUBCLASS , // Subclass code
-    USB_HID_PROTOCOL_CODE_NONE,         // No Protocol
-    0x00,                                  // Interface string index
+    0x09,                       // Size of this descriptor in bytes
+    USB_DESCRIPTOR_INTERFACE,   // INTERFACE descriptor type
+    0,                          // Interface Number
+    0,                          // Alternate Setting Number
+    2,                          // Number of endpoints in this intf
+    0xFF,                       // Class code
+    0xFF,                       // Subclass code
+    0xFF,                       // Protocol code
+    0,                          // Interface string index
 
-    /* HID Class-Specific Descriptor */
+    /* Endpoint (OUT) Descriptor */
 
-    0x09,                           // Size of this descriptor in bytes
-    USB_HID_DESCRIPTOR_TYPES_HID,   // HID descriptor type
-    0x11,0x01,                      // HID Spec Release Number in BCD format (1.11)
-    0x00,                           // Country Code (0x00 for Not supported)
-    1,                              // Number of class descriptors
-    USB_HID_DESCRIPTOR_TYPES_REPORT,// Report descriptor type
-    USB_DEVICE_16bitTo8bitArrange(sizeof(hid_rpt0)),   // Size of the report descriptor
-
-    /* Endpoint Descriptor */
-
-    0x07,                           // Size of this descriptor in bytes
-    USB_DESCRIPTOR_ENDPOINT,        // Endpoint Descriptor
-    1 | USB_EP_DIRECTION_IN,    // EndpointAddress ( EP1 IN )
-    USB_TRANSFER_TYPE_INTERRUPT,    // Attributes
-    0x40,0x00,                      // Size
-    0x01,                           // Interval
-
-    /* Endpoint Descriptor */
-
-    0x07,                           // Size of this descriptor in bytes
-    USB_DESCRIPTOR_ENDPOINT,        // Endpoint Descriptor
+    0x07,                       // Size of this descriptor in bytes
+    USB_DESCRIPTOR_ENDPOINT,    // Endpoint Descriptor 
     1 | USB_EP_DIRECTION_OUT,   // EndpointAddress ( EP1 OUT )
-    USB_TRANSFER_TYPE_INTERRUPT,    // Attributes
-    0x40,0x00,                      // size
-    0x01,                           // Interval
-    
-    
+    USB_TRANSFER_TYPE_BULK,     // Attributes
+    0x40,0x00,                  // Max packet size of this EP
+    1,                          // Interval
+
+    /* Endpoint (IN) Descriptor */
+
+    0x07,                       // Size of this descriptor in bytes
+    USB_DESCRIPTOR_ENDPOINT,    // Endpoint Descriptor
+    1 | USB_EP_DIRECTION_IN,    // EndpointAddress ( EP1 IN )
+    USB_TRANSFER_TYPE_BULK,     // Attributes
+    0x40,0x00,                  // Max packet size of this EP
+    1,                          // Interval
 
 
 
@@ -410,5 +341,10 @@ const USB_DEVICE_INIT usbDevInitData =
     /* Pointer to the USB Driver Functions. */
     .usbDriverInterface = DRV_USBHS_DEVICE_INTERFACE,
 	
+	/* Specify queue size for vendor endpoint read */
+    .queueSizeEndpointRead = 1,
+    
+    /* Specify queue size for vendor endpoint write */
+    .queueSizeEndpointWrite= 1,
 };
 // </editor-fold>

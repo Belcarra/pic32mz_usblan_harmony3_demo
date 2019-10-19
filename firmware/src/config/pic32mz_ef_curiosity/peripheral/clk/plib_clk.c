@@ -98,20 +98,23 @@ void CLK_Initialize( void )
         __builtin_mtc0(12, 0,(__builtin_mfc0(12, 0) | 0x0001)); /* enable interrupts */
     }
 
+    OSCCONbits.FRCDIV = 0;
+
+  
+
+    /* Peripheral Module Disable Configuration */
+    PMD1 = 0xffffffff;
+    PMD2 = 0xffffffff;
+    PMD3 = 0xffffffff;
+    PMD4 = 0xffffffff;
+    PMD5 = 0xfefffffd;
 
     /* XXX Peripheral Module Disable Configuration */
     /* XXX MHC inserted these, but it disables ethernet phy */
-    // XXX PMD1 = 0xffffffff;
-    // XXX PMD2 = 0xffffffff;
-    // XXX PMD3 = 0xffffffff;
-    // XXX PMD4 = 0xffffffff;
-    // XXX PMD5 = 0xfefffffd;
     // XXX PMD6 = 0xfffff0ff;
-    // XXX PMD7 = 0xffffffef;
+    PMD7 = 0xffffffef;
     /* XXX MHC inserted these, but it disables ethernet phy */
 
-
-  
     /* Lock system since done with clock configuration */
     int_flag = (bool)__builtin_disable_interrupts();
 
