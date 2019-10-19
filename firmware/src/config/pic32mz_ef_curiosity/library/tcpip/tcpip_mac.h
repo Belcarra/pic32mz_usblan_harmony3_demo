@@ -161,19 +161,8 @@ typedef enum
     TCPIP_MODULE_MAC_WILC1000       = 0x1080,
     TCPIP_MODULE_MAC_WILC1000_0     = 0x1080,   // alternate numbered name
 
-    /* DO NOT REMOVE DURING MERGE */
-    #ifdef USBLAN
-    // Virtual PIC32WK USBLAN MAC: room for 16 PIC32WK devices
-    // Using 0x10A0 fails
-    // XXX this won't work if PIC32WK is configured
-    TCPIP_MODULE_MAC_USBLAN        = 0x1090,
-    TCPIP_MODULE_MAC_USBLAN_0      = 0x1090,   // alternate numbered name
-    #else /* USBLAN */
-    // Internal/Embedded PIC32WK Wi-Fi MAC: room for 16 PIC32WK devices
     TCPIP_MODULE_MAC_PIC32WK        = 0x1090,
     TCPIP_MODULE_MAC_PIC32WK_0      = 0x1090,   // alternate numbered name
-    /* DO NOT REMOVE DURING MERGE */
-    #endif /* USBLAN */
 
     // External, non MCHP, MAC modules
     TCPIP_MODULE_MAC_EXTERNAL       = 0x4000,
