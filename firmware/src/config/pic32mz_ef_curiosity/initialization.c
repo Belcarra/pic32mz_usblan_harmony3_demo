@@ -642,9 +642,6 @@ SYS_MODULE_OBJ TCPIP_STACK_Init()
 }
 // </editor-fold>
 
-/* DO NOT REMOVE DURING MERGE */
-#ifdef USBLAN
-
 /******************************************************
  * USB Driver Initialization
  ******************************************************/
@@ -676,8 +673,6 @@ const DRV_USBHS_INIT drvUSBInit =
     .usbID = USBHS_ID_0,
 	
 };
-/* DO NOT REMOVE DURING MERGE */
-#endif /* USBLAN */
 
 
 
@@ -798,7 +793,6 @@ void SYS_Initialize ( void* data )
     CORETIMER_Initialize();
 	UART2_Initialize();
 
-	BSP_Initialize();
 
 
     /* Initialize the MIIM Driver */
@@ -816,6 +810,17 @@ void SYS_Initialize ( void* data )
     /*** File System Service Initialization Code ***/
     SYS_FS_Initialize( (const void *) sysFSInit );
 
+     /* Initialize the USB device layer */
+    /* DO NOT REMOVE DURING MERGE */
+    #ifdef USBLAN
+    /* DO NOT REMOVE DURING MERGE                                                           vvvvvvvvvvvvvvvvvvv  */
+    sysObj.usbDevObject0 = USB_DEVICE_Initialize (USB_DEVICE_INDEX_0 , ( SYS_MODULE_INIT* ) &usblanDevInitData);
+    #else /* USBLAN */
+    sysObj.usbDevObject0 = USB_DEVICE_Initialize (USB_DEVICE_INDEX_0 , ( SYS_MODULE_INIT* ) &usbDevInitData);
+    /* DO NOT REMOVE DURING MERGE */
+    #endif /* USBLAN */
+	
+
     sysObj.netPres = NET_PRES_Initialize(0, (SYS_MODULE_INIT*)&netPresInitData);
 
 
@@ -824,17 +829,8 @@ void SYS_Initialize ( void* data )
     SYS_ASSERT(sysObj.tcpip != SYS_MODULE_OBJ_INVALID, "TCPIP_STACK_Init Failed" );
 
 
-    /* DO NOT REMOVE DURING MERGE */
-    #ifdef USBLAN
 	/* Initialize USB Driver */ 
     sysObj.drvUSBHSObject = DRV_USBHS_Initialize(DRV_USBHS_INDEX_0, (SYS_MODULE_INIT *) &drvUSBInit);	
-
-	/* Initialize the USB device layer */
-    //sysObj.usbDevObject0 = USB_DEVICE_Initialize (USB_DEVICE_INDEX_0 , ( SYS_MODULE_INIT* ) & usbDevInitData);
-    sysObj.usbDevObject0 = USB_DEVICE_Initialize (USB_DEVICE_INDEX_0 , ( SYS_MODULE_INIT* ) & usblanDevInitData);
-    /* DO NOT REMOVE DURING MERGE */
-    #endif /* USBLAN */
-
 
 
     APP_Initialize();

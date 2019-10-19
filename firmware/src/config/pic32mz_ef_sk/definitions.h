@@ -79,10 +79,11 @@
 #include "peripheral/gpio/plib_gpio.h"
 #include "peripheral/evic/plib_evic.h"
 #include "bsp/bsp.h"
-#include "system/debug/sys_debug.h"
 #include "driver/usb/usbhs/drv_usbhs.h"
 #include "system/console/sys_console.h"
 #include "system/console/src/sys_console_uart_definitions.h"
+#include "system/debug/sys_debug.h"
+#include "system/command/sys_command.h"
 /* DO NOT REMOVE DURING MERGE */
 #ifdef USBLAN
 #include "driver/usblan/usb_device_usblan.h"

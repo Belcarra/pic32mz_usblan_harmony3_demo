@@ -18,7 +18,7 @@
 		<span id="btn2">?</span> &nbsp;
 		<span id="btn1">?</span> &nbsp;
 		<span id="btn0">?</span></p>
-		<p>Random Number: <span id="pot0" style="font-weight:normal">?</span></p>
+		<p>Random: <span id="pot0" style="font-weight:normal">?</span></p>
 	</div>
 </div>
 
@@ -86,7 +86,7 @@ function updateStatus(xmlData) {
 	loadstat = 'none';
 
 	// Loop over all the LEDs
-	for(i = 0; i < 1; i++) // Temporarily change 3 to 1
+	for(i = 0; i < 3; i++) 
 		document.getElementById('led' + i).style.color = (getXMLValue(xmlData, 'led' + i) == '1') ? '#090' : '#ddd';
 
 	// Loop over all the buttons

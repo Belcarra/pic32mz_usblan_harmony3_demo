@@ -392,7 +392,6 @@
               <itemPath>../src/config/pic32mz_ef_curiosity/usb/src/usb_device_mapping.h</itemPath>
               <itemPath>../src/config/pic32mz_ef_curiosity/usb/src/usb_device_function_driver.h</itemPath>
               <itemPath>../src/config/pic32mz_ef_curiosity/usb/src/usb_external_dependencies.h</itemPath>
-              <itemPath>../src/config/pic32mz_ef_curiosity/usb/src/usb_device_hid_local.h</itemPath>
             </logicalFolder>
             <itemPath>../src/config/pic32mz_ef_curiosity/usb/usb_device.h</itemPath>
             <itemPath>../src/config/pic32mz_ef_curiosity/usb/usb_common.h</itemPath>
@@ -401,8 +400,6 @@
             <itemPath>../src/config/pic32mz_ef_curiosity/usb/usb_host_hub_interface.h</itemPath>
             <itemPath>../src/config/pic32mz_ef_curiosity/usb/usb_host.h</itemPath>
             <itemPath>../src/config/pic32mz_ef_curiosity/usb/usb_hub.h</itemPath>
-            <itemPath>../src/config/pic32mz_ef_curiosity/usb/usb_device_hid.h</itemPath>
-            <itemPath>../src/config/pic32mz_ef_curiosity/usb/usb_hid.h</itemPath>
           </logicalFolder>
           <itemPath>../src/config/pic32mz_ef_curiosity/user.h</itemPath>
           <itemPath>../src/config/pic32mz_ef_curiosity/configuration.h</itemPath>
@@ -554,6 +551,7 @@
                 <itemPath>../src/config/pic32mz_ef_curiosity/library/tcpip/src/tcp.c</itemPath>
                 <itemPath>../src/config/pic32mz_ef_curiosity/library/tcpip/src/zero_conf_helper.c</itemPath>
                 <itemPath>../src/config/pic32mz_ef_curiosity/library/tcpip/src/zero_conf_link_local.c</itemPath>
+                <itemPath>../src/config/pic32mz_ef_curiosity/library/tcpip/src/zero_conf_multicast_dns.c</itemPath>
                 <itemPath>../src/config/pic32mz_ef_curiosity/library/tcpip/src/arp.c</itemPath>
                 <itemPath>../src/config/pic32mz_ef_curiosity/library/tcpip/src/ndp.c</itemPath>
                 <itemPath>../src/config/pic32mz_ef_curiosity/library/tcpip/src/ipv6.c</itemPath>
@@ -678,8 +676,10 @@
       <logicalFolder name="f2" displayName="web_pages" projectFiles="true">
         <logicalFolder name="f1" displayName="dyndns" projectFiles="true">
           <itemPath>../src/web_pages/dyndns/index.htm</itemPath>
+          <itemPath>../src/web_pages/dyndns/index.htm</itemPath>
         </logicalFolder>
         <logicalFolder name="f2" displayName="email" projectFiles="true">
+          <itemPath>../src/web_pages/email/index.htm</itemPath>
           <itemPath>../src/web_pages/email/index.htm</itemPath>
         </logicalFolder>
         <logicalFolder name="f3" displayName="protect" projectFiles="true">
@@ -687,8 +687,13 @@
           <itemPath>../src/web_pages/protect/index.htm</itemPath>
           <itemPath>../src/web_pages/protect/reboot.cgi</itemPath>
           <itemPath>../src/web_pages/protect/reboot.htm</itemPath>
+          <itemPath>../src/web_pages/protect/reboot.htm</itemPath>
+          <itemPath>../src/web_pages/protect/reboot.cgi</itemPath>
+          <itemPath>../src/web_pages/protect/config.htm</itemPath>
+          <itemPath>../src/web_pages/protect/index.htm</itemPath>
         </logicalFolder>
         <logicalFolder name="f4" displayName="snmp" projectFiles="true">
+          <itemPath>../src/web_pages/snmp/snmpconfig.htm</itemPath>
           <itemPath>../src/web_pages/snmp/snmpconfig.htm</itemPath>
         </logicalFolder>
         <itemPath>../src/web_pages/mchp.gif</itemPath>
@@ -709,12 +714,12 @@
         <itemPath>../src/web_pages/forms.htm</itemPath>
       </logicalFolder>
       <itemPath>/home/sl/work/work19/pic32mz/web_net_server_nvm_test2/firmware/src/app_usblan.c</itemPath>
+      <itemPath>../src/rgb_cree_led.c</itemPath>
       <itemPath>../src/app.c</itemPath>
       <itemPath>../src/http_net_print.c</itemPath>
       <itemPath>../src/custom_http_net_app.c</itemPath>
       <itemPath>../src/mpfs_net_img.c</itemPath>
       <itemPath>../src/main.c</itemPath>
-      <itemPath>../src/rgb_cree_led.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
