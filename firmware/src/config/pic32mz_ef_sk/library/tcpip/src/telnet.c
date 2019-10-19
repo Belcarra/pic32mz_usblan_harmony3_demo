@@ -179,7 +179,7 @@ static tcpipSignalHandle       telnetSignalHandle = 0;
 static void _Telnet_MSG(const void* cmdIoParam, const char* str);
 static void _Telnet_PRINT(const void* cmdIoParam, const char* format, ...);
 static void _Telnet_PUTC(const void* cmdIoParam, char c);
-static int _Telnet_DATA_RDY(const void* cmdIoParam);
+static int  _Telnet_DATA_RDY(const void* cmdIoParam);
 static char _Telnet_GETC(const void* cmdIoParam);
 
 static void _Telnet_Deregister(TELNET_DCPT* pDcpt);

@@ -49,7 +49,7 @@
 /**************************************************
  * USB Device Function Driver Init Data
  **************************************************/
-
+	
 
 /**************************************************
  * USB Device Layer Function Driver Registration 
@@ -167,7 +167,7 @@ const uint8_t highSpeedConfigurationDescriptor[]=
     1,                          // Interval
 
 
-    
+
 };
 
 /*******************************************
@@ -225,7 +225,7 @@ const uint8_t fullSpeedConfigurationDescriptor[]=
     1,                          // Interval
 
 
-    
+
 };
 
 /*******************************************
@@ -281,13 +281,13 @@ USB_DEVICE_CONFIGURATION_DESCRIPTORS_TABLE fullSpeedConfigDescSet[1] =
     {
         uint8_t bLength;                                    // Size of this descriptor in bytes
         uint8_t bDscType;                                   // STRING descriptor type
-        uint16_t string[14];                                // String
+        uint16_t string[13];                                // String
     }
     sd002 =
     {
         sizeof(sd002),
         USB_DESCRIPTOR_STRING,
-		{'U','S','B','L','A','N',' ','C','D','C','-','E','E','M'}
+		{'D','u','m','m','y',' ','C','D','C','-','E','E','M'}
     }; 
 /***************************************
  * Array of string descriptors

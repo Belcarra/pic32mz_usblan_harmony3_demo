@@ -3691,7 +3691,7 @@ static void _HTTP_FreeChunk(TCPIP_HTTP_NET_CONN* pHttpCon, TCPIP_HTTP_CHUNK_DCPT
                 if(httpUserCback != 0 && httpUserCback->dynamicAck != 0)
                 {
                     (*httpUserCback->dynamicAck)(pHttpCon, pDynDcpt->dynBuffer, httpUserCback);
-    }
+                }
             }
             _HTTP_ReleaseDynBuffDescriptor(pDynDcpt);
         }

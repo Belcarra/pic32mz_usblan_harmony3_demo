@@ -37,7 +37,9 @@ THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 #include "system_config.h"
 #include "system_definitions.h"
 #include "http_net_print.h"
+/* DO NOT REMOVE DURING MERGE */
 #include "confname.h"
+/* DO NOT REMOVE DURING MERGE */
 #if defined(TCPIP_STACK_USE_HTTP_NET_SERVER)
 
 #include "crypto/crypto.h"
