@@ -615,14 +615,22 @@
             <itemPath>../src/config/pic32mz_ef_curiosity/stdio/xc32_monitor.c</itemPath>
           </logicalFolder>
           <logicalFolder name="f3" displayName="system" projectFiles="true">
+            <logicalFolder name="f5" displayName="command" projectFiles="true">
+              <logicalFolder name="f1" displayName="src" projectFiles="true">
+                <itemPath>/home/sl/work/work19/pic32mz/web_net_server_nvm_test2/firmware/src/config/pic32mz_ef_curiosity/system/command/src/sys_command.c</itemPath>
+              </logicalFolder>
+            </logicalFolder>
             <logicalFolder name="f4" displayName="console" projectFiles="true">
-              <itemPath>/home/sl/work/work19/pic32mz/web_net_server_nvm_test2/firmware/src/config/pic32mz_ef_curiosity/system/console/src/sys_command.c</itemPath>
-              <itemPath>/home/sl/work/work19/pic32mz/web_net_server_nvm_test2/firmware/src/config/pic32mz_ef_curiosity/system/console/src/sys_debug.c</itemPath>
               <itemPath>../src/config/pic32mz_ef_curiosity/system/console/src/sys_console_local.h</itemPath>
               <itemPath>../src/config/pic32mz_ef_curiosity/system/console/src/sys_console.c</itemPath>
               <itemPath>../src/config/pic32mz_ef_curiosity/system/console/src/sys_console_uart.h</itemPath>
               <itemPath>../src/config/pic32mz_ef_curiosity/system/console/src/sys_console_uart_definitions.h</itemPath>
               <itemPath>../src/config/pic32mz_ef_curiosity/system/console/src/sys_console_uart.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="f6" displayName="debug" projectFiles="true">
+              <logicalFolder name="f1" displayName="src" projectFiles="true">
+                <itemPath>/home/sl/work/work19/pic32mz/web_net_server_nvm_test2/firmware/src/config/pic32mz_ef_curiosity/system/debug/src/sys_debug.c</itemPath>
+              </logicalFolder>
             </logicalFolder>
             <logicalFolder name="f3" displayName="fs" projectFiles="true">
               <logicalFolder name="f1" displayName="fat_fs" projectFiles="true">
@@ -646,7 +654,6 @@
           <logicalFolder name="f5" displayName="usb" projectFiles="true">
             <logicalFolder name="f1" displayName="src" projectFiles="true">
               <itemPath>../src/config/pic32mz_ef_curiosity/usb/src/usb_device.c</itemPath>
-              <itemPath>../src/config/pic32mz_ef_curiosity/usb/src/usb_device_hid.c</itemPath>
             </logicalFolder>
           </logicalFolder>
           <logicalFolder name="f10" displayName="usblan" projectFiles="true">
@@ -1080,6 +1087,7 @@
         <property key="ToolFirmwareFilePath"
                   value="Press to browse for a specific firmware version"/>
         <property key="ToolFirmwareOption.UseLatestFirmware" value="true"/>
+        <property key="firmware.download.all" value="false"/>
         <property key="memories.configurationmemory" value="true"/>
         <property key="memories.dataflash" value="true"/>
         <property key="memories.eeprom" value="true"/>
