@@ -113,6 +113,9 @@ extern "C" {
 
 
 
+
+
+
 #define SYS_CMD_ENABLE
 #define SYS_CMD_DEVICE_MAX_INSTANCES       SYS_CONSOLE_DEVICE_MAX_INSTANCES
 #define SYS_CMD_PRINT_BUFFER_SIZE          1024
@@ -298,7 +301,7 @@ extern "C" {
 #define TCPIP_STACK_USE_TELNET_SERVER
 #define TCPIP_TELNET_MAX_CONNECTIONS    2
 #define TCPIP_TELNET_USERNAME           "admin"
-#define TCPIP_TELNET_PASSWORD           "microchip"
+#define TCPIP_TELNET_PASSWORD           ""
 #define TCPIP_TELNET_TASK_TICK_RATE     100
 
 

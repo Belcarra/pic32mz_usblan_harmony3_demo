@@ -72,9 +72,9 @@ void SYS_Tasks ( void )
 {
     /* Maintain system services */
     
-    SYS_FS_Tasks();
+SYS_FS_Tasks();
 
-    SYS_CMD_Tasks();
+SYS_CMD_Tasks();
 
 
 
@@ -83,7 +83,7 @@ void SYS_Tasks ( void )
     DRV_MIIM_Tasks(sysObj.drvMiim);
 
 
-    DRV_MEMORY_Tasks(sysObj.drvMemory0);
+DRV_MEMORY_Tasks(sysObj.drvMemory0);
 
 
 
@@ -92,11 +92,11 @@ void SYS_Tasks ( void )
     USB_DEVICE_Tasks(sysObj.usbDevObject0);
 
 
-    NET_PRES_Tasks(sysObj.netPres);
+NET_PRES_Tasks(sysObj.netPres);
 
 
 
-    TCPIP_STACK_Task(sysObj.tcpip);
+TCPIP_STACK_Task(sysObj.tcpip);
 
 
     /* USBHS Driver Task Routine */ 

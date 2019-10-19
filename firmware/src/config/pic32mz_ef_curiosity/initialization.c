@@ -199,6 +199,7 @@ const SYS_FS_REGISTRATION_TABLE sysFSInit [ SYS_FS_MAX_FILE_SYSTEM_TYPE ] =
 
 /* Net Presentation Layer Data Definitions */
 #include "net_pres/pres/net_pres_enc_glue.h"
+
 static const NET_PRES_TransportObject netPresTransObject0SS = {
     .fpOpen        = (NET_PRES_TransOpen)TCPIP_TCP_ServerOpen,
     .fpLocalBind         = (NET_PRES_TransBind)TCPIP_TCP_Bind,
@@ -314,7 +315,6 @@ static const NET_PRES_INIT_DATA netPresInitData =
 
 
  
-
 
 // <editor-fold defaultstate="collapsed" desc="TCP/IP Stack Initialization Data">
 // *****************************************************************************
@@ -747,6 +747,16 @@ const SYS_CONSOLE_INIT sysConsole0Init =
     .deviceIndex = 0,
 };
 
+// </editor-fold>
+
+
+const SYS_CMD_INIT sysCmdInit =
+{
+    .moduleInit = {0},
+    .consoleCmdIOParam = SYS_CMD_SINGLE_CHARACTER_READ_CONSOLE_IO_PARAM,
+    .consoleIndex = 0,
+};
+
 
 const SYS_DEBUG_INIT debugInit =
 {
@@ -755,13 +765,6 @@ const SYS_DEBUG_INIT debugInit =
     .consoleIndex = 0,
 };
 
-const SYS_CMD_INIT sysCmdInit =
-{
-    .moduleInit = {0},
-    .consoleCmdIOParam = SYS_CMD_SINGLE_CHARACTER_READ_CONSOLE_IO_PARAM,
-};
-
-// </editor-fold>
 
 
 
