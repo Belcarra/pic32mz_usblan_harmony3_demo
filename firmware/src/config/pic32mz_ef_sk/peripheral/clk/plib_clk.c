@@ -107,11 +107,11 @@ void CLK_Initialize( void )
     PMD5 = 0xfefffffd;
 
     /* XXX Peripheral Module Disable Configuration */
-    /* XXX MHC inserted these, but it disables ethernet phy */
+    /* XXX MHC inserted this, but it disables ethernet phy */
     // XXX PMD6 = 0xfffff0ff;
-    PMD7 = 0xffffffef;
-    /* XXX MHC inserted these, but it disables ethernet phy */
+    /* XXX MHC inserted this, but it disables ethernet phy */
 
+    PMD7 = 0xffffffef;
 
   
     /* Lock system since done with clock configuration */
