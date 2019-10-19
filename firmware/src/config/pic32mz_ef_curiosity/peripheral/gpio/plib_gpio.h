@@ -61,15 +61,15 @@
 // *****************************************************************************
 // *****************************************************************************
 
-/*** Macros for BSP_STBY_RST pin ***/
-#define BSP_STBY_RST_Set()               (LATASET = (1<<5))
-#define BSP_STBY_RST_Clear()             (LATACLR = (1<<5))
-#define BSP_STBY_RST_Toggle()            (LATAINV= (1<<5))
-#define BSP_STBY_RST_Get()               ((PORTA >> 5) & 0x1)
-#define BSP_STBY_RST_OutputEnable()      (TRISACLR = (1<<5))
-#define BSP_STBY_RST_InputEnable()       (TRISASET = (1<<5))
-#define BSP_STBY_RST_PIN                  GPIO_PIN_RA5
-/*** Macros for LED3 pin ***/
+/*** Macros for STBY_RST pin ***/
+#define STBY_RST_Set()               (LATASET = (1<<5))
+#define STBY_RST_Clear()             (LATACLR = (1<<5))
+#define STBY_RST_Toggle()            (LATAINV= (1<<5))
+#define STBY_RST_Get()               ((PORTA >> 5) & 0x1)
+#define STBY_RST_OutputEnable()      (TRISACLR = (1<<5))
+#define STBY_RST_InputEnable()       (TRISASET = (1<<5))
+#define STBY_RST_PIN                  GPIO_PIN_RA5
+/*** Macros for LED_3 pin ***/
 #define LED3_Set()               (LATESET = (1<<6))
 #define LED3_Clear()             (LATECLR = (1<<6))
 #define LED3_Toggle()            (LATEINV= (1<<6))
@@ -77,6 +77,14 @@
 #define LED3_OutputEnable()      (TRISECLR = (1<<6))
 #define LED3_InputEnable()       (TRISESET = (1<<6))
 #define LED3_PIN                  GPIO_PIN_RE6
+/*** Macros for WIFI_SLEEP pin ***/
+#define WIFI_SLEEP_Set()               (LATASET = (1<<0))
+#define WIFI_SLEEP_Clear()             (LATACLR = (1<<0))
+#define WIFI_SLEEP_Toggle()            (LATAINV= (1<<0))
+#define WIFI_SLEEP_Get()               ((PORTA >> 0) & 0x1)
+#define WIFI_SLEEP_OutputEnable()      (TRISACLR = (1<<0))
+#define WIFI_SLEEP_InputEnable()       (TRISASET = (1<<0))
+#define WIFI_SLEEP_PIN                  GPIO_PIN_RA0
 /*** Macros for RGB_LED_RED pin ***/
 #define RGB_LED_RED_Set()               (LATBSET = (1<<5))
 #define RGB_LED_RED_Clear()             (LATBCLR = (1<<5))
@@ -101,15 +109,15 @@
 #define RGB_LED_BLUE_OutputEnable()      (TRISBCLR = (1<<0))
 #define RGB_LED_BLUE_InputEnable()       (TRISBSET = (1<<0))
 #define RGB_LED_BLUE_PIN                  GPIO_PIN_RB0
-/*** Macros for BSP_WIFI_INT pin ***/
-#define BSP_WIFI_INT_Set()               (LATFSET = (1<<4))
-#define BSP_WIFI_INT_Clear()             (LATFCLR = (1<<4))
-#define BSP_WIFI_INT_Toggle()            (LATFINV= (1<<4))
-#define BSP_WIFI_INT_Get()               ((PORTF >> 4) & 0x1)
-#define BSP_WIFI_INT_OutputEnable()      (TRISFCLR = (1<<4))
-#define BSP_WIFI_INT_InputEnable()       (TRISFSET = (1<<4))
-#define BSP_WIFI_INT_PIN                  GPIO_PIN_RF4
-/*** Macros for SWITCH1 pin ***/
+/*** Macros for WIFI_INT pin ***/
+#define WIFI_INT_Set()               (LATFSET = (1<<4))
+#define WIFI_INT_Clear()             (LATFCLR = (1<<4))
+#define WIFI_INT_Toggle()            (LATFINV= (1<<4))
+#define WIFI_INT_Get()               ((PORTF >> 4) & 0x1)
+#define WIFI_INT_OutputEnable()      (TRISFCLR = (1<<4))
+#define WIFI_INT_InputEnable()       (TRISFSET = (1<<4))
+#define WIFI_INT_PIN                  GPIO_PIN_RF4
+/*** Macros for SWITCH_1 pin ***/
 #define SWITCH1_Set()               (LATGSET = (1<<12))
 #define SWITCH1_Clear()             (LATGCLR = (1<<12))
 #define SWITCH1_Toggle()            (LATGINV= (1<<12))
@@ -125,7 +133,7 @@
 #define USB_VBUS_SWITCH_OutputEnable()      (TRISGCLR = (1<<13))
 #define USB_VBUS_SWITCH_InputEnable()       (TRISGSET = (1<<13))
 #define USB_VBUS_SWITCH_PIN                  GPIO_PIN_RG13
-/*** Macros for LED1 pin ***/
+/*** Macros for LED_1 pin ***/
 #define LED1_Set()               (LATESET = (1<<3))
 #define LED1_Clear()             (LATECLR = (1<<3))
 #define LED1_Toggle()            (LATEINV= (1<<3))
@@ -133,7 +141,7 @@
 #define LED1_OutputEnable()      (TRISECLR = (1<<3))
 #define LED1_InputEnable()       (TRISESET = (1<<3))
 #define LED1_PIN                  GPIO_PIN_RE3
-/*** Macros for LED2 pin ***/
+/*** Macros for LED_2 pin ***/
 #define LED2_Set()               (LATESET = (1<<4))
 #define LED2_Clear()             (LATECLR = (1<<4))
 #define LED2_Toggle()            (LATEINV= (1<<4))

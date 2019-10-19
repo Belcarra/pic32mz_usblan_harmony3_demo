@@ -199,7 +199,6 @@ const SYS_FS_REGISTRATION_TABLE sysFSInit [ SYS_FS_MAX_FILE_SYSTEM_TYPE ] =
 
 /* Net Presentation Layer Data Definitions */
 #include "net_pres/pres/net_pres_enc_glue.h"
-
 static const NET_PRES_TransportObject netPresTransObject0SS = {
     .fpOpen        = (NET_PRES_TransOpen)TCPIP_TCP_ServerOpen,
     .fpLocalBind         = (NET_PRES_TransBind)TCPIP_TCP_Bind,
@@ -293,8 +292,8 @@ static const NET_PRES_TransportObject netPresTransObject0DC = {
     .fpIsPortDefaultSecure = (NET_PRES_TransIsPortDefaultSecured)TCPIP_Helper_UDPSecurePortGet,
 };
 
-static const NET_PRES_INST_DATA netPresCfgs[] = 
-{  
+static const NET_PRES_INST_DATA netPresCfgs[] =
+{
     {
         .pTransObject_ss = &netPresTransObject0SS,
         .pTransObject_sc = &netPresTransObject0SC,
@@ -307,12 +306,13 @@ static const NET_PRES_INST_DATA netPresCfgs[] =
     },
 };
 
-static const NET_PRES_INIT_DATA netPresInitData = 
+static const NET_PRES_INIT_DATA netPresInitData =
 {
     .numLayers = sizeof(netPresCfgs) / sizeof(NET_PRES_INST_DATA),
     .pInitData = netPresCfgs
 };
-  
+
+
  
 
 
@@ -803,12 +803,16 @@ void SYS_Initialize ( void* data )
 
     sysObj.sysTime = SYS_TIME_Initialize(SYS_TIME_INDEX_0, (SYS_MODULE_INIT *)&sysTimeInitData);
     sysObj.sysConsole0 = SYS_CONSOLE_Initialize(SYS_CONSOLE_INDEX_0, (SYS_MODULE_INIT *)&sysConsole0Init);
-    sysObj.sysDebug0 = SYS_DEBUG_Initialize(SYS_DEBUG_INDEX_0, (SYS_MODULE_INIT*)&debugInit);
+
     SYS_CMD_Initialize((SYS_MODULE_INIT*)&sysCmdInit);
+
+    sysObj.sysDebug = SYS_DEBUG_Initialize(SYS_DEBUG_INDEX_0, (SYS_MODULE_INIT*)&debugInit);
+
 
 
     /*** File System Service Initialization Code ***/
     SYS_FS_Initialize( (const void *) sysFSInit );
+
 
      /* Initialize the USB device layer */
     /* DO NOT REMOVE DURING MERGE */
@@ -820,6 +824,7 @@ void SYS_Initialize ( void* data )
     /* DO NOT REMOVE DURING MERGE */
     #endif /* USBLAN */
 	
+
 
     sysObj.netPres = NET_PRES_Initialize(0, (SYS_MODULE_INIT*)&netPresInitData);
 

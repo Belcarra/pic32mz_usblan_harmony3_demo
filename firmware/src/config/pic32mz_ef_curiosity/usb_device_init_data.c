@@ -61,7 +61,7 @@ const USB_DEVICE_FUNCTION_REGISTRATION_TABLE funcRegistrationTable[1] =
 	/* Vendor Function 0 */
     { 
         .configurationValue = 1,    /* Configuration value */ 
-        .interfaceNumber = 9,       /* First interfaceNumber of this function */ 
+        .interfaceNumber = 0,       /* First interfaceNumber of this function */ 
         .speed = USB_SPEED_HIGH|USB_SPEED_FULL,    /* Function Speed */ 
         .numberOfInterfaces = 1,    /* Number of interfaces */
         .funcDriverIndex = 0,  /* Index of Function Driver */
@@ -130,7 +130,7 @@ const uint8_t highSpeedConfigurationDescriptor[]=
     0x09,                                                   // Size of this descriptor in bytes
     USB_DESCRIPTOR_CONFIGURATION,                           // Descriptor Type
     USB_DEVICE_16bitTo8bitArrange(32),                      //(32 Bytes)Size of the Configuration descriptor
-    10,                                                      // Number of interfaces in this configuration
+    1,                                                      // Number of interfaces in this configuration
     0x01,                                               // Index value of this configuration
     0x00,                                               // Configuration string index
     USB_ATTRIBUTE_DEFAULT | USB_ATTRIBUTE_SELF_POWERED, // Attributes
@@ -140,7 +140,7 @@ const uint8_t highSpeedConfigurationDescriptor[]=
 
     0x09,                       // Size of this descriptor in bytes
     USB_DESCRIPTOR_INTERFACE,   // INTERFACE descriptor type
-    9,                          // Interface Number
+    0,                          // Interface Number
     0,                          // Alternate Setting Number
     2,                          // Number of endpoints in this intf
     0xFF,                       // Class code
@@ -188,7 +188,7 @@ const uint8_t fullSpeedConfigurationDescriptor[]=
     0x09,                                                   // Size of this descriptor in bytes
     USB_DESCRIPTOR_CONFIGURATION,                           // Descriptor Type
     USB_DEVICE_16bitTo8bitArrange(32),                      //(32 Bytes)Size of the Configuration descriptor
-    10,                                                      // Number of interfaces in this configuration
+    1,                                                      // Number of interfaces in this configuration
     0x01,                                                   // Index value of this configuration
     0x00,                                                   // Configuration string index
     USB_ATTRIBUTE_DEFAULT | USB_ATTRIBUTE_SELF_POWERED,     // Attributes
@@ -198,7 +198,7 @@ const uint8_t fullSpeedConfigurationDescriptor[]=
 
     0x09,                       // Size of this descriptor in bytes
     USB_DESCRIPTOR_INTERFACE,   // INTERFACE descriptor type
-    9,                          // Interface Number
+    0,                          // Interface Number
     0,                          // Alternate Setting Number
     2,                          // Number of endpoints in this intf
     0xFF,                       // Class code
