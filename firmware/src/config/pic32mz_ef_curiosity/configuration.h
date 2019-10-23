@@ -218,8 +218,12 @@ extern "C" {
 #define TCPIP_ZC_LL_MAX_CONFLICTS 10
 #define TCPIP_ZC_LL_RATE_LIMIT_INTERVAL 60
 #define TCPIP_ZC_LL_DEFEND_INTERVAL 10
+
+/* VERIFY THAT MHC gets 0x prefix correct */
 #define TCPIP_ZC_LL_IPV4_LLBASE 0xa9fe0100
 #define TCPIP_ZC_LL_IPV4_LLBASE_MASK 0x0000ffff
+/* VERIFY THAT MHC gets 0x prefix correct */
+
 #define TCPIP_ZC_LL_TASK_TICK_RATE 333
 
 
