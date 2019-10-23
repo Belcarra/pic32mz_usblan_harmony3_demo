@@ -477,16 +477,6 @@ extern "C" {
 #define USB_DEVICE_EP0_BUFFER_SIZE                          64
 
 
-/* DO NOT REMOVE DURING MERGE */
-#ifdef USBLAN
-/* Maximum instances of USBLAN function driver */
-#define USB_DEVICE_USBLAN_INSTANCES_NUMBER     1
-#endif /* USBLAN */
-/* DO NOT REMOVE DURING MERGE */
-
-
-
-
 /*** TCPIP MAC Configuration ***/
 #define TCPIP_EMAC_TX_DESCRIPTORS				    8
 #define TCPIP_EMAC_RX_DESCRIPTORS				    6
