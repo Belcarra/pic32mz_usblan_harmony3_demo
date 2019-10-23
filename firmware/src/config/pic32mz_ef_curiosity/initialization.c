@@ -425,13 +425,6 @@ const TCPIP_MODULE_MAC_PIC32INT_CONFIG tcpipMACPIC32INTInitData =
     .pPhyInit               = &tcpipPhyInitData,
 };
 
-/* DO NOT REMOVE DURING MERGE */
-#ifdef USBLAN
-/*** ETH MAC Initialization Data for USBLAN ***/
-extern const TCPIP_MODULE_MAC_PIC32INT_CONFIG tcpipMACUSBLANInitData;
-/*** end of ETH MAC Initialization Data for USBLAN ***/
-/* DO NOT REMOVE DURING MERGE */
-#endif /* USBLAN */
 
 
 
@@ -523,6 +516,13 @@ const TCPIP_NETWORK_CONFIG __attribute__((unused))  TCPIP_HOSTS_CONFIGURATION[] 
 };
 
 
+/* DO NOT REMOVE DURING MERGE */
+#ifdef USBLAN
+/*** ETH MAC Initialization Data for USBLAN ***/
+extern const TCPIP_MODULE_MAC_PIC32INT_CONFIG tcpipMACUSBLANInitData;
+/*** end of ETH MAC Initialization Data for USBLAN ***/
+/* DO NOT REMOVE DURING MERGE */
+#endif /* USBLAN */
 
 const TCPIP_STACK_MODULE_CONFIG TCPIP_STACK_MODULE_CONFIG_TBL [] =
 {
