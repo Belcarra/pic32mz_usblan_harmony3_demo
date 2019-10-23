@@ -180,26 +180,6 @@ void APP_Tasks ( void )
             appData.state = APP_Tasks_USBLAN_Enable() ? APP_TCPIP_WAIT_INIT : APP_USB_ENABLE;
             break;
 
-            #if 0
-            /* Open the device layer */
-            appData.usbDevHandle = USB_DEVICE_Open( USB_DEVICE_INDEX_0, DRV_IO_INTENT_READWRITE );
-
-            if(appData.usbDevHandle != USB_DEVICE_HANDLE_INVALID)
-            {
-                /* Register a callback with device layer to get event notification (for end point 0) */
-                USB_DEVICE_EventHandlerSet(appData.usbDevHandle, APP_USBDeviceEventHandler, 0);
-
-                //appData.state = APP_STATE_WAIT_FOR_CONFIGURATION;
-                appData.state = APP_TCPIP_WAIT_INIT;
-            }
-            else
-            {
-                /* The Device Layer is not ready to be opened. We should try
-                 * again later. */
-            }
-            #endif
-
-            break;
             /* DO NOT REMOVE DURING MERGE */
             #endif /* USBLAN */
 
