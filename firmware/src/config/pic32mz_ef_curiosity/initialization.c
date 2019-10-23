@@ -549,13 +549,14 @@ const TCPIP_STACK_MODULE_CONFIG TCPIP_STACK_MODULE_CONFIG_TBL [] =
     { TCPIP_MODULE_MANAGER,         &tcpipHeapConfig },             // TCPIP_MODULE_MANAGER
 
     // MAC modules
+    
+    {TCPIP_MODULE_MAC_PIC32INT,     &tcpipMACPIC32INTInitData},     // TCPIP_MODULE_MAC_PIC32INT
+
     /* DO NOT REMOVE DURING MERGE */
     #ifdef USBLAN
     {TCPIP_MODULE_MAC_EXTERNAL,       &tcpipMACUSBLANInitData},
     /* DO NOT REMOVE DURING MERGE */
     #endif /* USBLAN */
-
-    {TCPIP_MODULE_MAC_PIC32INT,     &tcpipMACPIC32INTInitData},     // TCPIP_MODULE_MAC_PIC32INT
 
 
 };
