@@ -1,6 +1,6 @@
 # Web Net Server Demo
 
-This is demonstration kit for the **Belcarra PIC32MZ USBLAN Driver** using either of **Microchip's* 
+This is a demonstration kit for the **Belcarra PIC32MZ USBLAN Driver** using either of **Microchip's* 
 **PIC32MZ EF Starter Kit** or **PIC32MZ EF Curiosity Board**.
 
 It demonstrates how **Networking over USB** can be used as an alternative to **Ethernet** or
@@ -150,8 +150,10 @@ to setup of the correct pin configuration.
 
 The following pins were added to the pin configuration:
 
-| PIC32MZ EF Curiosity Tx/RX Pins | |
+PIC32MZ EF Curiosity Tx/RX Pins
+
 | Pin | Signal |
+| --- | ---------|
 | 2 | BSP_STBY_RST |
 | 7 | U2TX |
 | 8 | U2RX |
