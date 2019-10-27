@@ -169,11 +169,9 @@ typedef enum
     APP_MOUNT_DISK = 0,
 
     /* DO NOT REMOVE DURING MERGE */
-    #ifdef USBLAN
     /* This will enable USBLAN */
     APP_USB_ENABLE,
     /* DO NOT REMOVE DURING MERGE */
-    #endif /* USBLAN */
 
     /* In this state, the application waits for the initialization of the TCP/IP stack
        to complete. */

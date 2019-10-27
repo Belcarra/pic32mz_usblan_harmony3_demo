@@ -161,27 +161,18 @@ void APP_Tasks ( void )
             {
                 SYS_CONSOLE_PRINT("SYS_Initialize: The %s File System is mounted\r\n", SYS_FS_MPFS_STRING);
                 /* DO NOT REMOVE DURING MERGE */
-                #ifdef USBLAN
                 appData.state = APP_USB_ENABLE;
-                #else /* USBLAN */
-                appData.state = APP_TCPIP_WAIT_INIT;
                 /* DO NOT REMOVE DURING MERGE */
-                #endif /* USBLAN */
-
             }
             break;
 
 
             /* DO NOT REMOVE DURING MERGE */
-            #ifdef USBLAN
         case APP_USB_ENABLE:
-
             SYS_PRINT("%s: APP_USB_ENABLE\r\n", __FUNCTION__);
             appData.state = APP_Tasks_USBLAN_Enable() ? APP_TCPIP_WAIT_INIT : APP_USB_ENABLE;
             break;
-
             /* DO NOT REMOVE DURING MERGE */
-            #endif /* USBLAN */
 
         case APP_TCPIP_WAIT_INIT:
             tcpipStat = TCPIP_STACK_Status(sysObj.tcpip);
