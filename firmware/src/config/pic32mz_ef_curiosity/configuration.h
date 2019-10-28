@@ -243,44 +243,6 @@ extern "C" {
 
 
 
-#define TCPIP_IPV6_NDP_MAX_RTR_SOLICITATION_DELAY 	1
-#define TCPIP_IPV6_NDP_RTR_SOLICITATION_INTERVAL 	4
-#define TCPIP_IPV6_NDP_MAX_RTR_SOLICITATIONS 		3
-#define TCPIP_IPV6_NDP_MAX_MULTICAST_SOLICIT 		3
-#define TCPIP_IPV6_NDP_MAX_UNICAST_SOLICIT 			3
-#define TCPIP_IPV6_NDP_MAX_ANYCAST_DELAY_TIME 		1
-#define TCPIP_IPV6_NDP_MAX_NEIGHBOR_ADVERTISEMENT 	3
-#define TCPIP_IPV6_NDP_REACHABLE_TIME 				30
-#define TCPIP_IPV6_NDP_RETRANS_TIMER 				1
-#define TCPIP_IPV6_NDP_DELAY_FIRST_PROBE_TIME 		5
-#define TCPIP_IPV6_NDP_VALID_LIFETIME_TWO_HOURS 	(60 * 60 * 2)
-#define TCPIP_IPV6_MTU_INCREASE_TIMEOUT 			600
-#define TCPIP_IPV6_NDP_TASK_TIMER_RATE 				32
-
-
-/* Network Configuration Index 0 */
-#define TCPIP_NETWORK_DEFAULT_INTERFACE_NAME_IDX0	"ETHMAC"
-#define TCPIP_IF_ETHMAC
-
-#define TCPIP_NETWORK_DEFAULT_HOST_NAME_IDX0				"MCHPBOARD_E"
-#define TCPIP_NETWORK_DEFAULT_MAC_ADDR_IDX0				0
-
-#define TCPIP_NETWORK_DEFAULT_IP_ADDRESS_IDX0			"192.168.100.10"
-#define TCPIP_NETWORK_DEFAULT_IP_MASK_IDX0			"255.255.255.0"
-#define TCPIP_NETWORK_DEFAULT_GATEWAY_IDX0			"192.168.100.1"
-#define TCPIP_NETWORK_DEFAULT_DNS_IDX0				"192.168.100.1"
-#define TCPIP_NETWORK_DEFAULT_SECOND_DNS_IDX0			"0.0.0.0"
-#define TCPIP_NETWORK_DEFAULT_POWER_MODE_IDX0			"full"
-#define TCPIP_NETWORK_DEFAULT_INTERFACE_FLAGS_IDX0			\
-													TCPIP_NETWORK_CONFIG_DHCP_CLIENT_ON |\
-													TCPIP_NETWORK_CONFIG_DNS_CLIENT_ON |\
-													TCPIP_NETWORK_CONFIG_IP_STATIC
-													
-#define TCPIP_NETWORK_DEFAULT_MAC_DRIVER_IDX0			DRV_ETHMAC_PIC32MACObject
-
-
-
-
 /*** IPv6 Configuration ***/
 #define TCPIP_IPV6_DEFAULT_ALLOCATION_BLOCK_SIZE 		64
 #define TCPIP_IPV6_MINIMUM_LINK_MTU 					1280
@@ -344,45 +306,6 @@ extern "C" {
 #define TCPIP_SMTPC_SKT_TX_BUFF_SIZE			    0
 #define TCPIP_SMTPC_SKT_RX_BUFF_SIZE			    0
 #define TCPIP_SMTPC_TASK_TICK_RATE			        55
-
-
-
-/*** announce Configuration ***/
-#define TCPIP_STACK_USE_ANNOUNCE
-#define TCPIP_ANNOUNCE_MAX_PAYLOAD 	512
-#define TCPIP_ANNOUNCE_TASK_RATE    333
-#define TCPIP_ANNOUNCE_NETWORK_DIRECTED_BCAST             			false
-
-
-
-/*** UDP Configuration ***/
-#define TCPIP_UDP_MAX_SOCKETS		                	10
-#define TCPIP_UDP_SOCKET_DEFAULT_TX_SIZE		    	512
-#define TCPIP_UDP_SOCKET_DEFAULT_TX_QUEUE_LIMIT    	 	3
-#define TCPIP_UDP_SOCKET_DEFAULT_RX_QUEUE_LIMIT			3
-#define TCPIP_UDP_USE_POOL_BUFFERS   false
-#define TCPIP_UDP_USE_TX_CHECKSUM             			true
-#define TCPIP_UDP_USE_RX_CHECKSUM             			true
-#define TCPIP_UDP_COMMANDS   false
-
-
-
-
-#define TCPIP_INTMAC_PHY_CONFIG_FLAGS     			\
-                                                    DRV_ETHPHY_CFG_AUTO | \
-													0                                                    
-
-#define TCPIP_INTMAC_PHY_LINK_INIT_DELAY  			500
-#define TCPIP_INTMAC_PHY_ADDRESS		    			0
-#define DRV_ETHPHY_INSTANCES_NUMBER					1
-#define DRV_ETHPHY_CLIENTS_NUMBER					1
-#define DRV_ETHPHY_INDEX		        			1
-#define DRV_ETHPHY_PERIPHERAL_ID					1
-#define DRV_ETHPHY_NEG_INIT_TMO		    			1
-#define DRV_ETHPHY_NEG_DONE_TMO		    			2000
-#define DRV_ETHPHY_RESET_CLR_TMO					500
-#define DRV_ETHPHY_USE_DRV_MIIM                     true
-
 
 
 
@@ -468,17 +391,11 @@ extern "C" {
 #define TCPIP_NBNS_TASK_TICK_RATE   110
 
 
-/* Number of Endpoints used */
-#define DRV_USBHS_ENDPOINTS_NUMBER                        3
 
-/* The USB Device Layer will not initialize the USB Driver */
-#define USB_DEVICE_DRIVER_INITIALIZE_EXPLICIT
+/* DO NOT REMOVE DURING MERGE */
+#include "driver/usblan/usb_config.h"
+/* DO NOT REMOVE DURING MERGE */
 
-/* Maximum device layer instances */
-#define USB_DEVICE_INSTANCES_NUMBER                         1
-
-/* EP0 size in bytes */
-#define USB_DEVICE_EP0_BUFFER_SIZE                          64
 
 
 /*** TCPIP MAC Configuration ***/
@@ -577,9 +494,7 @@ extern "C" {
 													
 #define TCPIP_NETWORK_DEFAULT_MAC_DRIVER_IDX0			DRV_ETHMAC_PIC32MACObject
 
-
 /* DO NOT REMOVE DURING MERGE */
-#ifdef USBLAN
 /*** Network Configuration Index 1 USBLAN ***/
 #define TCPIP_NETWORK_DEFAULT_INTERFACE_NAME_IDX1       "USBLAN"
 #define TCPIP_IF_USBLAN
@@ -600,7 +515,6 @@ extern "C" {
 
 #define TCPIP_NETWORK_DEFAULT_MAC_DRIVER_IDX1           DRV_USBLAN_MACObject
 /*** end of Network Configuration Index 1 USBLAN ***/
-#endif /* USBLAN */
 /* DO NOT REMOVE DURING MERGE */
 
 
@@ -678,10 +592,14 @@ extern "C" {
 /*** TCP/IP Configuration ***/
 
 
+/* DO NOT REMOVE DURING MERGE */
+#if 0
 /* Endpoint Transfer Queue Size for both read and
    write. Applicable to all instances of the
    function driver */
 #define USB_DEVICE_ENDPOINT_QUEUE_DEPTH_COMBINED 2
+#endif
+/* DO NOT REMOVE DURING MERGE */
 
 
 /*** SNTP Configuration ***/

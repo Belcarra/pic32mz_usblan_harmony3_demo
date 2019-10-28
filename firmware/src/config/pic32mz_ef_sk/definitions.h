@@ -84,11 +84,9 @@
 #include "system/debug/sys_debug.h"
 #include "system/command/sys_command.h"
 /* DO NOT REMOVE DURING MERGE */
-#ifdef USBLAN
 #include "driver/usblan/drv_usblan.h"
 #include "driver/usblan/usb_device_usblan.h"
 /* DO NOT REMOVE DURING MERGE */
-#endif /* USBLAN */
 #include "app.h"
 
 

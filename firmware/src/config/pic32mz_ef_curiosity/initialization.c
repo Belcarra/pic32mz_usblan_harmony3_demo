@@ -476,7 +476,6 @@ TCPIP_STACK_HEAP_INTERNAL_CONFIG tcpipHeapConfig =
 const TCPIP_NETWORK_CONFIG __attribute__((unused))  TCPIP_HOSTS_CONFIGURATION[] =
 {
 /* DO NOT REMOVE DURING MERGE */
-#ifdef USBLAN
 /*** Network Configuration Index 1 for USBLAN 
  * IDX1 is used to avoid patching the ETHMAC driver config.
  * This is placed first in the array to allow iperf to work. The tcpip iperf.c 
@@ -497,7 +496,6 @@ const TCPIP_NETWORK_CONFIG __attribute__((unused))  TCPIP_HOSTS_CONFIGURATION[] 
     },
 /*** end of Network Configuration Index 1 for USBLAN ***/
 /* DO NOT REMOVE DURING MERGE */
-#endif /* USBLAN */
 
 	/*** Network Configuration Index 0 ***/
     {
@@ -517,12 +515,22 @@ const TCPIP_NETWORK_CONFIG __attribute__((unused))  TCPIP_HOSTS_CONFIGURATION[] 
 
 
 /* DO NOT REMOVE DURING MERGE */
-#ifdef USBLAN
-/*** ETH MAC Initialization Data for USBLAN ***/
-extern const TCPIP_MODULE_MAC_PIC32INT_CONFIG tcpipMACUSBLANInitData;
-/*** end of ETH MAC Initialization Data for USBLAN ***/
+const TCPIP_MODULE_MAC_PIC32INT_CONFIG tcpipMACUSBLANInitData =
+{
+    .nTxDescriptors         = TCPIP_EMAC_TX_DESCRIPTORS,
+    .rxBuffSize             = TCPIP_EMAC_RX_BUFF_SIZE,
+    .nRxDescriptors         = TCPIP_EMAC_RX_DESCRIPTORS,
+    .nRxDedicatedBuffers    = TCPIP_EMAC_RX_DEDICATED_BUFFERS,
+    .nRxInitBuffers         = TCPIP_EMAC_RX_INIT_BUFFERS,
+    .rxLowThreshold         = TCPIP_EMAC_RX_LOW_THRESHOLD,
+    .rxLowFill              = TCPIP_EMAC_RX_LOW_FILL,
+    .linkInitDelay          = 0,
+    .ethFlags               = 0,
+    .ethModuleId            = 0,
+    .pPhyBase               = 0,
+    .pPhyInit               = 0
+};
 /* DO NOT REMOVE DURING MERGE */
-#endif /* USBLAN */
 
 const TCPIP_STACK_MODULE_CONFIG TCPIP_STACK_MODULE_CONFIG_TBL [] =
 {
@@ -553,12 +561,8 @@ const TCPIP_STACK_MODULE_CONFIG TCPIP_STACK_MODULE_CONFIG_TBL [] =
     {TCPIP_MODULE_MAC_PIC32INT,     &tcpipMACPIC32INTInitData},     // TCPIP_MODULE_MAC_PIC32INT
 
     /* DO NOT REMOVE DURING MERGE */
-    #ifdef USBLAN
     {TCPIP_MODULE_MAC_EXTERNAL,       &tcpipMACUSBLANInitData},
     /* DO NOT REMOVE DURING MERGE */
-    #endif /* USBLAN */
-
-
 };
 
 /*********************************************************************
@@ -772,13 +776,8 @@ void SYS_Initialize ( void* data )
 
      /* Initialize the USB device layer */
     /* DO NOT REMOVE DURING MERGE */
-    #ifdef USBLAN
-    /* DO NOT REMOVE DURING MERGE                                                           vvvvvvvvvvvvvvvvvvv  */
     sysObj.usbDevObject0 = USB_DEVICE_Initialize (USB_DEVICE_INDEX_0 , ( SYS_MODULE_INIT* ) &usblanDevInitData);
-    #else /* USBLAN */
-    sysObj.usbDevObject0 = USB_DEVICE_Initialize (USB_DEVICE_INDEX_0 , ( SYS_MODULE_INIT* ) &usbDevInitData);
     /* DO NOT REMOVE DURING MERGE */
-    #endif /* USBLAN */
 	
 
 
