@@ -427,29 +427,6 @@ const TCPIP_MODULE_MAC_PIC32INT_CONFIG tcpipMACPIC32INTInitData =
 
 
 
-/* DO NOT REMOVE DURING MERGE */
-/*** ETH MAC Initialization Data for USBLAN ***/
-const TCPIP_MODULE_MAC_PIC32INT_CONFIG tcpipMACUSBLANInitData =
-{
-    .nTxDescriptors         = TCPIP_EMAC_TX_DESCRIPTORS,
-    .rxBuffSize             = TCPIP_EMAC_RX_BUFF_SIZE,
-    .nRxDescriptors         = TCPIP_EMAC_RX_DESCRIPTORS,
-    .nRxDedicatedBuffers    = TCPIP_EMAC_RX_DEDICATED_BUFFERS,
-    .nRxInitBuffers         = TCPIP_EMAC_RX_INIT_BUFFERS,
-    .rxLowThreshold         = TCPIP_EMAC_RX_LOW_THRESHOLD,
-    .rxLowFill              = TCPIP_EMAC_RX_LOW_FILL,
-    .linkInitDelay          = 0,
-    .ethFlags               = 0,
-    .ethModuleId            = 0,
-    .pPhyBase               = 0,
-    .pPhyInit               = 0
-};
-/*** end of ETH MAC Initialization Data for USBLAN ***/
-/* DO NOT REMOVE DURING MERGE */
-
-
-
-
 
 /*** Zeroconfig initialization data ***/
 const ZCLL_MODULE_CONFIG tcpipZCLLInitData =
@@ -533,6 +510,24 @@ const TCPIP_NETWORK_CONFIG __attribute__((unused))  TCPIP_HOSTS_CONFIGURATION[] 
        &TCPIP_NETWORK_DEFAULT_MAC_DRIVER_IDX0,           // pMacObject
     },
 };
+
+/* DO NOT REMOVE DURING MERGE */
+const TCPIP_MODULE_MAC_PIC32INT_CONFIG tcpipMACUSBLANInitData =
+{
+    .nTxDescriptors         = TCPIP_EMAC_TX_DESCRIPTORS,
+    .rxBuffSize             = TCPIP_EMAC_RX_BUFF_SIZE,
+    .nRxDescriptors         = TCPIP_EMAC_RX_DESCRIPTORS,
+    .nRxDedicatedBuffers    = TCPIP_EMAC_RX_DEDICATED_BUFFERS,
+    .nRxInitBuffers         = TCPIP_EMAC_RX_INIT_BUFFERS,
+    .rxLowThreshold         = TCPIP_EMAC_RX_LOW_THRESHOLD,
+    .rxLowFill              = TCPIP_EMAC_RX_LOW_FILL,
+    .linkInitDelay          = 0,
+    .ethFlags               = 0,
+    .ethModuleId            = 0,
+    .pPhyBase               = 0,
+    .pPhyInit               = 0
+};
+/* DO NOT REMOVE DURING MERGE */
 
 
 const TCPIP_STACK_MODULE_CONFIG TCPIP_STACK_MODULE_CONFIG_TBL [] =
