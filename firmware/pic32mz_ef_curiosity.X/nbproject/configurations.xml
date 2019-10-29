@@ -540,7 +540,8 @@
       <itemPath>../src/mpfs_net_img.c</itemPath>
       <itemPath>../src/main.c</itemPath>
       <itemPath>../src/config/pic32mz_ef_curiosity/driver/usblan/app_usblan.c</itemPath>
-      <itemPath>../src/config/pic32mz_ef_curiosity/driver/usblan/usblan-config.c</itemPath>
+      <itemPath>../src/app_usblan.c</itemPath>
+      <itemPath>../src/usblan-config.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

@@ -177,7 +177,7 @@ The default are:
 
 
 
-###Date: Sun Oct 27 23:35:44 PDT 2019
+###Date: Tue Oct 29 16:24:18 PDT 2019
 ###ProjDir: pic32mzusblan
 ###ConfName: pic32mz_ef_sk
 ###Device: PIC32MZ2048EFM144
