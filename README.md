@@ -13,12 +13,20 @@ This kit is based on the [**Microchip Harmony 3 Framework demonstration project*
 
     - apps/tcpip/web_net_server_nvm_mpfs
 
-The kit was developed using [**MPLAB X IDE v5.20**](https://www.microchip.com/mplab/mplab-x-ide/0). 
+The kit was developed using:
+    - [**MPLAB X IDE v5.20**](https://www.microchip.com/mplab/mplab-x-ide/0)
+    - [**MPLAB XC32 Compiler**](https://www.microchip.com/mplab/compilers). 
+
+It is not necessary to have the **Harmony 3 Framework* or the **MPLAB Code Configurator** installed. 
+
+Download:
+    - [**MPLAB X IDE** See Download and Install MPLAB X IDE](https://www.microchip.com/mplab/mplab-harmony)
+    - [**MPLAB XC32 Compiler** See Downloads tab ](https://www.microchip.com/mplab/compilers). 
 
 There are two projects available in the kit:
 
-    - pic32mz_ef_sk.X - support for the PIC32MZ_EF_SK Ethernet Starter Kit
-    - pic32mz_ef_curiosity.X - support of the PIC32MZ_EF_CURIOSITY Board
+    - firmware/pic32mz_ef_sk.X - support for the PIC32MZ_EF_SK Ethernet Starter Kit
+    - firmware/pic32mz_ef_curiosity.X - support of the PIC32MZ_EF_CURIOSITY Board
 
 The sample application was been modified to add the following Harmony 3 components:
 
@@ -27,16 +35,18 @@ The sample application was been modified to add the following Harmony 3 componen
     - net Zeroconf
     - USB High Speed Driver
     - USB Device Driver
-    - Belcarra USBLAN Function Driver
+    - Belcarra PIC32MZ USBLAN Function Driver
 
-The **Belcarra PIC32MZ USBLAN Driver** is a TCPIP NIC driver that uses the PIC32MZ USB High Speed Device Driver
-to connect to another system. It uses CDC-EEM to transfer network packets to and from the other system. The driver is distributed in this project as a libary archive (libusblan.a)
+The **Belcarra PIC32MZ USBLAN Function Driver** is a TCPIP NIC driver that uses the PIC32MZ USB High Speed Device Driver
+to connect to another system. It uses CDC-EEM to transfer network packets to and from the other system. 
+The driver is distributed in this project as a libary archive (libusblan.a)
 
 ## Testing
 
 To test with this project you need:
 
     - have MPLAB X IDE installed
+    - have the Microchip XC compiler installed
     - have either the PIC32MZ EF SK or PIC32MZ EF Curiosity Board
 
 The project has all of the files needed to compile and build the test application. It is not necessary to have the Harmony 3 Framework installed. 
