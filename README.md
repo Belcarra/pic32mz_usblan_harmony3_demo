@@ -30,7 +30,10 @@ The sample application was been modified to add the following Harmony 3 componen
     * USB Device Driver
     * Belcarra USBLAN Function Driver
 
-This demonstration can be used with or without the Belcarra USBLAN Driver.
+## Belcarra Windows USBLAN 
+This demonstration can be used with or without the &Belcarra USBLAN Driver.* A demonstration kit containing Windows drivers that support this demonstration project is available here:
+
+    * [belcarra_usblan_iot_demo_drivers] (https://github.com/Belcarra/belcarra_usblan_iot_demo_drivers.git)
 
 
 ## Supported Microchip Evaluation Boards
