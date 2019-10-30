@@ -11,7 +11,7 @@ the PIC32MZ board and a Windows, Mac or Linux host.
 
 This kit is based on the [**Microchip Harmony 3 Framework demonstration project**](https://github.com/Microchip-MPLAB-Harmony):
 
-    - **apps/tcpip/web_net_server_nvm_mpfs**
+    - apps/tcpip/web_net_server_nvm_mpfs
 
 The kit was developed using [**MPLAB X IDE v5.20**](https://www.microchip.com/mplab/mplab-x-ide/0). 
 
@@ -19,7 +19,6 @@ There are two projects available in the kit:
 
     - pic32mz_ef_sk.X - support for the PIC32MZ_EF_SK Ethernet Starter Kit
     - pic32mz_ef_curiosity.X - support of the PIC32MZ_EF_CURIOSITY Board
-
 
 The sample application was been modified to add the following Harmony 3 components:
 
@@ -30,16 +29,27 @@ The sample application was been modified to add the following Harmony 3 componen
     - USB Device Driver
     - Belcarra USBLAN Function Driver
 
+The **Belcarra PIC32MZ USBLAN Driver** is a TCPIP NIC driver that uses the PIC32MZ USB High Speed Device Driver
+to connect to another system. It uses CDC-EEM to transfer network packets to and from the other system. The driver is distributed in this project as a libusblan.
+
+## Testing
+
+To test with this project you need:
+
+    - have MPLAB X IDE installed
+    - have either the PIC32MZ EF SK or PIC32MZ EF Curiosity Board
+
+The project has all of the files needed to compile and build the test application. It is not necessary to have the Harmony 3 Framework installed. 
+
 ## Belcarra Windows USBLAN 
 This demonstration can be used with or without the **Belcarra USBLAN Driver.** A demonstration kit containing Windows drivers that support this demonstration project is available here:
 
    - [belcarra_usblan_iot_demo_drivers](https://github.com/Belcarra/belcarra_usblan_iot_demo_drivers.git)
  
-
 ## Supported Microchip Evaluation Boards
 
-    - **PIC32MZ EF Ethernet Starter Kit** (pic32mz_ef_sk)
-    - **PIC32MZ EF Curiosity Board Bundle **(pic32mz_ef_curiosity)
+    - PIC32MZ EF Ethernet Starter Kit (pic32mz_ef_sk)
+    - PIC32MZ EF Curiosity Board Bundle (pic32mz_ef_curiosity)
 
 ## CDC-EEM
 
@@ -47,6 +57,7 @@ This demonstration can be used with or without the **Belcarra USBLAN Driver.** A
 USB Host (typically a Windows, Mac or Linux system.)
 
 There are various protocols defined by USB.org:
+
     - CDC-ECM
     - CDC-EEM
     - CDC-NCM
