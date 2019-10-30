@@ -17,23 +17,23 @@ The kit was developed using [**MPLAB X IDE v5.20**](https://www.microchip.com/mp
 
 There are two projects available in the kit:
 
-    * pic32mz_ef_sk.X - support for the PIC32MZ_EF_SK Ethernet Starter Kit
-    * pic32mz_ef_curiosity.X - support of the PIC32MZ_EF_CURIOSITY Board
+    - pic32mz_ef_sk.X - support for the PIC32MZ_EF_SK Ethernet Starter Kit
+    - pic32mz_ef_curiosity.X - support of the PIC32MZ_EF_CURIOSITY Board
 
 
 The sample application was been modified to add the following Harmony 3 components:
 
-    * net Telnet
-    * net Iperf
-    * net Zeroconf
-    * USB High Speed Driver
-    * USB Device Driver
-    * Belcarra USBLAN Function Driver
+    - net Telnet
+    - net Iperf
+    - net Zeroconf
+    - USB High Speed Driver
+    - USB Device Driver
+    - Belcarra USBLAN Function Driver
 
 ## Belcarra Windows USBLAN 
 This demonstration can be used with or without the **Belcarra USBLAN Driver.** A demonstration kit containing Windows drivers that support this demonstration project is available here:
 
-   [belcarra_usblan_iot_demo_drivers](https://github.com/Belcarra/belcarra_usblan_iot_demo_drivers.git)
+   - [belcarra_usblan_iot_demo_drivers](https://github.com/Belcarra/belcarra_usblan_iot_demo_drivers.git)
  
 
 ## Supported Microchip Evaluation Boards
@@ -47,9 +47,9 @@ This demonstration can be used with or without the **Belcarra USBLAN Driver.** A
 USB Host (typically a Windows, Mac or Linux system.)
 
 There are various protocols defined by USB.org:
-    * CDC-ECM
-    * CDC-EEM
-    * CDC-NCM
+    - CDC-ECM
+    - CDC-EEM
+    - CDC-NCM
 
 The **Belcarra PIC32MZ USBLAN Driver** implements **CDC-EEM**. The **CDC-EEM** protocol allows for simple point to point transfer of frames between the USB
 Host and the USB Device. It supports frame aggregation and his very little overhead.
