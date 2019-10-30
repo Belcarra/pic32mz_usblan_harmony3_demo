@@ -4,7 +4,7 @@ This is a demonstration kit for the **Belcarra PIC32MZ USBLAN Driver** using eit
 **PIC32MZ EF Starter Kit** or **PIC32MZ EF Curiosity Board**.
 
 The kit demonstrates how **Networking over USB** can be used as an alternative to **Ethernet** or
-**WiFi** to provide lower cost networking to a Microchip PIC32MZ based board.
+**WiFi** to provide lower cost networking to a Microchip PIC32MZ based board with performance that is close to Ethernet at over 80Mbps per second.
 
 **Networking over USB** allows a point to point network connection to be used between
 the PIC32MZ board and a Windows, Mac or Linux host.
