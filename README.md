@@ -31,7 +31,7 @@ The sample application was been modified to add the following Harmony 3 componen
     * Belcarra USBLAN Function Driver
 
 ## Belcarra Windows USBLAN 
-This demonstration can be used with or without the &Belcarra USBLAN Driver.* A demonstration kit containing Windows drivers that support this demonstration project is available here:
+This demonstration can be used with or without the *Belcarra USBLAN Driver.* A demonstration kit containing Windows drivers that support this demonstration project is available here:
 
     * [**belcarra_usblan_iot_demo_drivers**](https://github.com/Belcarra/belcarra_usblan_iot_demo_drivers.git)
 
