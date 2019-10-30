@@ -11,7 +11,7 @@ the PIC32MZ board and a Windows, Mac or Linux host.
 
 This kit is based on the [**Microchip Harmony 3 Framework demonstration project**](https://github.com/Microchip-MPLAB-Harmony):
 
-    - apps/tcpip/web_net_server_nvm_mpfs
+    - net/apps/tcpip/web_net_server_nvm_mpfs
 
 The kit was developed using:
 
@@ -30,7 +30,7 @@ There are two projects available in the kit:
     - firmware/pic32mz_ef_sk.X - support for the PIC32MZ_EF_SK Ethernet Starter Kit
     - firmware/pic32mz_ef_curiosity.X - support of the PIC32MZ_EF_CURIOSITY Board
 
-The sample application was been modified to add the following Harmony 3 components:
+The sample application was modified to add the following Harmony 3 components:
 
     - net Telnet
     - net Iperf
@@ -57,6 +57,8 @@ The project has all of the files needed to compile and build the test applicatio
 This demonstration can be used with or without the **Belcarra USBLAN Driver.** A demonstration kit containing Windows drivers that support this demonstration project is available here:
 
    - [belcarra_usblan_iot_demo_drivers](https://github.com/Belcarra/belcarra_usblan_iot_demo_drivers.git)
+
+For information on obtaining a copy of the Belcarra driver contact Email: [info@belcarra.com](mailto://info@belcarra.com)
  
 ## Supported Microchip Evaluation Boards
 
@@ -86,16 +88,6 @@ The **USBLAN** driver also supports zero-copy transmit frames or can aggregate m
 ## Performance
 
 Using iperf the pic32mz_ef_sk board can source TCP data at about **70-80 Mbits/second with Ethernet** and about **60-70 Mbits/second using USBLAN**.
-
-## Belcarra PIC32MZ USBLAN Driver
-
-The kit is set up to use the **Belcarra PIC32MZ USBLAN Driver**. That driver is available under license from Belcarra Technologies. Simply copy the USBLAN
-driver into **src/config/*/driver/usblan**.
-
-To use this kit without the Belcarra driver remove the **USBLAN** definition from the X32-gcc Preprocessing macros and compile.
-
-For information on obtaining a copy of the Belcarra driver contact Email: [info@belcarra.com](mailto://info@belcarra.com)
-
 
 ## Microchip Eval Boards 
 
