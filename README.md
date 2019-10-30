@@ -30,7 +30,7 @@ The sample application was been modified to add the following Harmony 3 componen
     - Belcarra USBLAN Function Driver
 
 The **Belcarra PIC32MZ USBLAN Driver** is a TCPIP NIC driver that uses the PIC32MZ USB High Speed Device Driver
-to connect to another system. It uses CDC-EEM to transfer network packets to and from the other system. The driver is distributed in this project as a libusblan.
+to connect to another system. It uses CDC-EEM to transfer network packets to and from the other system. The driver is distributed in this project as a libary archive (libusblan.a)
 
 ## Testing
 
