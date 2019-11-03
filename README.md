@@ -1,4 +1,4 @@
-# Belcarra PIC32MZ USBLAN Harmony 3 Demostration Project
+# Belcarra PIC32MZ USBLAN Harmony 3 Demonstration Project
 
 This is a demonstration kit for the **Belcarra PIC32MZ USBLAN Driver** using either of **Microchip's** 
 **PIC32MZ EF Starter Kit** or **PIC32MZ EF Curiosity Board**.
