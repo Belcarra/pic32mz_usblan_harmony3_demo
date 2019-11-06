@@ -149,6 +149,20 @@ On the Starter Kits only buttons 1 and 2 work. Button 3 functionality is lost be
 
 On the Curiosity board, there is only one button. 
 
+## MPLAB X IDE Upgrading
+
+If you have an newer version of MPLAB X you may see the following error:
+
+[pic32mz_ef_sk]: /img/dfp_error.png
+
+If you click on the highlighted link "Resolve DFP for project ..." 
+
+You should see:
+
+[pic32mz_ef_sk]: /img/dfp_prop.png
+
+Select the next higher pack number (in this case 1.1.45), then click OK to save.
+
 
 
 ## PIC32MZ EF Curiosity 
@@ -195,6 +209,9 @@ PIC32MZ EF Curiosity Tx/RX Pins
 
 
 ## Release Notes
+
+### 2019-11-06
+    - update for mplab x ide v5.30
 
 ### 2019-10-16 
     - moved to mplab x ide v5.20
