@@ -135,7 +135,7 @@ Windows setup:
 
 The Chrome tabs should display the following screen, with the Random Number being updated rapidly:
 
-![Web Server Screen](/img/demo-webserver.png "web server")
+![Web Server Screen](/img/demo-webserver.png)
 
 For the non _usblan_ configurations you will only see the webpage on the Ethernet IP address. 
 
@@ -153,17 +153,16 @@ On the Curiosity board, there is only one button.
 
 If you have an newer version of MPLAB X you may see the following error:
 
-[pic32mz_ef_sk]: /img/dfp_error.png
+![DFP Error](/img/dfp_error.png)
+
 
 If you click on the highlighted link "Resolve DFP for project ..." 
 
 You should see:
 
-[pic32mz_ef_sk]: /img/dfp_prop.png
+![DFP Property](/img/dfp_prop.png)
 
 Select the next higher pack number (in this case 1.1.45), then click OK to save.
-
-
 
 ## PIC32MZ EF Curiosity 
 
