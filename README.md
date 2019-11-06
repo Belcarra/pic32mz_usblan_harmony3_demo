@@ -14,24 +14,25 @@ This kit is based on the [**Microchip Harmony 3 Framework demonstration project*
     - net/apps/tcpip/web_net_server_nvm_mpfs
 
 The kit was developed using:
-    - [**MPLAB X IDE v5.20**](https://www.microchip.com/mplab/mplab-x-ide/0)
-    - [**MPLAB XC32 Compiler**](https://www.microchip.com/mplab/compilers)
+
+- [**MPLAB X IDE v5.20**](https://www.microchip.com/mplab/mplab-x-ide)
+- [**MPLAB XC32 Compiler**](https://www.microchip.com/mplab/compilers)
 
 It is not necessary to have the **Harmony 3 Framework* or the **MPLAB Code Configurator** installed. 
 
 There are two projects available in the kit:
 
-    - firmware/pic32mz_ef_sk.X - support for the PIC32MZ_EF_SK Ethernet Starter Kit
-    - firmware/pic32mz_ef_curiosity.X - support of the PIC32MZ_EF_CURIOSITY Board
+- firmware/pic32mz_ef_sk.X - support for the PIC32MZ_EF_SK Ethernet Starter Kit
+- firmware/pic32mz_ef_curiosity.X - support of the PIC32MZ_EF_CURIOSITY Board
 
 The sample application was modified to add the following Harmony 3 components:
 
-    - net Telnet
-    - net Iperf
-    - net Zeroconf
-    - USB High Speed Driver
-    - USB Device Driver
-    - Belcarra PIC32MZ USBLAN Function Driver
+- net Telnet
+- net Iperf
+- net Zeroconf
+- USB High Speed Driver
+- USB Device Driver
+ - Belcarra PIC32MZ USBLAN Function Driver
 
 The **Belcarra PIC32MZ USBLAN Function Driver** is a TCPIP NIC driver that uses the PIC32MZ USB High Speed Device Driver
 to connect to another system. It uses CDC-EEM to transfer network packets to and from the other system. 
@@ -41,23 +42,23 @@ The driver is distributed in this project as a libary archive (libusblan.a)
 
 To test with this project you need:
 
-    - have MPLAB X IDE installed
-    - have the Microchip XC compiler installed
-    - have either the PIC32MZ EF SK or PIC32MZ EF Curiosity Board
+- have MPLAB X IDE installed
+- have the Microchip XC compiler installed
+- have either the PIC32MZ EF SK or PIC32MZ EF Curiosity Board
 
 The project has all of the files needed to compile and build the test application. It is not necessary to have the Harmony 3 Framework installed. 
 
 ## Belcarra Windows USBLAN 
 This demonstration can be used with or without the **Belcarra USBLAN Driver.** A demonstration kit containing Windows drivers that support this demonstration project is available here:
 
-   - [belcarra_usblan_iot_demo_drivers](https://github.com/Belcarra/belcarra_usblan_iot_demo_drivers.git)
+- [belcarra_usblan_iot_demo_drivers](https://github.com/Belcarra/belcarra_usblan_iot_demo_drivers.git)
 
 For information on obtaining a copy of the Belcarra driver contact Email: [info@belcarra.com](mailto://info@belcarra.com)
  
 ## Supported Microchip Evaluation Boards
 
-    - PIC32MZ EF Ethernet Starter Kit (pic32mz_ef_sk)
-    - PIC32MZ EF Curiosity Board Bundle (pic32mz_ef_curiosity)
+- PIC32MZ EF Ethernet Starter Kit (pic32mz_ef_sk)
+- PIC32MZ EF Curiosity Board Bundle (pic32mz_ef_curiosity)
 
 ## CDC-EEM
 
@@ -66,9 +67,9 @@ USB Host (typically a Windows, Mac or Linux system.)
 
 There are various protocols defined by USB.org:
 
-    - CDC-ECM
-    - CDC-EEM
-    - CDC-NCM
+- CDC-ECM
+- CDC-EEM
+- CDC-NCM
 
 The **Belcarra PIC32MZ USBLAN Driver** implements **CDC-EEM**. The **CDC-EEM** protocol allows for simple point to point transfer of frames between the USB
 Host and the USB Device. It supports frame aggregation and his very little overhead.
@@ -89,15 +90,13 @@ Using iperf the pic32mz_ef_sk board can source TCP data at about **70-80 Mbits/s
 
 Configurations:
 
-    - pic32mz_ef_sk_usblan - USBLAN and Ethernet
-    - pic32mz_ef_sk - Ethernet only 
+- pic32mz_ef_sk_usblan - USBLAN and Ethernet
+- pic32mz_ef_sk - Ethernet only 
 
 There are two versions of this kit, you may to need to chnage the processor selection to match your kit:
 
-    - DM30007 - non-crypto PIC32MZ2048EFH144
-    - DM30007-C - crypto PIC32MZ2048EFM1444
-
-
+- DM30007 - non-crypto PIC32MZ2048EFH144
+- DM30007-C - crypto PIC32MZ2048EFM1444
 
 ![pic32mz_ef_sk][pic32mz_ef_sk]
 
@@ -108,8 +107,8 @@ There are two versions of this kit, you may to need to chnage the processor sele
 
 Configurations:
 
-    - pic32mz_ef_sk_curiosity_usblan - USBLAN and Ethernet
-    - pic32mz_ef_sk_curiosity - Ethernet only
+- pic32mz_ef_sk_curiosity_usblan - USBLAN and Ethernet
+- pic32mz_ef_sk_curiosity - Ethernet only
 
 ![pic32mz_ef_curiosity][pic32mz_ef_curiosity] 
 
@@ -142,8 +141,8 @@ For the non _usblan_ configurations you will only see the webpage on the Etherne
 
 IP address:
 
-    - Ethernet is assigned by DHCP from your local DHCP server, see it's DHCP Lease table
-    - USBLAN will be at 192.168.188.2
+- Ethernet is assigned by DHCP from your local DHCP server, see it's DHCP Lease table
+- USBLAN will be at 192.168.188.2
 
 
 On the Starter Kits only buttons 1 and 2 work. Button 3 functionality is lost because the MPU pin it is on is used for the USB2UART Tx line.
