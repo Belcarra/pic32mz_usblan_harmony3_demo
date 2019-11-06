@@ -14,16 +14,10 @@ This kit is based on the [**Microchip Harmony 3 Framework demonstration project*
     - net/apps/tcpip/web_net_server_nvm_mpfs
 
 The kit was developed using:
-
     - [**MPLAB X IDE v5.20**](https://www.microchip.com/mplab/mplab-x-ide/0)
-    - [**MPLAB XC32 Compiler**](https://www.microchip.com/mplab/compilers). 
+    - [**MPLAB XC32 Compiler**](https://www.microchip.com/mplab/compilers)
 
 It is not necessary to have the **Harmony 3 Framework* or the **MPLAB Code Configurator** installed. 
-
-Download:
-
-    - [**MPLAB X IDE** See Download and Install MPLAB X IDE](https://www.microchip.com/mplab/mplab-harmony)
-    - [**MPLAB XC32 Compiler** See Downloads tab ](https://www.microchip.com/mplab/compilers). 
 
 There are two projects available in the kit:
 
