@@ -1,6 +1,13 @@
-
 ECHO OFF
-ECHO WINDOWS
+REM
+REM Bat file to generate confname.h and call java to regenerate mpfs_net_img.c
+REM 
+REM Call with: 
+REM     sh -c './genmpfs ${ProjectDir} ${ProjectName} ${ConfName} ${Device}'
+REM 
+REM The sh.exe is a simple C program (see fakesh directory) that removes the ./
+REM and calls this bat file, genmpfs.bat.
+REM
 
 if "%H3PATH%" == "" GOTO H3PATHNOTSET
     GOTO H3PATHSET
