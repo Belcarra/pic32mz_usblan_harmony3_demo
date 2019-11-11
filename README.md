@@ -1,19 +1,19 @@
 # Belcarra PIC32MZ USBLAN Harmony 3 Demonstration Project
 
-This is a demonstration kit for the **Belcarra PIC32MZ USBLAN Driver** using either of **Microchip's** 
+This is a demonstration project for the **Belcarra PIC32MZ USBLAN Driver** using either of **Microchip's** 
 **PIC32MZ EF Starter Kit** or **PIC32MZ EF Curiosity Board**.
 
-The kit demonstrates how **Networking over USB** can be used as an alternative to **Ethernet** or
-**WiFi** to provide lower cost networking to a Microchip PIC32MZ based board with performance that is close to Ethernet at over 80Mbps per second.
+It will demonstrate how **Networking over USB** can be used as an alternative to **Ethernet** or
+**WiFi** to provide low cost networking to a Microchip PIC32MZ based board with performance that is close to Ethernet at over 80Mbps per second.
 
 **Networking over USB** allows a point to point network connection to be used between
 the PIC32MZ board and a Windows, Mac or Linux host.
 
-This kit is based on the [**Microchip Harmony 3 Framework demonstration project**](https://github.com/Microchip-MPLAB-Harmony):
+This project is based on the [**Microchip Harmony 3 Framework demonstration project**](https://github.com/Microchip-MPLAB-Harmony):
 
     - net/apps/tcpip/web_net_server_nvm_mpfs
 
-The kit was developed using:
+It was developed using:
 
 - [**MPLAB X IDE v5.20**](https://www.microchip.com/mplab/mplab-x-ide)
 - [**MPLAB XC32 Compiler**](https://www.microchip.com/mplab/compilers)
@@ -32,7 +32,7 @@ The sample application was modified to add the following Harmony 3 components:
 - net Zeroconf
 - USB High Speed Driver
 - USB Device Driver
- - Belcarra PIC32MZ USBLAN Function Driver
+- Belcarra PIC32MZ USBLAN Function Driver
 
 The **Belcarra PIC32MZ USBLAN Function Driver** is a TCPIP NIC driver that uses the PIC32MZ USB High Speed Device Driver
 to connect to another system. It uses CDC-EEM to transfer network packets to and from the other system. 
@@ -49,11 +49,11 @@ To test with this project you need:
 The project has all of the files needed to compile and build the test application. It is not necessary to have the Harmony 3 Framework installed. 
 
 ## Belcarra Windows USBLAN 
-This demonstration can be used with or without the **Belcarra USBLAN Driver.** A demonstration kit containing Windows drivers that support this demonstration project is available here:
+A git archive containing Windows drivers that support this demonstration project is available here:
 
 - [belcarra_usblan_iot_demo_drivers](https://github.com/Belcarra/belcarra_usblan_iot_demo_drivers.git)
 
-For information on obtaining a copy of the Belcarra driver contact Email: [info@belcarra.com](mailto://info@belcarra.com)
+For information on obtaining a licensed copy of the Belcarra driver contact Email: [info@belcarra.com](mailto://info@belcarra.com)
  
 ## Supported Microchip Evaluation Boards
 
@@ -64,12 +64,6 @@ For information on obtaining a copy of the Belcarra driver contact Email: [info@
 
 **Networking over USB** uses a USB connection to transfer TCP IP Frames (aka packets) between the USB Device (in this case a Microchip Evaluation Board) and a
 USB Host (typically a Windows, Mac or Linux system.)
-
-There are various protocols defined by USB.org:
-
-- CDC-ECM
-- CDC-EEM
-- CDC-NCM
 
 The **Belcarra PIC32MZ USBLAN Driver** implements **CDC-EEM**. The **CDC-EEM** protocol allows for simple point to point transfer of frames between the USB
 Host and the USB Device. It supports frame aggregation and his very little overhead.
