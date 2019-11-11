@@ -1,9 +1,15 @@
-#!/bin/sh
-#
-# Copyright (c) 2019 Belcarra Technologies
-#
-# Linux version of genmpfs
-#
+: #
+: # Copyright (c) 2019 Belcarra Technologies
+: #
+: # Linux version of genmpfs
+: #
+
+:; if [ -z 0 ] ; then
+    @echo off
+    goto :WINDOWS
+fi
+
+echo SHELL
 
 # Set to installation path for HARMONY3
 # This is only required to be able to update the web pages
@@ -39,5 +45,8 @@ echo '#define DEVICE "'$DEVICE'"'
 set -x
 java -jar ${HARMONY3PATH}/net/utilities/mpfs_generator/mpfs.jar /c /z "snmp.bib" "../src/web_pages" "../src" "mpfs_net_img.c"
 
+exit
 
+:WINDOWS
+ECHO WINDOWS
 

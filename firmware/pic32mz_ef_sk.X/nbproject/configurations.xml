@@ -592,7 +592,7 @@
       </compileType>
       <makeCustomizationType>
         <makeCustomizationPreStepEnabled>true</makeCustomizationPreStepEnabled>
-        <makeCustomizationPreStep>genmpfs.bat ${ProjectDir} ${ProjectName} ${ConfName} ${Device}</makeCustomizationPreStep>
+        <makeCustomizationPreStep>sh -c ''./genmpfs ${ProjectDir} ${ProjectName} ${ConfName} ${Device}'</makeCustomizationPreStep>
         <makeCustomizationPostStepEnabled>false</makeCustomizationPostStepEnabled>
         <makeCustomizationPostStep></makeCustomizationPostStep>
         <makeCustomizationPutChecksumInUserID>false</makeCustomizationPutChecksumInUserID>
