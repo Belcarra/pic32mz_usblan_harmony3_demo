@@ -1,0 +1,50 @@
+#!/bin/sh
+#
+# Posix Shell script to generate confname.h and call java to regenerate mpfs_net_img.c
+#
+# Call with: 
+#     sh -c './genmpfs ${ProjectDir} ${ProjectName} ${ConfName} ${Device}'
+#
+
+
+:; Linux/Mac sh script
+:;
+echo SHELL
+
+# Set to installation path for HARMONY3
+# This is only required to be able to update the web pages
+#
+H3PATH="/HarmonyFramework3"
+
+if [ ! -d "${H3PATH}" ] ; then
+(
+sleep 2
+echo
+echo "Cannot see HarmonyFramework installed in: ${H3PATH}"
+echo "Install HarmonyFramework 3 and / or set location in firmware/src/genmpfs.bat file"
+echo "Web Pages will not be rebuilt"
+echo
+) 1>&2
+exit 0
+fi
+
+PROJDIR=$(echo $1 | sed -e 's/.*\/\(.*\)\/firmware.*/\1/')
+PROJNAME=$2
+CONFNAME=$3
+DEVICE=$4
+
+printf '\r\nHarmony3: %s\r\nPROJDIR: %s CONFNAME: %s DEVICE: %s\r\n\r\n' ${H3PATH}  ${PROJDIR} ${CONFNAME} ${DEVICE} 
+
+(
+echo "/* DO NOT EDIT - see src/genmpfs.bat which is called from project properties building */"
+echo 
+echo '#define PROJDIR "'$PROJDIR'"' 
+echo '#define PROJNAME "'$PROJNAME'"' 
+echo '#define CONFNAME "'$CONFNAME'"' 
+echo '#define DEVICE "'$DEVICE'"' 
+) > ../src/config/${CONFNAME}/confname.h
+
+set -x
+java -jar ${H3PATH}/net/utilities/mpfs_generator/mpfs.jar /c /z "snmp.bib" "../src/web_pages" "../src" "mpfs_net_img.c"
+
+exit
