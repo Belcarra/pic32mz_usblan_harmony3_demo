@@ -1,6 +1,9 @@
-/firmware/pic32mz_ef_sk.X/build/
-/firmware/pic32mz_ef_sk.X/dist/
-/firmware/pic32mz_ef_curiosity.X/build/
-/firmware/pic32mz_ef_curiosity.X/dist/
-/firmware/pic32mzusblan.X/build/
-/firmware/pic32mzusblan.X/dist/
+./firmware/pic32mz_ef_sk.X/build/
+./firmware/pic32mz_ef_sk.X/dist/
+./firmware/pic32mz_ef_curiosity.X/build/
+./firmware/pic32mz_ef_curiosity.X/dist/
+./firmware/pic32mzusblan.X/build/
+./firmware/pic32mzusblan.X/dist/
+./src/config/*/*/driver/usblan
+./firmware/*.X/build/
+./firmware/*.X/dist/
