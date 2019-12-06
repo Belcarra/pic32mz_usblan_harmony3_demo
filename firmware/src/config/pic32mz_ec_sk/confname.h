@@ -1,0 +1,6 @@
+/* DO NOT EDIT - see src/genmpfs.bat which is called from project properties building */
+
+#define PROJDIR "pic32mz_usblan_harmony3_demo"
+#define PROJNAME "usblan_demo_pic32mz_ec_sk"
+#define CONFNAME "pic32mz_ec_sk"
+#define DEVICE "PIC32MZ2048ECH144"
