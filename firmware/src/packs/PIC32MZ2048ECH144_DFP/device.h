@@ -42,6 +42,26 @@
 // DOM-IGNORE-END
 
 #include <xc.h>
+/* XXX
+ *  The most current dev packs included in mplabs v5.30 are not up to date with all of the
+ *  USBHS configuration registers.
+ *
+ *  Specifically:
+ * 
+ *      - USBCRCON register definition is missing
+ *      - AD1.\* registered renamed to ADC.\*
+ *
+ *  The *p32mz2048ech144-fixes.h* file has enough of the required changes to get this
+ *  project compiling.
+ *
+ *  At some point if Microchip updates the dev packs to have the current definitions
+ *  then compilation will fail with a compiler warning that numerous names are being
+ *  redefined. 
+ *
+ *  It may be possible to remove this include in device.h:
+ *
+ */
+#include "../src/packs/PIC32MZ2048ECH144_DFP/p32mz2048ech144-fixes.h"
 #include <sys/attribs.h>
 #include "toolchain_specifics.h"
 
