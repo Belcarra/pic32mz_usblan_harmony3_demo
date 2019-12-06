@@ -59,6 +59,7 @@ For information on obtaining a licensed copy of the Belcarra driver contact Emai
 
 - PIC32MZ EF Ethernet Starter Kit (pic32mz_ef_sk)
 - PIC32MZ EF Curiosity Board Bundle (pic32mz_ef_curiosity)
+- PIC32MZ EC Ethernet Starter Kit (pic32mz_ec_sk)
 
 ## CDC-EEM
 
@@ -85,7 +86,6 @@ Using iperf the pic32mz_ef_sk board can source TCP data at about **70-80 Mbits/s
 Configurations:
 
 - pic32mz_ef_sk_usblan - USBLAN and Ethernet
-- pic32mz_ef_sk - Ethernet only 
 
 There are two versions of this kit, you may to need to chnage the processor selection to match your kit:
 
@@ -102,16 +102,33 @@ There are two versions of this kit, you may to need to chnage the processor sele
 Configurations:
 
 - pic32mz_ef_sk_curiosity_usblan - USBLAN and Ethernet
-- pic32mz_ef_sk_curiosity - Ethernet only
 
 ![pic32mz_ef_curiosity][pic32mz_ef_curiosity] 
 
 
 
+
+### PIC32MZ_EC_SK - Ethernet Starter Kit PIC32MZ2048ECH144 
+
+Configurations:
+
+- pic32mz_ec_sk_usblan - USBLAN and Ethernet
+
+N.B. The dev pack in *PIC32MZ-EC_DFP* for mplabx v5.30 is up to date with all of the required changes to support the EC version of the starter kit.
+A set of fixes sufficient to allow the project to compile and work is provided in:
+'''
+src/packs/PIC32MZ2048ECH144_DFP/p32mz2048ech144-fixes.h
+'''
+
+N.B. The ECH chip does not support hardware float and as configured the project compiles with a warning that "soft float" is used.
+
+
+![pic32mz_ec_sk][pic32mz_ec_sk]
+
+
 [pic32mz_ef_sk]: /img/pic32mz_ef_sk.png
 [pic32mz_ef_curiosity]: /img/pic32mz_ef_curiosity.png
-
-
+[pic32mz_ec_sk]: /img/pic32mz_ec_sk.png
 
 ## Testing Setup
 
